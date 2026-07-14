@@ -19,20 +19,4 @@ jobs:
 
     steps:
       - name: Repository auschecken
-        uses: actions/checkout@v4
-
-      - name: LaTeX kompilieren
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: main.tex
-          working_directory: Regelwerk
-
-      - name: Neueste PDF vorbereiten
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: |
-          mkdir -p Build
-          cp Regelwerk/main.pdf Build/Heldenpfade-Regelwerk.pdf
-
-      - name: Neueste PDF ins Repository schreiben
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: stefanzwe
+        uses: actions/checkout@
