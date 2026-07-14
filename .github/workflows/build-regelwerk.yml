@@ -10,6 +10,9 @@ on:
       - 'Regelwerk/**'
       - '.github/workflows/build-regelwerk.yml'
 
+permissions:
+  contents: write
+
 jobs:
   build-pdf:
     runs-on: ubuntu-latest
@@ -23,8 +26,4 @@ jobs:
           root_file: main.tex
           working_directory: Regelwerk
 
-      - name: PDF als Artefakt bereitstellen
-        uses: actions/upload-artifact@v4
-        with:
-          name: heldenpfade-regelwerk
-          path: Regelwerk/main.pdf
+      - name: PDF fuer
