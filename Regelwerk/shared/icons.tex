@@ -1,0 +1,58 @@
+% Zentrale Symbolbefehle fuer Heldenpfade
+% Die aktuellen Darstellungen sind bewusst einfache Platzhalter.
+% Spaeter koennen sie hier zentral durch Bilddateien ersetzt werden.
+
+% Hilfsbefehle
+\newcommand{\hpDieIcon}[2]{%
+  \begingroup
+  \setlength{\fboxsep}{1.2pt}%
+  \raisebox{0.1ex}{\fcolorbox{black}{#1}{\textcolor{#2}{\sffamily\bfseries\scriptsize W}}}%
+  \endgroup
+}
+
+\newcommand{\hpActionIcon}[1]{%
+  \raisebox{0.1ex}{\textcircled{\sffamily\bfseries\scriptsize #1}}%
+}
+
+% Farben
+\definecolor{hpGreen}{RGB}{46,125,50}
+\definecolor{hpBlue}{RGB}{30,100,190}
+\definecolor{hpOrange}{RGB}{230,126,34}
+\definecolor{hpRed}{RGB}{192,38,45}
+\definecolor{hpMana}{RGB}{55,95,180}
+
+% Wuerfel
+\newcommand{\heroDie}{\hpDieIcon{white}{black}}
+\newcommand{\greenDie}{\hpDieIcon{hpGreen}{white}}
+\newcommand{\blueDie}{\hpDieIcon{hpBlue}{white}}
+\newcommand{\orangeDmgDie}{\hpDieIcon{hpOrange}{white}}
+\newcommand{\redDmgDie}{\hpDieIcon{hpRed}{white}}
+\newcommand{\blackDmgDie}{\hpDieIcon{black}{white}}
+
+% Sterne und Monde
+% \star ist bereits ein LaTeX-Mathematikbefehl und wird hier bewusst
+% als Heldenpfade-Symbol neu definiert.
+\renewcommand{\star}{\ensuremath{\ast}}
+\newcommand{\moon}{\ensuremath{\mathord{\mathrm{C}}}}
+
+% Leben und Mana
+\newcommand{\lifeLoss}{\textcolor{hpRed}{\ensuremath{\heartsuit}}}
+\newcommand{\lifeGain}{\textcolor{hpGreen}{\ensuremath{\heartsuit}}}
+\newcommand{\manaLoss}{\textcolor{hpRed}{\ensuremath{\blacklozenge}}}
+\newcommand{\manaGain}{\textcolor{hpGreen}{\ensuremath{\blacklozenge}}}
+
+% Ressourcen
+\newcommand{\crystal}{\textcolor{hpMana}{\ensuremath{\blacklozenge}}}
+
+% Aktionen
+\newcommand{\standardAction}{\hpActionIcon{A}}
+\newcommand{\moveAction}{\hpActionIcon{B}}
+\newcommand{\freeAction}{\hpActionIcon{F}}
+
+% Kampf
+\newcommand{\armor}{\ensuremath{\square}}
+\newcommand{\armorPierce}{\ensuremath{\square\mkern-9mu/}}
+\newcommand{\evade}{\ensuremath{\curvearrowright}}
+
+% Karten
+\newcommand{\exhaust}{\ensuremath{\circlearrowright}}
