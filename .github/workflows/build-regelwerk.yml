@@ -5,10 +5,6 @@ on:
     paths:
       - 'Regelwerk/**'
       - '.github/workflows/build-regelwerk.yml'
-  pull_request:
-    paths:
-      - 'Regelwerk/**'
-      - '.github/workflows/build-regelwerk.yml'
   workflow_dispatch:
 
 permissions:
@@ -17,7 +13,6 @@ permissions:
 jobs:
   build-pdf:
     runs-on: ubuntu-latest
-
     steps:
       - name: Repository auschecken
         uses: actions/checkout@v4
@@ -28,4 +23,7 @@ jobs:
           root_file: main.tex
           working_directory: Regelwerk
 
-      - name: Akt
+      - name: PDF in Build ablegen
+        run: |
+          mkdir -p Build
+          cp Regelwerk/main.pdf Build/Heldenpf
