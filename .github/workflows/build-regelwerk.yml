@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'Regelwerk/**'
-      - '!Regelwerk/Build/**'
+      - '!Regelwerk/build/**'
       - '.github/workflows/build-regelwerk.yml'
       - '.gitignore'
   workflow_dispatch:
@@ -26,17 +26,17 @@ jobs:
           root_file: main.tex
           working_directory: Regelwerk
 
-      - name: PDF in Regelwerk/Build ablegen
+      - name: PDF in Regelwerk/build ablegen
         run: |
-          mkdir -p Regelwerk/Build
-          cp Regelwerk/main.pdf Regelwerk/Build/Heldenpfade-Regelwerk.pdf
+          mkdir -p Regelwerk/build
+          cp Regelwerk/main.pdf Regelwerk/build/Heldenpfade-Regelwerk.pdf
 
       - name: PDF committen
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
-          git add -f Regelwerk/Build/Heldenpfade-Regelwerk.pdf
+          git add -f Regelwerk/build/Heldenpfade-Regelwerk.pdf
           
           if git diff --cached --quiet; then
             echo "PDF ist unverändert. Kein Commit notwendig."
