@@ -1,0 +1,16 @@
+Build/*
+!Build/.gitkeep
+!Regelwerk/Build/
+!Regelwerk/Build/Heldenpfade-Regelwerk.pdf
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+main.pdf
