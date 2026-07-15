@@ -13,6 +13,7 @@
 \RequirePackage{hyperref}
 \RequirePackage{amssymb}
 \RequirePackage{tabularx}
+\RequirePackage{array}
 \RequirePackage{csquotes}
 \RequirePackage{parskip}
 \RequirePackage{titlesec}
@@ -63,6 +64,15 @@
 % Typografie
 \newcommand{\HPHeadingFont}{\fontfamily{Cinzel-LF}\selectfont}
 \newcommand{\HPUIFont}{\sffamily}
+
+% Tabellen: mehr Luft, bessere Umbrueche, kein gequetschter Blocksatz
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.35}
+\renewcommand{\tabularxcolumn}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
 % Kapitel und Abschnitte
 \titleformat{\chapter}[display]
@@ -182,9 +192,9 @@
 \newenvironment{tip}[1][]{\begin{tipbox}[#1]}{\end{tipbox}}
 \newenvironment{kurzregel}[1][]{\begin{quickreference}[#1]}{\end{quickreference}}
 
-% Kompakte Tabellen mit serifenloser Schrift
+% Tabellen mit serifenloser Schrift und bewusst grosszuegigem Zeilenabstand
 \newenvironment{hptable}[1]
-  {\begingroup\HPUIFont\renewcommand{\arraystretch}{1.2}\begin{tabularx}{\linewidth}{#1}}
+  {\begingroup\HPUIFont\renewcommand{\arraystretch}{1.45}\setlength{\tabcolsep}{7pt}\emergencystretch=1.5em\begin{tabularx}{\linewidth}{#1}}
   {\end{tabularx}\endgroup}
 
 % Zentrale, spaeter austauschbare Spielsymbole
