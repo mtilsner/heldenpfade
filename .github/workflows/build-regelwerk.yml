@@ -14,8 +14,24 @@ permissions:
 jobs:
   build-pdf:
     runs-on: ubuntu-latest
+
     steps:
       - name: Repository auschecken
         uses: actions/checkout@v4
 
       - name: LaTeX kompilieren
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: Regelwerk
+
+      - name: PDF in Regelwerk/Build ablegen
+        run: |
+          mkdir -p Regelwerk/Build
+          cp Regelwerk/main.pdf Regelwerk/Build/Heldenpfade-Regelwerk.pdf
+
+      - name: PDF committen
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'ci: update generated Regelwerk PDF'
+          file_pattern: Regelwerk/Build/Heldenpfade-Regelwerk.pdf
