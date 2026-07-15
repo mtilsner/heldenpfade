@@ -26,4 +26,10 @@ jobs:
       - name: PDF in Build ablegen
         run: |
           mkdir -p Build
-          cp Regelwerk/main.pdf Build/Heldenpf
+          cp Regelwerk/main.pdf Build/Heldenpfade-Regelwerk.pdf
+
+      - name: PDF committen
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'ci: update generated Regelwerk PDF'
+          file_pattern: Build/Heldenpfade-Regelwerk.pdf
