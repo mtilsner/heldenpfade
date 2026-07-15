@@ -6,6 +6,7 @@ on:
       - 'Regelwerk/**'
       - '!Regelwerk/Build/**'
       - '.github/workflows/build-regelwerk.yml'
+      - '.gitignore'
   workflow_dispatch:
 
 permissions:
@@ -26,12 +27,4 @@ jobs:
           working_directory: Regelwerk
 
       - name: PDF in Regelwerk/Build ablegen
-        run: |
-          mkdir -p Regelwerk/Build
-          cp Regelwerk/main.pdf Regelwerk/Build/Heldenpfade-Regelwerk.pdf
-
-      - name: PDF committen
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: 'ci: update generated Regelwerk PDF'
-          file_pattern: Regelwerk/Build/Heldenpfade-Regelwerk.pdf
+        run:
