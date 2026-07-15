@@ -2,128 +2,63 @@
 
 \section{Was ist Magie?}
 
-Magie gehört zu den außergewöhnlichsten Fähigkeiten, die ein Held in Heldenpfade erlernen kann. Während viele Helden ihre Herausforderungen mit Mut, Geschick oder körperlicher Stärke überwinden, greifen Magiebegabte auf geheimnisvolle Kräfte zurück, um die Welt um sich herum zu beeinflussen.
-
-Magie kann Verletzungen heilen, Feuer beschwören, Verbündete stärken oder Gegner schwächen. Manche Zauber wirken sofort, andere entfalten ihre Wirkung über längere Zeit oder müssen aufrechterhalten werden.
+Magie gehört zu den außergewöhnlichsten Fähigkeiten, die ein Held in Heldenpfade erlernen kann. Magie kann Verletzungen heilen, Feuer beschwören, Verbündete stärken oder Gegner schwächen.
 
 Nicht jeder Held ist magiebegabt. Erst das Talent \emph{Magiebegabt} ermöglicht einem Helden, Zauber zu erlernen und zu wirken.
 
-Die allgemeinen Regeln zum Wirken von Magie werden in diesem Kapitel beschrieben. Die Beschreibungen aller verfügbaren Zauber befinden sich in Anhang 2 -- Zauber.
-
 \section{Mana}
 
-Jeder Zauber kostet Mana. Mana beschreibt die innere magische Kraft eines Helden und bestimmt, wie viele Zauber er wirken kann, bevor er sich ausruhen muss.
+Jeder Zauber kostet Mana. Beim ersten Auftreten wird das Ausgeben von Mana als \textbf{Mana bezahlen (\manaLoss)} und das Erhalten von Mana als \textbf{Mana erhalten (\manaGain)} bezeichnet.
 
-Jeder Held besitzt zwei Werte:
+Jeder Held besitzt einen Manavorrat und aktuelles Mana. Der Manavorrat ist das Maximum, das aktuelle Mana steht für die momentan verfügbare Menge.
 
-\begin{itemize}
-  \item \textbf{Manavorrat:} die maximale Menge an Mana, über die der Held verfügen kann.
-  \item \textbf{Aktuelles Mana:} die Menge an Mana, die dem Helden momentan zur Verfügung steht.
-\end{itemize}
+Zu Beginn jedes Abenteuers besitzt ein Held seinen vollständigen Manavorrat. Reicht das aktuelle Mana nicht aus, kann ein Zauber nicht gewirkt werden. Das aktuelle Mana kann niemals unter 0 oder über den Manavorrat steigen.
 
-Zu Beginn jedes Abenteuers besitzt ein Held seinen vollständigen Manavorrat als aktuelles Mana.
-
-Immer wenn ein Held einen Zauber wirkt, bezahlt er dessen Manakosten (\manaLoss). Reicht das aktuelle Mana nicht aus, kann der Zauber nicht gewirkt werden. Das aktuelle Mana kann niemals unter 0 sinken oder höher sein als der Manavorrat.
-
-Verbrauchtes Mana wird während einer Rast regeneriert (\manaGain). Die genauen Regeln hierzu befinden sich in Kapitel 8 -- Abenteuer erleben.
+Verbrauchtes Mana wird während einer Rast mit \manaGain{} regeneriert.
 
 \section{Magiebegabt}
 
-Um Zauber wirken zu können, muss ein Held das allgemeine Talent \emph{Magiebegabt} erlernt haben. Ein Held ohne dieses Talent kann keine Zauber erlernen und keine Zauber wirken.
-
-Das Talent erhöht den Manavorrat des Helden um 6 \manaGain. Es verleiht jedoch noch keine Zauber. Welche Zauber ein Held beherrscht, entscheidet der Spieler beim Erlernen der Zauber.
+Um Zauber wirken zu können, muss ein Held das Talent \emph{Magiebegabt} besitzen. Das Talent erhöht den Manavorrat des Helden um 6.
 
 \section{Zauber}
 
-Jeder Zauber wird durch eine Zauberkarte beschrieben. Eine Zauberkarte enthält alle Informationen, die zum Wirken des Zaubers benötigt werden:
+Jeder Zauber wird durch eine Zauberkarte beschrieben. Sie enthält Name, Manakosten, mögliche Probe, Reichweite, Ziele, Wirkungsdauer, Schlüsselwörter und Regelwirkung.
 
-\begin{itemize}
-  \item Name des Zaubers
-  \item Manakosten (\manaLoss)
-  \item notwendige Probe, falls eine Probe erforderlich ist
-  \item Reichweite und mögliche Ziele
-  \item Wirkungsdauer
-  \item Schlüsselwörter
-  \item Beschreibung der Wirkung
-\end{itemize}
+Zauberkarten werden durch das Wirken eines Zaubers nicht automatisch erschöpft. Nur wenn eine Zauberkarte ausdrücklich das Symbol \textbf{Erschöpfen (\exhaust)} zeigt oder der Regeltext dies verlangt, wird genau diese Karte umgedreht. Solange sie erschöpft ist, können ihre Angaben und Effekte nicht genutzt werden.
 
-Jeder Zauber kann nur einmal erlernt werden. Ein Held kann einen erlernten Zauber grundsätzlich wiederholt wirken, solange er über genügend Mana verfügt, die Zauberkarte bereit ist und alle Voraussetzungen des Zaubers erfüllt.
-
-\section{Schlüsselwörter}
-
-Zauber können ein oder mehrere Schlüsselwörter besitzen. Schlüsselwörter beschreiben Eigenschaften eines Zaubers und dienen seiner Einordnung. Für sich genommen besitzen sie keine eigene Regelwirkung.
-
-Andere Spielregeln können sich auf Schlüsselwörter beziehen. Talente, Zauber, Ausrüstungsgegenstände oder Gegnerfähigkeiten können beispielsweise nur auf Zauber mit bestimmten Schlüsselwörtern wirken oder deren Wirkung verändern.
-
-Ein Zauber kann beliebig viele Schlüsselwörter besitzen. Alle Schlüsselwörter eines Zaubers sind auf seiner Zauberkarte angegeben.
+Ein Held kann einen erlernten Zauber wiederholt wirken, solange genügend Mana vorhanden ist, die Karte nicht erschöpft ist und alle Voraussetzungen erfüllt sind.
 
 \section{Einen Zauber wirken}
 
-Ein Held wirkt einen Zauber in mehreren Schritten:
-
 \begin{enumerate}
-  \item \textbf{Zauber wählen:} Der Spieler wählt einen Zauber, den sein Held erlernt hat.
-  \item \textbf{Ziel bestimmen:} Der Spieler bestimmt alle Ziele des Zaubers. Die Ziele müssen die Bedingungen und die Reichweite des Zaubers erfüllen.
-  \item \textbf{Mana bezahlen \manaLoss:} Der Held gibt die auf der Zauberkarte angegebenen Manakosten aus.
-  \item \textbf{Probe ablegen:} Verlangt der Zauber eine Probe, wird diese nun abgelegt.
-  \item \textbf{Wirkung ausführen:} Ist die Probe erfolgreich oder verlangt der Zauber keine Probe, tritt die beschriebene Wirkung ein.
+  \item Zauber wählen.
+  \item Gültige Ziele bestimmen.
+  \item Angegebene Manakosten mit \manaLoss{} bezahlen.
+  \item Falls verlangt, die Probe ablegen.
+  \item Wirkung ausführen.
+  \item Falls angegeben, die Zauberkarte mit \exhaust{} erschöpfen.
 \end{enumerate}
 
 Kann ein Schritt nicht vollständig ausgeführt werden, kann der Zauber nicht gewirkt werden. Die Manakosten werden erst bezahlt, nachdem gültige Ziele bestimmt wurden.
 
 \subsection{Zauberproben}
 
-Nicht jeder Zauber verlangt eine Probe. Ist auf der Zauberkarte keine Probe angegeben, gelingt der Zauber automatisch, sobald alle übrigen Voraussetzungen erfüllt sind.
-
-Verlangt ein Zauber eine Probe, nennt die Zauberkarte das verwendete Attribut, die verwendete Fertigkeit und die Schwierigkeit. Die Probe wird nach den allgemeinen Regeln aus Kapitel 3 abgelegt.
-
-Misslingt die Probe, tritt die Wirkung des Zaubers nicht ein. Das ausgegebene Mana ist dennoch verbraucht.
+Nicht jeder Zauber verlangt eine Probe. Verlangt er eine Probe, nennt die Karte Attribute, Fertigkeit und Schwierigkeit. Misslingt die Probe, tritt die Wirkung nicht ein; das ausgegebene Mana bleibt verbraucht.
 
 \subsection{Zaubern im Kampf}
 
-Im Kampf ist das Wirken eines Zaubers eine \standardAction, sofern die Zauberkarte nichts anderes bestimmt. Verlangt ein Zauber einen Angriff, gelten zusätzlich die Regeln für Angriffe und Verteidigung aus Kapitel 4.
+Im Kampf ist das Wirken eines Zaubers eine \standardAction, sofern die Karte nichts anderes bestimmt. Verlangt ein Zauber einen Angriff, gelten zusätzlich die Kampfregeln.
 
 \section{Reichweite und Ziele}
 
-Die Zauberkarte bestimmt, welche Ziele ein Zauber haben darf und wie weit diese vom Zaubernden entfernt sein dürfen.
-
-Typische Zielangaben sind:
-
-\begin{itemize}
-  \item \textbf{Selbst:} Der Zauber kann nur den Zaubernden betreffen.
-  \item \textbf{Berührung:} Der Zaubernde muss das Ziel berühren können.
-  \item \textbf{Ein Ziel:} Der Zauber betrifft genau eine geeignete Kreatur oder ein geeignetes Objekt in Reichweite.
-  \item \textbf{Mehrere Ziele:} Der Zauber betrifft bis zu der angegebenen Anzahl geeigneter Ziele.
-  \item \textbf{Bereich:} Der Zauber betrifft alle geeigneten Ziele in dem beschriebenen Bereich.
-\end{itemize}
-
-Ein Ziel muss grundsätzlich wahrnehmbar sein. Vollständig verborgene Ziele können nur gewählt werden, wenn der Zauber dies ausdrücklich erlaubt.
-
-Befindet sich ein Ziel außerhalb der Reichweite, kann es nicht gewählt werden. Verlässt ein Ziel die Reichweite erst nach dem Wirken, endet die Wirkung nur dann, wenn die Zauberkarte dies ausdrücklich bestimmt.
+Die Zauberkarte bestimmt Ziele und Reichweite. Typische Zielangaben sind Selbst, Berührung, ein Ziel, mehrere Ziele oder ein Bereich. Ein Ziel muss grundsätzlich wahrnehmbar sein.
 
 \section{Wirkungsdauer}
 
-Die Wirkungsdauer beschreibt, wie lange ein Zauber anhält.
+Typische Wirkungsdauern sind sofort, bis zum Ende des Zuges, bis zum Ende der Runde oder eine bestimmte Dauer. Eine Kampfrunde endet, nachdem alle Gegner vollständig aktiviert wurden.
 
-\begin{itemize}
-  \item \textbf{Sofort:} Die Wirkung tritt einmalig ein und endet unmittelbar danach.
-  \item \textbf{Bis zum Ende des Zuges:} Die Wirkung endet am Ende des aktuellen Zuges.
-  \item \textbf{Bis zum Ende der Runde:} Die Wirkung endet am Ende der aktuellen Kampfrunde.
-  \item \textbf{Bestimmte Dauer:} Die Wirkung hält für die auf der Zauberkarte angegebene Anzahl an Runden, Minuten oder Stunden an.
-\end{itemize}
-
-Endet ein Zauber, enden auch alle durch ihn verursachten fortdauernden Boni, Mali und Zustände, sofern die Zauberkarte nichts anderes bestimmt.
-
-\section{Zauber lernen}
-
-Helden können im Laufe ihrer Abenteuer neue Zauber erlernen. Die Regeln zum Erlernen neuer Zauber befinden sich in Kapitel 9 -- Wie entsteht ein Held?
-
-Die vollständige Liste aller verfügbaren Zauber befindet sich in Anhang 2 -- Zauber.
+Endet ein Zauber, enden auch alle durch ihn verursachten fortdauernden Boni, Mali und Zustände, sofern die Karte nichts anderes bestimmt.
 
 \section{Beispiel}
 
-Kiera besitzt das Talent \emph{Magiebegabt}, hat den Zauber \emph{Feuerstrahl} erlernt und verfügt noch über 4 Mana. Der Zauber kostet 2 \manaLoss.
-
-Während ihres Zuges wählt sie den Zauber und bestimmt einen Gegner in Reichweite als Ziel. Da alle Voraussetzungen erfüllt sind, bezahlt sie 2 \manaLoss. Ihr aktuelles Mana sinkt dadurch von 4 auf 2.
-
-Anschließend legt Kiera die auf der Zauberkarte angegebene Probe ab. Die Probe gelingt. Der Zauber wird erfolgreich gewirkt und die auf der Zauberkarte beschriebene Wirkung tritt ein.
+Kiera besitzt den Zauber \emph{Feuerstrahl}. Er kostet 2\manaLoss. Sie bestimmt ein gültiges Ziel, bezahlt die Kosten und legt die angegebene Probe ab. Gelingt die Probe, tritt die Wirkung ein. Die Karte wird nur dann mit \exhaust{} erschöpft, wenn dies auf ihr angegeben ist.
