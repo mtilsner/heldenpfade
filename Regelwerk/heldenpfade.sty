@@ -14,4 +14,178 @@
 \RequirePackage{amssymb}
 \RequirePackage{tabularx}
 \RequirePackage{csquotes}
-\RequirePackage
+\RequirePackage{parskip}
+\RequirePackage{titlesec}
+\RequirePackage{fancyhdr}
+\RequirePackage{enumitem}
+\RequirePackage[most]{tcolorbox}
+
+% Farbpalette
+\definecolor{hpText}{HTML}{2A2A2A}
+\definecolor{hpBrown}{HTML}{5E4630}
+\definecolor{hpLine}{HTML}{D7D1C8}
+\definecolor{hpPaper}{HTML}{FBF9F4}
+\definecolor{hpExample}{HTML}{EAF3FB}
+\definecolor{hpExampleLine}{HTML}{7CA8C9}
+\definecolor{hpTip}{HTML}{EAF5E7}
+\definecolor{hpTipLine}{HTML}{7FA46F}
+\definecolor{hpQuick}{HTML}{F7EEDB}
+\definecolor{hpQuickLine}{HTML}{B68A42}
+
+\color{hpText}
+\pagecolor{hpPaper}
+
+% DIN A4 mit grosszuegigem Satzspiegel
+\geometry{
+  inner=21mm,
+  outer=21mm,
+  top=22mm,
+  bottom=22mm,
+  headheight=14pt,
+  headsep=8mm,
+  footskip=10mm
+}
+
+% Absatzlayout
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.72\baselineskip plus 0.18\baselineskip minus 0.12\baselineskip}
+\linespread{1.08}
+
+% Listen
+\setlist{
+  leftmargin=1.6em,
+  itemsep=0.28\baselineskip,
+  topsep=0.35\baselineskip,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+% Typografie
+\newcommand{\HPHeadingFont}{\fontfamily{Cinzel-LF}\selectfont}
+\newcommand{\HPUIFont}{\sffamily}
+
+% Kapitel und Abschnitte
+\titleformat{\chapter}[display]
+  {\normalfont\HPHeadingFont\color{hpBrown}}
+  {\Large\MakeUppercase{Kapitel \thechapter}}
+  {0.45em}
+  {\Huge}
+  [\vspace{0.55em}\color{hpLine}\titlerule]
+\titlespacing*{\chapter}{0pt}{-7mm}{11mm}
+
+\titleformat{\section}
+  {\normalfont\HPHeadingFont\Large\color{hpBrown}}
+  {\thesection}
+  {0.7em}
+  {}
+\titlespacing*{\section}{0pt}{1.55\baselineskip}{0.5\baselineskip}
+
+\titleformat{\subsection}
+  {\normalfont\HPHeadingFont\large\color{hpBrown}}
+  {\thesubsection}
+  {0.65em}
+  {}
+\titlespacing*{\subsection}{0pt}{1.2\baselineskip}{0.35\baselineskip}
+
+\titleformat{\subsubsection}
+  {\normalfont\HPHeadingFont\normalsize\color{hpBrown}}
+  {\thesubsubsection}
+  {0.6em}
+  {}
+\titlespacing*{\subsubsection}{0pt}{1.0\baselineskip}{0.25\baselineskip}
+
+% Kopf- und Fusszeilen
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\HPUIFont\small\color{hpBrown}\nouppercase{\leftmark}}
+\fancyfoot[C]{\HPUIFont\small\color{hpBrown}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{hpLine}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyfoot[C]{\HPUIFont\small\color{hpBrown}\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+% Links
+\hypersetup{
+  colorlinks=true,
+  linkcolor=hpBrown,
+  urlcolor=hpBrown,
+  citecolor=hpBrown,
+  pdfborder={0 0 0}
+}
+
+% Gemeinsamer Stil fuer Hervorhebungen
+\tcbset{
+  hpbox/.style={
+    enhanced,
+    breakable,
+    arc=2mm,
+    boxrule=0.7pt,
+    left=4mm,
+    right=4mm,
+    top=3.5mm,
+    bottom=3.5mm,
+    before skip=0.9\baselineskip,
+    after skip=0.9\baselineskip,
+    fonttitle=\HPUIFont\bfseries,
+    fontupper=\HPUIFont,
+    coltitle=hpText,
+    attach boxed title to top left={xshift=3mm,yshift*=-2mm},
+    boxed title style={
+      boxrule=0pt,
+      arc=1.5mm,
+      left=2mm,
+      right=2mm,
+      top=1mm,
+      bottom=1mm
+    }
+  }
+}
+
+% Beispiel: erklaert eine konkrete Anwendung der Regel
+\newtcolorbox{examplebox}[1][]{
+  hpbox,
+  title=Example,
+  colback=hpExample,
+  colframe=hpExampleLine,
+  boxed title style={colback=hpExampleLine!24},
+  #1
+}
+
+% Tipp: optionale Hilfestellung, keine neue Regel
+\newtcolorbox{tipbox}[1][]{
+  hpbox,
+  title=Tip,
+  colback=hpTip,
+  colframe=hpTipLine,
+  boxed title style={colback=hpTipLine!24},
+  #1
+}
+
+% Kurzregel: knappe, symbolorientierte Darstellung wie auf Karten oder Boegen
+\newtcolorbox{quickreference}[1][]{
+  hpbox,
+  title=Quick Reference,
+  colback=hpQuick,
+  colframe=hpQuickLine,
+  boxed title style={colback=hpQuickLine!24},
+  fontupper=\HPUIFont\large,
+  #1
+}
+
+% Deutsche Aliase fuer die Verwendung im Quelltext
+\newenvironment{beispiel}[1][]{\begin{examplebox}[#1]}{\end{examplebox}}
+\newenvironment{tip}[1][]{\begin{tipbox}[#1]}{\end{tipbox}}
+\newenvironment{kurzregel}[1][]{\begin{quickreference}[#1]}{\end{quickreference}}
+
+% Kompakte Tabellen mit serifenloser Schrift
+\newenvironment{hptable}[1]
+  {\begingroup\HPUIFont\renewcommand{\arraystretch}{1.2}\begin{tabularx}{\linewidth}{#1}}
+  {\end{tabularx}\endgroup}
+
+% Zentrale, spaeter austauschbare Spielsymbole
+\input{shared/icons.tex}
