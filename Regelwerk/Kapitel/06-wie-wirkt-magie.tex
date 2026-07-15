@@ -23,15 +23,15 @@ Jeder Held besitzt zwei Werte:
 
 Zu Beginn jedes Abenteuers besitzt ein Held seinen vollständigen Manavorrat als aktuelles Mana.
 
-Immer wenn ein Held einen Zauber wirkt, bezahlt er dessen Manakosten. Reicht das aktuelle Mana nicht aus, kann der Zauber nicht gewirkt werden. Das aktuelle Mana kann niemals unter 0 sinken oder höher sein als der Manavorrat.
+Immer wenn ein Held einen Zauber wirkt, bezahlt er dessen Manakosten (\manaLoss). Reicht das aktuelle Mana nicht aus, kann der Zauber nicht gewirkt werden. Das aktuelle Mana kann niemals unter 0 sinken oder höher sein als der Manavorrat.
 
-Verbrauchtes Mana wird während einer Rast regeneriert. Die genauen Regeln hierzu befinden sich in Kapitel 8 -- Abenteuer erleben.
+Verbrauchtes Mana wird während einer Rast regeneriert (\manaGain). Die genauen Regeln hierzu befinden sich in Kapitel 8 -- Abenteuer erleben.
 
 \section{Magiebegabt}
 
 Um Zauber wirken zu können, muss ein Held das allgemeine Talent \emph{Magiebegabt} erlernt haben. Ein Held ohne dieses Talent kann keine Zauber erlernen und keine Zauber wirken.
 
-Das Talent erhöht den Manavorrat des Helden um 6 Mana. Es verleiht jedoch noch keine Zauber. Welche Zauber ein Held beherrscht, entscheidet der Spieler beim Erlernen der Zauber.
+Das Talent erhöht den Manavorrat des Helden um 6 \manaGain. Es verleiht jedoch noch keine Zauber. Welche Zauber ein Held beherrscht, entscheidet der Spieler beim Erlernen der Zauber.
 
 \section{Zauber}
 
@@ -39,7 +39,7 @@ Jeder Zauber wird durch eine Zauberkarte beschrieben. Eine Zauberkarte enthält 
 
 \begin{itemize}
   \item Name des Zaubers
-  \item Manakosten
+  \item Manakosten (\manaLoss)
   \item notwendige Probe, falls eine Probe erforderlich ist
   \item Reichweite und mögliche Ziele
   \item Wirkungsdauer
@@ -64,7 +64,7 @@ Ein Held wirkt einen Zauber in mehreren Schritten:
 \begin{enumerate}
   \item \textbf{Zauber wählen:} Der Spieler wählt einen Zauber, den sein Held erlernt hat.
   \item \textbf{Ziel bestimmen:} Der Spieler bestimmt alle Ziele des Zaubers. Die Ziele müssen die Bedingungen und die Reichweite des Zaubers erfüllen.
-  \item \textbf{Mana bezahlen:} Der Held gibt die auf der Zauberkarte angegebenen Manakosten aus.
+  \item \textbf{Mana bezahlen \manaLoss:} Der Held gibt die auf der Zauberkarte angegebenen Manakosten aus.
   \item \textbf{Probe ablegen:} Verlangt der Zauber eine Probe, wird diese nun abgelegt.
   \item \textbf{Wirkung ausführen:} Ist die Probe erfolgreich oder verlangt der Zauber keine Probe, tritt die beschriebene Wirkung ein.
 \end{enumerate}
@@ -81,7 +81,7 @@ Misslingt die Probe, tritt die Wirkung des Zaubers nicht ein. Das ausgegebene Ma
 
 \subsection{Zaubern im Kampf}
 
-Im Kampf ist das Wirken eines Zaubers eine Aktion, sofern die Zauberkarte nichts anderes bestimmt. Verlangt ein Zauber einen Angriff, gelten zusätzlich die Regeln für Angriffe und Verteidigung aus Kapitel 4.
+Im Kampf ist das Wirken eines Zaubers eine \standardAction, sofern die Zauberkarte nichts anderes bestimmt. Verlangt ein Zauber einen Angriff, gelten zusätzlich die Regeln für Angriffe und Verteidigung aus Kapitel 4.
 
 \section{Reichweite und Ziele}
 
@@ -122,8 +122,8 @@ Die vollständige Liste aller verfügbaren Zauber befindet sich in Anhang 2 -- Z
 
 \section{Beispiel}
 
-Kiera besitzt das Talent \emph{Magiebegabt}, hat den Zauber \emph{Feuerstrahl} erlernt und verfügt noch über 4 Mana. Der Zauber kostet 2 Mana.
+Kiera besitzt das Talent \emph{Magiebegabt}, hat den Zauber \emph{Feuerstrahl} erlernt und verfügt noch über 4 Mana. Der Zauber kostet 2 \manaLoss.
 
-Während ihres Zuges wählt sie den Zauber und bestimmt einen Gegner in Reichweite als Ziel. Da alle Voraussetzungen erfüllt sind, bezahlt sie die 2 Manakosten. Ihr aktuelles Mana sinkt dadurch von 4 auf 2.
+Während ihres Zuges wählt sie den Zauber und bestimmt einen Gegner in Reichweite als Ziel. Da alle Voraussetzungen erfüllt sind, bezahlt sie 2 \manaLoss. Ihr aktuelles Mana sinkt dadurch von 4 auf 2.
 
 Anschließend legt Kiera die auf der Zauberkarte angegebene Probe ab. Die Probe gelingt. Der Zauber wird erfolgreich gewirkt und die auf der Zauberkarte beschriebene Wirkung tritt ein.
