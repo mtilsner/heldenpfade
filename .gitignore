@@ -1,5 +1,5 @@
-Build/*
-!Build/.gitkeep
+/Build/*
+!/Build/.gitkeep
 !Regelwerk/Build/
 !Regelwerk/Build/Heldenpfade-Regelwerk.pdf
 *.aux
