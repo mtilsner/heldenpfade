@@ -19,4 +19,9 @@ jobs:
 
     steps:
       - name: Repository auschecken
-        uses: actions/checkout@
+        uses: actions/checkout@v4
+
+      - name: LaTeX kompilieren
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file:
