@@ -4,6 +4,7 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[ngerman]{babel}
+\RequirePackage{libertinus}
 \RequirePackage{microtype}
 \RequirePackage{xcolor}
 \RequirePackage{geometry}
@@ -11,8 +12,72 @@
 \RequirePackage{amssymb}
 \RequirePackage{tabularx}
 \RequirePackage{csquotes}
+\RequirePackage{parskip}
+\RequirePackage{titlesec}
+\RequirePackage{fancyhdr}
+\RequirePackage{enumitem}
 
-\geometry{margin=25mm}
+% Kompaktes DIN-A5-Layout mit etwas mehr Innenrand fuer die Bindung
+\geometry{
+  inner=18mm,
+  outer=14mm,
+  top=16mm,
+  bottom=17mm,
+  headheight=14pt,
+  headsep=6mm,
+  footskip=9mm
+}
+
+% Absatzlayout: kein Einzug, stattdessen klarer Abstand
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65\baselineskip plus 0.15\baselineskip minus 0.1\baselineskip}
+
+% Ruhigere Listen im kleineren Seitenformat
+\setlist{itemsep=0.25\baselineskip, topsep=0.35\baselineskip, parsep=0pt}
+
+% Kapitel- und Abschnittsformat
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries}
+  {\Large Kapitel \thechapter}
+  {0.35em}
+  {\Huge}
+\titlespacing*{\chapter}{0pt}{-8mm}{8mm}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\thesection}
+  {0.65em}
+  {}
+\titlespacing*{\section}{0pt}{1.4\baselineskip}{0.45\baselineskip}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}
+  {\thesubsection}
+  {0.65em}
+  {}
+\titlespacing*{\subsection}{0pt}{1.1\baselineskip}{0.35\baselineskip}
+
+% Dezente Kopf- und Fusszeilen
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\nouppercase{\leftmark}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyfoot[C]{\small\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+% Zurueckhaltende Linkdarstellung
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
+  citecolor=black,
+  pdfborder={0 0 0}
+}
 
 % Zentrale, spaeter austauschbare Spielsymbole
 \input{shared/icons.tex}
