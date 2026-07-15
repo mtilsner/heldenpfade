@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'Regelwerk/**'
+      - '!Regelwerk/Build/**'
       - '.github/workflows/build-regelwerk.yml'
   workflow_dispatch:
 
@@ -18,18 +19,3 @@ jobs:
         uses: actions/checkout@v4
 
       - name: LaTeX kompilieren
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: main.tex
-          working_directory: Regelwerk
-
-      - name: PDF in Build ablegen
-        run: |
-          mkdir -p Build
-          cp Regelwerk/main.pdf Build/Heldenpfade-Regelwerk.pdf
-
-      - name: PDF committen
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: 'ci: update generated Regelwerk PDF'
-          file_pattern: Build/Heldenpfade-Regelwerk.pdf
