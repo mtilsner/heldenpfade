@@ -1,0 +1,63 @@
+% Wiederverwendbare Darstellung fuer Beispielhelden
+
+\definecolor{hpHero}{HTML}{F2EEE6}
+\definecolor{hpHeroLine}{HTML}{8A6A49}
+\definecolor{hpHeroInner}{HTML}{FBF9F4}
+
+% Geschlossenes Profil fuer einen Beispielhelden.
+\newtcolorbox{heroprofile}[2][]{
+  hpbox,
+  breakable=false,
+  title={#2},
+  colback=hpHero,
+  colframe=hpHeroLine,
+  boxed title style={colback=hpHeroLine!22},
+  fonttitle=\HPHeadingFont\large,
+  #1
+}
+
+% Acht gleich breite Attributfelder direkt unter dem Namen.
+\newenvironment{heroattributes}
+  {\begingroup\HPUIFont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{2pt}%
+   \tabularx{\linewidth}{@{}*{8}{>{\centering\arraybackslash}X}@{}}}
+  {\endtabularx\endgroup}
+
+% Zweispaltiger Hauptbereich: links Fertigkeiten, rechts weitere Heldenwerte.
+\newenvironment{herocolumns}
+  {\par\medskip\noindent
+   \begin{minipage}[t]{0.485\linewidth}\vspace{0pt}}
+  {\end{minipage}\par}
+
+\newcommand{\herocolumnbreak}{%
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.485\linewidth}\vspace{0pt}%
+}
+
+% Frei stapelbare Informationskarte innerhalb eines Heldenprofils.
+\newtcolorbox{herosectionbox}[1][]{
+  enhanced,
+  colback=hpHeroInner,
+  colframe=hpLine,
+  boxrule=0.55pt,
+  arc=1.5mm,
+  left=3mm,
+  right=3mm,
+  top=2.5mm,
+  bottom=2.5mm,
+  before skip=0pt,
+  after skip=3mm,
+  fontupper=\HPUIFont,
+  #1
+}
+
+% Kompakte Fertigkeitstabelle. Die beiden rechten Spalten zeigen
+% Grundwuerfel (Held + Attribute) und zusaetzliche Fertigkeitswuerfel.
+\newenvironment{heroskills}
+  {\begingroup\HPUIFont\renewcommand{\arraystretch}{1.12}\setlength{\tabcolsep}{3pt}%
+   \tabularx{\linewidth}{@{}X >{\centering\arraybackslash}p{2.45cm} >{\centering\arraybackslash}p{1.3cm}@{}}}
+  {\endtabularx\endgroup}
+
+\newcommand{\heroskillheader}{%
+  & \heroDie{}\,\greenDie{} & \blueDie{} \\
+  \arrayrulecolor{hpLine}\hline
+}
