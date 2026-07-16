@@ -26,13 +26,30 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Inkscape installieren
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y inkscape
+
+      - name: SVG-Icons in PDF-Vektorgrafiken konvertieren
+        run: |
+          mkdir -p Regelwerk/assets/icons/generated
+          find Regelwerk/assets/icons -maxdepth 1 -type f -name '*.svg' -print0 |
+            while IFS= read -r -d '' svg; do
+              name="$(basename "${svg}" .svg)"
+              inkscape "${svg}" \
+                --export-type=pdf \
+                --export-filename="Regelwerk/assets/icons/generated/${name}.pdf"
+            done
+
+          test -f Regelwerk/assets/icons/generated/icon-die-white.pdf
+
       - name: LaTeX kompilieren
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
           working_directory: Regelwerk
-          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -shell-escape
-          extra_system_packages: inkscape
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
 
       - name: PDF in Regelwerk/build ablegen
         run: |
