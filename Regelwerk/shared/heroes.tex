@@ -63,7 +63,9 @@
 }
 
 % Dezente Trennung zwischen den vier Fertigkeitsgruppen.
-% Die Linie wird direkt gezeichnet, damit keine Abhaengigkeit von colortbl besteht.
+% Kleine, symmetrische Abstaende verhindern eine optisch zu hohe Folgezeile.
 \newcommand{\heroskillseparator}{%
-  \noalign{\vskip 1.2mm\color{hpLine}\hrule height 0.4pt\vskip 0.8mm}%
+  \noalign{\vskip 0.5mm}%
+  \hline
+  \noalign{\vskip 0.5mm}%
 }
