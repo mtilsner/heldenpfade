@@ -1,1 +1,143 @@
 \chapter{Gegner-Almanach}
+
+\input{shared/enemies.tex}
+
+Der Gegner-Almanach versammelt die spielrelevanten Werte, Angriffe und Verhaltensregeln der Gegner. Jeder Eintrag ist als geschlossenes Profil aufgebaut. Darin ordnen sich die Informationskarten frei in zwei Spalten an und nutzen den vorhandenen Platz entsprechend ihres Inhalts. Die Gegner-KI wird von oben nach unten ausgewertet. Die erste zutreffende Bedingung bestimmt die Aktion des Gegners.
+
+\begin{enemyprofile}{Höhlenspinne}
+  \begin{enemystats}
+    Lebenspunkte & 12~\lifeLoss & Schilde & 1~\armor & Rolle & Kontrollgegner \\
+  \end{enemystats}
+
+  \smallskip
+  Eine lauernde Jägerin, die ihre Beute zunächst mit klebrigen Netzen schwächt und anschließend aus nächster Nähe zubeißt.
+
+  \begin{enemycolumns}
+    \begin{enemysectionbox}{Angriffe}
+      \textbf{Netzspucken} \hfill \rangedAttack
+
+      5~\orangeDmgDie{} Netzwürfel
+
+      Jeder nicht negierte Erfolg erzeugt einen Netzmarker auf dem Ziel.
+
+      \medskip
+      \textbf{Biss} \hfill \meleeAttack
+
+      3~\redDmgDie{} Schadenswürfel
+    \end{enemysectionbox}
+
+    \begin{enemysectionbox}{Netzmarker}
+      Jeder Netzmarker verhindert den nächsten \star{} bei einer Angriffs- oder \evade{}-Probe.
+
+      Der Netzmarker wird danach abgeworfen.
+    \end{enemysectionbox}
+
+    \enemycolumnbreak
+
+    \begin{enemysectionbox}{Gegner-KI}
+      \begin{enumerate}[leftmargin=1.5em,itemsep=0.3\baselineskip]
+        \item Besitzt mindestens ein Held keinen Netzmarker?
+
+        \textbf{Ja:} Die Höhlenspinne setzt \textbf{Netzspucken} ein.
+
+        \item Andernfalls setzt sie \textbf{Biss} ein.
+      \end{enumerate}
+    \end{enemysectionbox}
+  \end{enemycolumns}
+\end{enemyprofile}
+
+\begin{enemyprofile}{Baumdrache}
+  \begin{enemystats}
+    Lebenspunkte & 50~\lifeLoss & Schilde & 3~\armor & Rolle & Bossgegner \\
+  \end{enemystats}
+
+  \smallskip
+  Ein mächtiger Gegner mit einer vorhersehbaren, aber abwechslungsreichen Angriffsfolge. Wer seine Muster erkennt, kann sich gezielt auf den nächsten Schlag vorbereiten.
+
+  \begin{enemycolumns}
+    \begin{enemysectionbox}{Angriffe}
+      \textbf{Feueratem} \hfill \rangedAttack
+
+      5~\orangeDmgDie{} gegen alle Helden
+
+      \medskip
+      \textbf{Biss} \hfill \meleeAttack
+
+      3~\redDmgDie{}
+
+      \medskip
+      \textbf{Schwanzschlag} \hfill \meleeAttack
+
+      3~\orangeDmgDie{}; das Ziel wird weggeschleudert
+
+      \medskip
+      \textbf{Krallenhieb} \hfill \meleeAttack
+
+      4~\orangeDmgDie{}
+    \end{enemysectionbox}
+
+    \enemycolumnbreak
+
+    \begin{enemysectionbox}{Gegner-KI}
+      Der Baumdrache führt pro Runde genau eine Aktion aus. Er verwendet jeweils den nächsten Angriff dieser Reihenfolge:
+
+      \begin{enumerate}[leftmargin=1.5em,itemsep=0.15\baselineskip]
+        \item Feueratem
+        \item Biss
+        \item Schwanzschlag
+        \item Krallenhieb
+        \item Biss
+        \item Schwanzschlag
+        \item Krallenhieb
+      \end{enumerate}
+
+      Danach beginnt die Reihenfolge erneut.
+    \end{enemysectionbox}
+  \end{enemycolumns}
+\end{enemyprofile}
+
+\begin{enemyprofile}{Krähe}
+  \begin{enemystats}
+    Lebenspunkte & 24~\lifeLoss & Schilde & 0~\armor & Rolle & Mobiler Plänkler \\
+  \end{enemystats}
+
+  \smallskip
+  Eine flinke und scheue Jägerin, die ihre Beute mit schnellen Vorbeiflügen attackiert und sich sofort wieder außer Reichweite bringt.
+
+  \begin{enemycolumns}
+    \begin{enemysectionbox}{Angriffe}
+      \textbf{Vorbeiflug} \hfill \meleeAttack
+
+      3~\orangeDmgDie{} Schadenswürfel
+
+      Die Krähe fliegt an einem Helden vorbei und greift ihn mit ihren Krallen an. Anschließend landet sie 5~m hinter dem Helden.
+
+      \medskip
+      \textbf{Schnabelhieb} \hfill \meleeAttack
+
+      2~\redDmgDie{} Schadenswürfel
+
+      Diesen Angriff setzt die Krähe ein, wenn sie ihre Runde unmittelbar bei einem Helden beginnt. Anschließend fliegt sie 10~m weit davon.
+    \end{enemysectionbox}
+
+    \enemycolumnbreak
+
+    \begin{enemysectionbox}{Gegner-KI}
+      \begin{enumerate}[leftmargin=1.5em,itemsep=0.3\baselineskip]
+        \item Besitzt die Krähe 12 oder weniger Lebenspunkte?
+
+        \textbf{Ja:} Sie flieht aus dem Kampf.
+
+        \item Beginnt die Krähe ihre Runde unmittelbar bei einem Helden?
+
+        \textbf{Ja:} Sie setzt \textbf{Schnabelhieb} ein und fliegt anschließend 10~m weit davon.
+
+        \item Andernfalls greift sie den nächstgelegenen Helden mit einem \textbf{Vorbeiflug} an und landet anschließend 5~m hinter ihm.
+      \end{enumerate}
+    \end{enemysectionbox}
+
+    \begin{enemysectionbox}{Feige}
+      Sinken die Lebenspunkte der Krähe auf \textbf{12 oder weniger}, flieht sie aus dem Kampf.
+    \end{enemysectionbox}
+  \end{enemycolumns}
+\end{enemyprofile}

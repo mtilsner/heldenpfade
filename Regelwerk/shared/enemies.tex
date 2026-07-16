@@ -1,0 +1,56 @@
+% Wiederverwendbare Darstellung fuer Gegnerprofile
+
+\definecolor{hpEnemy}{HTML}{F2EEE6}
+\definecolor{hpEnemyLine}{HTML}{8A6A49}
+\definecolor{hpEnemyInner}{HTML}{FBF9F4}
+
+% Ein Gegnerprofil bildet einen geschlossenen Almanach-Eintrag.
+% Es bleibt als Ganzes zusammen und wird bei Platzmangel auf die naechste Seite geschoben.
+\newtcolorbox{enemyprofile}[2][]{
+  hpbox,
+  breakable=false,
+  title={#2},
+  colback=hpEnemy,
+  colframe=hpEnemyLine,
+  boxed title style={colback=hpEnemyLine!22},
+  fonttitle=\HPHeadingFont\large,
+  #1
+}
+
+% Frei stapelbare Informationskarte innerhalb eines Gegnerprofils.
+\newtcolorbox{enemysectionbox}[1]{
+  enhanced,
+  colback=hpEnemyInner,
+  colframe=hpLine,
+  boxrule=0.55pt,
+  arc=1.5mm,
+  left=3mm,
+  right=3mm,
+  top=2.5mm,
+  bottom=2.5mm,
+  before skip=0pt,
+  after skip=3mm,
+  title={#1},
+  fonttitle=\HPUIFont\bfseries,
+  fontupper=\HPUIFont,
+  coltitle=hpBrown,
+  after title={\par\smallskip}
+}
+
+% Werteband direkt unter dem Gegnernamen.
+\newenvironment{enemystats}
+  {\begingroup\HPUIFont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{4pt}%
+   \tabularx{\linewidth}{@{}>{\bfseries}l X >{\bfseries}l X >{\bfseries}l X@{}}}
+  {\endtabularx\endgroup}
+
+% Zweispaltiges Masonry-Layout: Jede Spalte stapelt ihre Karten unabhaengig.
+% Mit \enemycolumnbreak wird von der linken in die rechte Spalte gewechselt.
+\newenvironment{enemycolumns}
+  {\par\medskip\noindent
+   \begin{minipage}[t]{0.485\linewidth}\vspace{0pt}}
+  {\end{minipage}\par}
+
+\newcommand{\enemycolumnbreak}{%
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.485\linewidth}\vspace{0pt}%
+}
