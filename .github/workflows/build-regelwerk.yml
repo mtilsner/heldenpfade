@@ -9,6 +9,10 @@ on:
       - '.gitignore'
   workflow_dispatch:
 
+concurrency:
+  group: build-regelwerk-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -23,25 +27,4 @@ jobs:
       - name: LaTeX kompilieren
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: main.tex
-          working_directory: Regelwerk
-          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -shell-escape
-
-      - name: PDF in Regelwerk/build ablegen
-        run: |
-          mkdir -p Regelwerk/build
-          cp Regelwerk/main.pdf Regelwerk/build/Heldenpfade-Regelwerk.pdf
-
-      - name: PDF committen
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
-          git add -f Regelwerk/build/Heldenpfade-Regelwerk.pdf
-          
-          if git diff --cached --quiet; then
-            echo "PDF ist unverändert. Kein Commit notwendig."
-          else
-            git commit -m "ci: update generated Regelwerk PDF"
-            git push
-          fi
+          root_file:
