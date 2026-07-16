@@ -2,8 +2,10 @@
 % SVG-Dateien liegen unter Regelwerk/assets/icons.
 
 % Einheitliche Einbindung mit sauberer Ausrichtung an der Textgrundlinie.
+% Die Icons enthalten keinen SVG-Text. Deshalb wird der LaTeX-Overlay-Export
+% von Inkscape deaktiviert und nur die reine Vektorgrafik eingebunden.
 \newcommand{\hpIcon}[2][1em]{%
-  \raisebox{-0.14em}{\includesvg[height=#1]{assets/icons/#2}}%
+  \raisebox{-0.14em}{\includesvg[height=#1,inkscapelatex=false]{assets/icons/#2}}%
 }
 
 \newcommand{\hpActionIcon}[1]{%
