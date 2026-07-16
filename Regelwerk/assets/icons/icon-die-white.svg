@@ -1,15 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130" role="img" aria-labelledby="title">
-  <title id="title">Weisser Heldenwuerfel</title>
-  <g stroke="#111111" stroke-width="4" stroke-linejoin="round">
-    <path d="M65 8 116 37 65 66 14 37Z" fill="#ffffff"/>
-    <path d="M14 37 65 66 65 122 14 93Z" fill="#f7f7f7"/>
-    <path d="M65 66 116 37 116 93 65 122Z" fill="#d9d9d9"/>
-  </g>
-  <g fill="#111111">
-    <circle cx="65" cy="37" r="6"/>
-    <circle cx="37" cy="66" r="6"/>
-    <circle cx="37" cy="94" r="6"/>
-    <circle cx="88" cy="62" r="6"/>
-    <circle cx="88" cy="94" r="6"/>
-  </g>
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="130.000000pt" height="130.000000pt" viewBox="0 0 130.000000 130.000000" preserveAspectRatio="xMidYMid meet">
+<g transform="translate(0.000000,130.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
+<path d="M369 1172 c-147 -70 -265 -129 -263 -131 2 -2 125 -61 273 -131 l270 -128 268 125 c147 68 271 128 276 132 7 7 -532 262 -550 260 -4 -1 -128 -58 -274 -127z"/>
+<path d="M50 612 c0 -320 1 -350 18 -365 21 -19 509 -247 528 -247 12 0 14 56 12 350 l-3 351 -274 129 c-150 72 -275 130 -277 130 -2 0 -4 -157 -4 -348z"/>
+<path d="M973 832 l-273 -126 0 -353 c0 -269 3 -353 12 -353 16 0 510 229 526 244 9 9 12 90 10 363 l-3 351 -272 -126z"/>
+</g>
 </svg>
