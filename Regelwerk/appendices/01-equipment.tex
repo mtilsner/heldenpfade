@@ -4,58 +4,31 @@ Dieser Anhang enthält die derzeit verfügbaren Ausrüstungsgegenstände. Die Be
 
 \section{Waffen}
 
-Waffen können eine oder mehrere Angriffsoptionen besitzen. Jede Angriffsoption nennt die verwendete Angriffsfertigkeit, die Schadensformel und gegebenenfalls eine besondere Fähigkeit.
+Waffen können eine oder mehrere Angriffsoptionen besitzen. Jede Angriffsoption nennt die verwendete Angriffsfertigkeit, die Schadensformel und gegebenenfalls einen besonderen Effekt.
 
-\begin{center}
-\small
-\begin{tabular}{|p{2.5cm}|p{1.7cm}|p{2.5cm}|p{3.2cm}|p{4.1cm}|}
-\hline
-\textbf{Name} & \textbf{Platz} & \textbf{Angriff} & \textbf{Schaden} & \textbf{Besondere Fähigkeit} \\
-\hline
+\begin{hptable}{L{2.6cm} C{1.7cm} L{2.7cm} L{3.2cm} Y}
+\textbf{Name} & \textbf{Plätze} & \textbf{Angriffsfertigkeit} & \textbf{Schaden} & \textbf{Effekt} \\
 Schwert & 1 Hand & Schlagen & \star{} $\rightarrow$ \orangeDmgDie & -- \\
-\hline
 Speer & 2 Hände & Schlagen & \star{} $\rightarrow$ \orangeDmgDie & \armorPierce{} 2 \\
-\cline{3-5}
  & & Schießen & \star{} $\rightarrow$ \orangeDmgDie\orangeDmgDie & \exhaust \\
-\hline
 Zahnschwert & 2 Hände & Schlagen & \star{} $\rightarrow$ \orangeDmgDie\orangeDmgDie & -- \\
-\hline
-\end{tabular}
-\end{center}
+\end{hptable}
 
-\section{Rüstungen}
+\begin{todo}[title=Offen: Handlungsart besonderer Ausrüstungseffekte]
+Für Ausrüstungseffekte wie die Heilung der Knochenrüstung ist noch festzulegen, ob ihre Nutzung grundsätzlich eine freie Aktion ist oder ob die Handlungsart jeweils auf dem Gegenstand angegeben wird.
+\end{todo}
 
-Rüstungen werden am Körper getragen. Sie können Rüstung bieten, eine Ausweichprobe erlauben oder eine besondere Fähigkeit besitzen.
+\section{Rüstungen und Schilde}
 
-\begin{center}
-\small
-\begin{tabular}{|p{2.8cm}|p{1.7cm}|p{2.2cm}|p{4.4cm}|p{3.6cm}|}
-\hline
-\textbf{Name} & \textbf{Platz} & \textbf{Rüstung} & \textbf{Ausweichen} & \textbf{Besondere Fähigkeit} \\
-\hline
+Rüstungen und Schilde können Schild-Symbole verleihen, eine Ausweichprobe ermöglichen oder verbessern und besondere Effekte besitzen.
+
+\begin{hptable}{L{2.8cm} C{1.7cm} C{2.0cm} L{4.1cm} Y}
+\textbf{Name} & \textbf{Platz} & \textbf{Schild-Symbole} & \textbf{Ausweichen} & \textbf{Effekt} \\
 Kettenrüstung & Körper & \armor\armor & \heroDie{} + INT + GEW & -- \\
-\hline
 Knochenrüstung & Körper & \armor & \heroDie{} + INT + GEW & \exhaust{} $\rightarrow$ 8\,\lifeGain \\
-\hline
-\end{tabular}
-\end{center}
-
-\section{Schilde}
-
-Schilde werden in einer Hand getragen. Sie verbessern entweder die Rüstung oder die Ausweichprobe eines Helden.
-
-\begin{center}
-\small
-\begin{tabular}{|p{3.2cm}|p{2cm}|p{2.5cm}|p{5.5cm}|}
-\hline
-\textbf{Name} & \textbf{Platz} & \textbf{Rüstung} & \textbf{Ausweichen} \\
-\hline
-Kleiner Deckel & 1 Hand & -- & +\blueDie \\
-\hline
-Großer Deckel & 1 Hand & \armor & -- \\
-\hline
-\end{tabular}
-\end{center}
+Kleiner Deckel & 1 Hand & -- & +\blueDie{} auf Ausweichproben & -- \\
+Großer Deckel & 1 Hand & \armor & -- & -- \\
+\end{hptable}
 
 \section{Sonstige Gegenstände}
 
