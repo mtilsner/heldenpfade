@@ -91,3 +91,41 @@ Der Gegner-Almanach versammelt die spielrelevanten Werte, Angriffe und Verhalten
     \end{enemysectionbox}
   \end{enemycolumns}
 \end{enemyprofile}
+
+\begin{enemyprofile}{Krähe}
+  \begin{enemystats}
+    Lebenspunkte & 24~\lifeLoss & Schilde & 0~\armor & Rolle & Mobiler Plänkler \\
+  \end{enemystats}
+
+  \smallskip
+  Eine flinke und scheue Jägerin, die ihre Beute mit schnellen Vorbeiflügen attackiert und sich sofort wieder außer Reichweite bringt.
+
+  \begin{enemycolumns}
+    \begin{enemysectionbox}{Angriffe}
+      \textbf{Vorbeiflug} \hfill \meleeAttack
+
+      3~\orangeDmgDie{} Schadenswürfel
+
+      Die Krähe fliegt an einem Helden vorbei und greift ihn mit ihren Krallen an. Anschließend landet sie 5~m hinter dem Helden.
+
+      \medskip
+      \textbf{Schnabelhieb} \hfill \meleeAttack
+
+      2~\redDmgDie{} Schadenswürfel
+
+      Diesen Angriff setzt die Krähe ein, wenn sie ihre Runde unmittelbar bei einem Helden beginnt. Anschließend fliegt sie 10~m weit davon.
+    \end{enemysectionbox}
+
+    \enemycolumnbreak
+
+    \begin{enemysectionbox}{Verhalten}
+      Beginnt die Krähe ihre Runde unmittelbar bei einem Helden, setzt sie \textbf{Schnabelhieb} ein.
+
+      Andernfalls greift sie den nächstgelegenen Helden mit einem \textbf{Vorbeiflug} an.
+    \end{enemysectionbox}
+
+    \begin{enemysectionbox}{Feige}
+      Sinken die Lebenspunkte der Krähe auf \textbf{12 oder weniger}, flieht sie aus dem Kampf.
+    \end{enemysectionbox}
+  \end{enemycolumns}
+\end{enemyprofile}
