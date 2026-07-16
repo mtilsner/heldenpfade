@@ -4,7 +4,7 @@
 
 Magie gehört zu den außergewöhnlichsten Fähigkeiten, die ein Held in Heldenpfade erlernen kann. Magie kann Verletzungen heilen, Feuer beschwören, Verbündete stärken oder Gegner schwächen.
 
-Nicht jeder Held ist magiebegabt. Erst das Talent \emph{Magiebegabt} ermöglicht einem Helden, Zauber zu erlernen und zu wirken.
+Nicht jeder Held kann zaubern. Ein Held benötigt das Talent \emph{Magiebegabt}, einen erlernten und verfügbaren Zauber sowie ausreichend Mana, um dessen Kosten zu bezahlen.
 
 \section{Mana}
 
@@ -20,9 +20,11 @@ Verbrauchtes Mana wird während einer Rast mit \manaGain{} regeneriert.
 
 Um Zauber wirken zu können, muss ein Held das Talent \emph{Magiebegabt} besitzen. Das Talent erhöht den Manavorrat des Helden um 6.
 
-\section{Zauber}
+\section{Zauber und ihre Effekte}
 
-Jeder Zauber wird durch eine Zauberkarte beschrieben. Sie enthält Name, Manakosten, mögliche Probe, Reichweite, Ziele, Wirkungsdauer, Schlüsselwörter und Regelwirkung.
+Jeder Zauber wird durch eine Zauberkarte beschrieben. Die Karte nennt den Namen, die Manakosten, die Zauberzeit und den Effekt des Zaubers. Sie kann außerdem Ziele, eine Wirkungsdauer, Schlüsselwörter oder weitere Voraussetzungen angeben.
+
+Ein \textbf{Zauber} ist die gesamte Karte. Um ihn zu wirken, bezahlt der Held seine Manakosten und führt den beschriebenen \textbf{Effekt} aus. Ein Effekt kann eine \textbf{Angriffsoption} sein. In diesem Fall bestimmt die Angriffsoption wie gewohnt die Angriffsfertigkeit, die Schadensformel und mögliche besondere Effekte.
 
 Zauberkarten werden durch das Wirken eines Zaubers nicht automatisch erschöpft. Nur wenn eine Zauberkarte ausdrücklich das Symbol \textbf{Erschöpfen (\exhaust)} zeigt oder der Regeltext dies verlangt, wird genau diese Karte umgedreht. Solange sie erschöpft ist, können ihre Angaben und Effekte nicht genutzt werden.
 
@@ -30,35 +32,67 @@ Ein Held kann einen erlernten Zauber wiederholt wirken, solange genügend Mana v
 
 \section{Einen Zauber wirken}
 
+Jeder Zauber nennt eine Zauberzeit. Im Kampf gibt sie an, welche Aktion zum Wirken benötigt wird. Ein besonders schneller Zauber kann beispielsweise als \freeAction{} gewirkt werden, während ein aufwendigerer Zauber eine \standardAction{} benötigt.
+
+\begin{kurzregel}[title=Einen Zauber wirken]
 \begin{enumerate}
   \item Zauber wählen.
-  \item Gültige Ziele bestimmen.
   \item Angegebene Manakosten mit \manaLoss{} bezahlen.
-  \item Falls verlangt, die Probe ablegen.
-  \item Wirkung ausführen.
+  \item Gültige Ziele bestimmen.
+  \item Effekt vollständig ausführen.
   \item Falls angegeben, die Zauberkarte mit \exhaust{} erschöpfen.
 \end{enumerate}
+\end{kurzregel}
 
-Kann ein Schritt nicht vollständig ausgeführt werden, kann der Zauber nicht gewirkt werden. Die Manakosten werden erst bezahlt, nachdem gültige Ziele bestimmt wurden.
+Kann ein Schritt nicht vollständig ausgeführt werden, kann der Zauber nicht gewirkt werden. Insbesondere müssen ausreichend Mana und mindestens ein gültiges Ziel vorhanden sein.
 
-\subsection{Zauberproben}
+\begin{beispiel}[title=Beispiel: Einen unterstützenden Zauber wirken]
+Lina möchte mit dem Zauber \emph{Heilende Berührung} einen benachbarten Verbündeten heilen. Der Zauber kostet 1\manaLoss{} und benötigt eine \standardAction. Lina wählt den Zauber, bezahlt 1 Mana, bestimmt den benachbarten Verbündeten als gültiges Ziel und führt anschließend den auf der Karte beschriebenen Heileffekt aus.
+\end{beispiel}
 
-Nicht jeder Zauber verlangt eine Probe. Verlangt er eine Probe, nennt die Karte Attribute, Fertigkeit und Schwierigkeit. Misslingt die Probe, tritt die Wirkung nicht ein; das ausgegebene Mana bleibt verbraucht.
+\section{Angriffszauber}
 
-\subsection{Zaubern im Kampf}
+Enthält der Effekt eines Zaubers eine Angriffsoption, gelten für diese vollständig die Kampfregeln aus Kapitel 4. Die Angriffsoption wird erst genutzt, nachdem die Manakosten des Zaubers bezahlt wurden.
 
-Im Kampf ist das Wirken eines Zaubers eine \standardAction, sofern die Karte nichts anderes bestimmt. Verlangt ein Zauber einen Angriff, gelten zusätzlich die Kampfregeln.
+\begin{kurzregel}[title=Angriffszauber]
+Manakosten bezahlen $\rightarrow$ Angriffsoption nach den normalen Kampfregeln ausführen.
+\end{kurzregel}
 
-\section{Reichweite und Ziele}
+\begin{beispiel}[title=Beispiel: Eisblitz]
+Lina wirkt \emph{Eisblitz}. Der Zauber kostet 1\manaLoss{} und benötigt eine \standardAction. Sein Effekt ist eine Angriffsoption mit der Angriffsfertigkeit \emph{Zaubern}, die pro erzieltem \star{} einen \orangeDmgDie{} erzeugt.
 
-Die Zauberkarte bestimmt Ziele und Reichweite. Typische Zielangaben sind Selbst, Berührung, ein Ziel, mehrere Ziele oder ein Bereich. Ein Ziel muss grundsätzlich wahrnehmbar sein.
+Lina bezahlt 1 Mana, bestimmt einen gültigen Gegner als Ziel und legt anschließend die Angriffsprobe mit \emph{Zaubern} ab. Sie erzielt 2\star{} und würfelt deshalb 2\orangeDmgDie. Der weitere Ablauf folgt den normalen Regeln für Schaden, \armor{} und Lebenspunktverlust.
+\end{beispiel}
 
-\section{Wirkungsdauer}
+\section{Zauberproben}
+
+Nicht jeder Zauber verlangt eine Probe. Verlangt ein Effekt eine Probe, nennt die Karte Attribute, Fertigkeit und Schwierigkeit. Misslingt die Probe, tritt die Wirkung nicht ein; das ausgegebene Mana bleibt verbraucht.
+
+Eine Angriffsprobe durch eine Angriffsoption ist ebenfalls eine Zauberprobe. Für sie gelten jedoch die Regeln für Angriffe aus Kapitel 4.
+
+\section{Ziele und Wirkungsdauer}
+
+Die Zauberkarte bestimmt mögliche Ziele. Typische Zielangaben sind Selbst, Berührung, ein Ziel, mehrere Ziele oder ein Bereich. Ein Ziel muss grundsätzlich wahrnehmbar sein.
+
+Die Reichweite einer Angriffsoption ergibt sich aus ihrer Angriffsfertigkeit, sofern der Zauber nichts anderes bestimmt.
 
 Typische Wirkungsdauern sind sofort, bis zum Ende des Zuges, bis zum Ende der Runde oder eine bestimmte Dauer. Eine Kampfrunde endet, nachdem alle Gegner vollständig aktiviert wurden.
 
 Endet ein Zauber, enden auch alle durch ihn verursachten fortdauernden Boni, Mali und Zustände, sofern die Karte nichts anderes bestimmt.
 
-\section{Beispiel}
+\section{Ausführliches Beispiel}
 
-Kiera besitzt den Zauber \emph{Feuerstrahl}. Er kostet 2\manaLoss. Sie bestimmt ein gültiges Ziel, bezahlt die Kosten und legt die angegebene Probe ab. Gelingt die Probe, tritt die Wirkung ein. Die Karte wird nur dann mit \exhaust{} erschöpft, wenn dies auf ihr angegeben ist.
+Lina möchte im Kampf einen entfernten Gegner mit \emph{Eisblitz} angreifen.
+
+\begin{enumerate}
+  \item \textbf{Zauber wählen:} Lina wählt den verfügbaren Zauber \emph{Eisblitz}. Das Wirken benötigt eine \standardAction.
+  \item \textbf{Mana bezahlen:} Sie bezahlt die Kosten von 1\manaLoss.
+  \item \textbf{Ziel bestimmen:} Da die Angriffsoption \emph{Zaubern} verwendet, darf sie einen benachbarten oder entfernten Gegner als Ziel wählen.
+  \item \textbf{Angriffsprobe:} Lina legt eine Angriffsprobe mit \emph{Zaubern} ab und erzielt 3\star.
+  \item \textbf{Schadenswürfel bestimmen:} \emph{Eisblitz} erzeugt pro \star{} einen \orangeDmgDie. Lina würfelt deshalb 3\orangeDmgDie.
+  \item \textbf{Angriff abschließen:} Die Würfelergebnisse werden addiert. Anschließend werden \armor{} und mögliche weitere Effekte nach den normalen Kampfregeln angewendet.
+\end{enumerate}
+
+\section{Weiterführende Informationen}
+
+Im Anhang befindet sich die vollständige Zauberliste.
