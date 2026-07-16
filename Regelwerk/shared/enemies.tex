@@ -5,8 +5,10 @@
 \definecolor{hpEnemyInner}{HTML}{FBF9F4}
 
 % Ein Gegnerprofil bildet einen geschlossenen Almanach-Eintrag.
+% Es bleibt als Ganzes zusammen und wird bei Platzmangel auf die naechste Seite geschoben.
 \newtcolorbox{enemyprofile}[2][]{
   hpbox,
+  breakable=false,
   title={#2},
   colback=hpEnemy,
   colframe=hpEnemyLine,
@@ -15,7 +17,7 @@
   #1
 }
 
-% Kompakte Teilbereiche innerhalb eines Gegnerprofils.
+% Frei stapelbare Informationskarte innerhalb eines Gegnerprofils.
 \newtcolorbox{enemysectionbox}[1]{
   enhanced,
   colback=hpEnemyInner,
@@ -27,7 +29,7 @@
   top=2.5mm,
   bottom=2.5mm,
   before skip=0pt,
-  after skip=0pt,
+  after skip=3mm,
   title={#1},
   fonttitle=\HPUIFont\bfseries,
   fontupper=\HPUIFont,
@@ -41,15 +43,14 @@
    \tabularx{\linewidth}{@{}>{\bfseries}l X >{\bfseries}l X >{\bfseries}l X@{}}}
   {\endtabularx\endgroup}
 
-% Zweispaltiger Inhaltsbereich fuer Angriffe, KI und Sonderregeln.
-\newenvironment{enemygrid}
-  {\begin{tcbraster}[
-      raster columns=2,
-      raster column skip=4mm,
-      raster row skip=3mm,
-      raster valign=top
-    ]}
-  {\end{tcbraster}}
+% Zweispaltiges Masonry-Layout: Jede Spalte stapelt ihre Karten unabhaengig.
+% Mit \enemycolumnbreak wird von der linken in die rechte Spalte gewechselt.
+\newenvironment{enemycolumns}
+  {\par\medskip\noindent
+   \begin{minipage}[t]{0.485\linewidth}\vspace{0pt}}
+  {\end{minipage}\par}
 
-\newcommand{\enemyrole}[1]{\textbf{Rolle:} #1}
-\newcommand{\enemydesign}[1]{\textbf{Designziel:} #1}
+\newcommand{\enemycolumnbreak}{%
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.485\linewidth}\vspace{0pt}%
+}
