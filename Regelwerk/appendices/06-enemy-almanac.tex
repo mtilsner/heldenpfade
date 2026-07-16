@@ -1,1 +1,113 @@
 \chapter{Gegner-Almanach}
+
+\input{shared/enemies.tex}
+
+Der Gegner-Almanach versammelt die spielrelevanten Werte, Angriffe und Verhaltensregeln der Gegner. Jeder Eintrag ist als kompaktes Profil aufgebaut: Das Werteband zeigt die wichtigsten Kennzahlen, darunter stehen Angriffe und Verhalten direkt nebeneinander.
+
+\section{Höhlenspinne}
+
+\begin{enemyprofile}{Höhlenspinne}
+  \begin{enemystats}
+    Lebenspunkte & 12~\lifeLoss & Schilde & 1~\armor & Rolle & Kontrollgegner \\
+  \end{enemystats}
+
+  \smallskip
+  Eine lauernde Jägerin, die ihre Beute zunächst mit klebrigen Netzen schwächt und anschließend aus nächster Nähe zubeißt.
+
+  \begin{enemygrid}
+    \begin{enemysectionbox}{Angriffe}
+      \textbf{Netzspucken} \hfill \rangedAttack
+
+      5~\orangeDmgDie{} Netzwürfel
+
+      Jeder nicht negierte Erfolg erzeugt einen Netzmarker auf dem Ziel.
+
+      \medskip
+      \textbf{Biss} \hfill \meleeAttack
+
+      3~\redDmgDie{} Schadenswürfel
+    \end{enemysectionbox}
+
+    \begin{enemysectionbox}{Verhalten}
+      Solange mindestens ein Held keinen Netzmarker besitzt, setzt die Höhlenspinne \textbf{Netzspucken} ein.
+
+      Besitzen alle Helden mindestens einen Netzmarker, führt sie einen \textbf{Biss} aus.
+    \end{enemysectionbox}
+
+    \begin{enemysectionbox}{Netzmarker}
+      Jeder Netzmarker verhindert den nächsten Angriffserfolg oder Ausweicherfolg des betroffenen Helden.
+
+      Anschließend wird der Marker entfernt.
+    \end{enemysectionbox}
+
+    \begin{enemysectionbox}{Taktische Rolle}
+      \enemyrole{Kontrolle und Vorbereitung}
+
+      \medskip
+      \enemydesign{Die Höhlenspinne verursacht zunächst wenig direkten Schaden. Ihre Netze schwächen jedoch gezielt die nächsten Angriffe oder Ausweichversuche und erhöhen so den Druck nachfolgender Aktionen.}
+    \end{enemysectionbox}
+  \end{enemygrid}
+\end{enemyprofile}
+
+\section{Baumdrache}
+
+\begin{enemyprofile}{Baumdrache}
+  \begin{enemystats}
+    Lebenspunkte & 50~\lifeLoss & Schilde & 3~\armor & Rolle & Bossgegner \\
+  \end{enemystats}
+
+  \smallskip
+  Ein mächtiger Gegner mit einer vorhersehbaren, aber abwechslungsreichen Angriffsfolge. Wer seine Muster erkennt, kann sich gezielt auf den nächsten Schlag vorbereiten.
+
+  \begin{enemygrid}
+    \begin{enemysectionbox}{Angriffe}
+      \textbf{Feueratem} \hfill \rangedAttack
+
+      5~\orangeDmgDie{} gegen alle Helden
+
+      \medskip
+      \textbf{Biss} \hfill \meleeAttack
+
+      3~\redDmgDie{}
+
+      \medskip
+      \textbf{Schwanzschlag} \hfill \meleeAttack
+
+      3~\orangeDmgDie{}; das Ziel wird weggeschleudert
+
+      \medskip
+      \textbf{Krallenhieb} \hfill \meleeAttack
+
+      4~\orangeDmgDie{}
+    \end{enemysectionbox}
+
+    \begin{enemysectionbox}{Angriffsfolge}
+      Der Baumdrache führt pro Runde genau eine Aktion aus:
+
+      \begin{enumerate}[leftmargin=1.5em,itemsep=0.15\baselineskip]
+        \item Feueratem
+        \item Biss
+        \item Schwanzschlag
+        \item Krallenhieb
+        \item Biss
+        \item Schwanzschlag
+        \item Krallenhieb
+      \end{enumerate}
+
+      Danach beginnt die Folge erneut.
+    \end{enemysectionbox}
+
+    \begin{enemysectionbox}{Prolog-Regel}
+      Im Prolog endet der Kampf nicht mit dem Tod des Baumdrachen.
+
+      Sobald er insgesamt \textbf{30 Schaden} erlitten hat, flieht er.
+    \end{enemysectionbox}
+
+    \begin{enemysectionbox}{Taktische Rolle}
+      \enemyrole{Boss mit lernbarer Rotation}
+
+      \medskip
+      \enemydesign{Der Baumdrache verbindet Flächenschaden, hohen Einzelschaden und Positionskontrolle. Seine feste Reihenfolge macht die Bedrohung planbar und belohnt vorausschauendes Handeln.}
+    \end{enemysectionbox}
+  \end{enemygrid}
+\end{enemyprofile}
