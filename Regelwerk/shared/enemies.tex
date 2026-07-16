@@ -1,0 +1,55 @@
+% Wiederverwendbare Darstellung fuer Gegnerprofile
+
+\definecolor{hpEnemy}{HTML}{F2EEE6}
+\definecolor{hpEnemyLine}{HTML}{8A6A49}
+\definecolor{hpEnemyInner}{HTML}{FBF9F4}
+
+% Ein Gegnerprofil bildet einen geschlossenen Almanach-Eintrag.
+\newtcolorbox{enemyprofile}[2][]{
+  hpbox,
+  title={#2},
+  colback=hpEnemy,
+  colframe=hpEnemyLine,
+  boxed title style={colback=hpEnemyLine!22},
+  fonttitle=\HPHeadingFont\large,
+  #1
+}
+
+% Kompakte Teilbereiche innerhalb eines Gegnerprofils.
+\newtcolorbox{enemysectionbox}[1]{
+  enhanced,
+  colback=hpEnemyInner,
+  colframe=hpLine,
+  boxrule=0.55pt,
+  arc=1.5mm,
+  left=3mm,
+  right=3mm,
+  top=2.5mm,
+  bottom=2.5mm,
+  before skip=0pt,
+  after skip=0pt,
+  title={#1},
+  fonttitle=\HPUIFont\bfseries,
+  fontupper=\HPUIFont,
+  coltitle=hpBrown,
+  attach title to upper={\quad}
+}
+
+% Werteband direkt unter dem Gegnernamen.
+\newenvironment{enemystats}
+  {\begingroup\HPUIFont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{4pt}%
+   \tabularx{\linewidth}{@{}>{\bfseries}l X >{\bfseries}l X >{\bfseries}l X@{}}}
+  {\endtabularx\endgroup}
+
+% Zweispaltiger Inhaltsbereich fuer Angriffe, KI und Sonderregeln.
+\newenvironment{enemygrid}
+  {\begin{tcbraster}[
+      raster columns=2,
+      raster column skip=4mm,
+      raster row skip=3mm,
+      raster valign=top
+    ]}
+  {\end{tcbraster}}
+
+\newcommand{\enemyrole}[1]{\textbf{Rolle:} #1}
+\newcommand{\enemydesign}[1]{\textbf{Designziel:} #1}
