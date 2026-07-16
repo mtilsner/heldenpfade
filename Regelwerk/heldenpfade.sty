@@ -14,6 +14,7 @@
 \RequirePackage{amssymb}
 \RequirePackage{tabularx}
 \RequirePackage{array}
+\RequirePackage{etoolbox}
 \RequirePackage{csquotes}
 \RequirePackage{parskip}
 \RequirePackage{titlesec}
@@ -75,6 +76,10 @@
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
+% Alle Tabellen im Regelwerk verwenden die serifenlose UI-Schrift.
+\AtBeginEnvironment{tabular}{\HPUIFont}
+\AtBeginEnvironment{tabularx}{\HPUIFont}
+
 % Kapitel und Abschnitte
 \titleformat{\chapter}[display]
   {\normalfont\HPHeadingFont\color{hpBrown}}
@@ -100,7 +105,7 @@
 
 \titleformat{\subsubsection}
   {\normalfont\HPHeadingFont\normalsize\color{hpBrown}}
-  {\thesubsubsection}
+  {\thesubsection}
   {0.6em}
   {}
 \titlespacing*{\subsubsection}{0pt}{1.0\baselineskip}{0.25\baselineskip}
