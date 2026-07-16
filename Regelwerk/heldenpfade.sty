@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{heldenpfade}[2026/07/15 Moderner Regelwerkstil]
+\ProvidesPackage{heldenpfade}[2026/07/16 Moderner Regelwerkstil]
 
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
@@ -20,6 +20,7 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{enumitem}
 \RequirePackage[most]{tcolorbox}
+\RequirePackage{svg}
 
 % Farbpalette
 \definecolor{hpText}{HTML}{2A2A2A}
@@ -197,5 +198,5 @@
   {\begingroup\HPUIFont\renewcommand{\arraystretch}{1.45}\setlength{\tabcolsep}{7pt}\emergencystretch=1.5em\begin{tabularx}{\linewidth}{#1}}
   {\end{tabularx}\endgroup}
 
-% Zentrale, spaeter austauschbare Spielsymbole
+% Zentrale Spielsymbole
 \input{shared/icons.tex}
