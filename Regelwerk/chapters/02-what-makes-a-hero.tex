@@ -42,7 +42,9 @@ Jedes Attribut besitzt einen Wert zwischen 0 und 5.
 
 Auf dem Charakterbogen werden Attributswerte als grüne Attributswürfel (\greenDie) dargestellt.
 
-\textbf{Beispiel:} Ein Held mit KRA 2 ist kräftig. Ein Held mit KRA 4 ist außergewöhnlich stark. Ein Held mit KRA 0 ist körperlich schwach oder kaum belastbar.
+\begin{beispiel}[title=Beispiel]
+Ein Held mit KRA 2 ist kräftig. Ein Held mit KRA 4 ist außergewöhnlich stark. Ein Held mit KRA 0 ist körperlich schwach oder kaum belastbar.
+\end{beispiel}
 
 \section{Fertigkeiten}
 
@@ -106,7 +108,9 @@ Auch Fertigkeiten können Werte zwischen 0 und 5 besitzen.
 
 Ein hoher Fertigkeitswert bedeutet, dass ein Held in diesem Bereich mehr Übung und Erfahrung besitzt. Auf dem Charakterbogen werden Fertigkeitswerte als blaue Fertigkeitswürfel (\blueDie) dargestellt.
 
-\textbf{Beispiel:} Ein Held mit Basteln 2 ist vielleicht ein erfahrener Heimwerker. Ein Held mit Schleichen 4 ist ein Meisterspion. Ein Held mit Turnen 0 hat vielleicht zwei linke Füße.
+\begin{beispiel}[title=Beispiel]
+Ein Held mit Basteln 2 ist vielleicht ein erfahrener Heimwerker. Ein Held mit Schleichen 4 ist ein Meisterspion. Ein Held mit Turnen 0 hat vielleicht zwei linke Füße.
+\end{beispiel}
 
 \section{Lebenspunkte}
 
@@ -114,15 +118,11 @@ Lebenspunkte (\lifeGain/\lifeLoss) zeigen, wie viel Schaden ein Held aushalten k
 
 Die Anzahl der Lebenspunkte hängt von der Konstitution des Helden ab.
 
-\begin{hptable}{C{3cm} Y}
-\textbf{KON-Wert} & \textbf{Lebenspunkte} \\
-0 & 14 \\
-1 & 16 \\
-2 & 18 \\
-3 & 20 \\
-4 & 22 \\
-5 & 24 \\
-\end{hptable}
+\begin{kurzregel}[title=Lebenspunkte berechnen]
+\textbf{Lebenspunkte} $= 14 + 2 \times \mathrm{KON}$
+
+\emph{Beispiel:} Ein Held mit KON 3 besitzt $14 + 2 \times 3 = 20$ Lebenspunkte.
+\end{kurzregel}
 
 Die genauen Regeln für Schaden, Schilde, Ausweichen und Kampfunfähigkeit stehen im Kampfkapitel.
 
@@ -132,15 +132,11 @@ Mana (\manaGain/\manaLoss) zeigt, wie viel magische Kraft einem Helden zur Verf�
 
 Jeder Held besitzt einen Manavorrat. Dieser gibt an, wie viel Mana ein Held höchstens besitzen kann. Die Höhe des Manavorrats hängt vom Charisma des Helden ab.
 
-\begin{hptable}{C{3cm} Y}
-\textbf{CHA-Wert} & \textbf{Mana} \\
-0 & 0 \\
-1 & 2 \\
-2 & 4 \\
-3 & 6 \\
-4 & 8 \\
-5 & 10 \\
-\end{hptable}
+\begin{kurzregel}[title=Manavorrat berechnen]
+\textbf{Manavorrat} $= 2 \times \mathrm{CHA}$
+
+\emph{Beispiel:} Ein Held mit CHA 3 besitzt $2 \times 3 = 6$ Mana. Mit dem Talent \emph{Magiebegabt} erhöht sich sein Manavorrat auf 12 Mana.
+\end{kurzregel}
 
 Talente und andere Effekte können den Manavorrat eines Helden erhöhen oder verringern.
 
