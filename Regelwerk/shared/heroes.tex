@@ -63,8 +63,7 @@
 }
 
 % Dezente Trennung zwischen den vier Fertigkeitsgruppen.
+% Die Linie wird direkt gezeichnet, damit keine Abhaengigkeit von colortbl besteht.
 \newcommand{\heroskillseparator}{%
-  \noalign{\vskip 1.2mm}%
-  \arrayrulecolor{hpLine}\hline
-  \noalign{\vskip 0.8mm}%
+  \noalign{\vskip 1.2mm\color{hpLine}\hrule height 0.4pt\vskip 0.8mm}%
 }
