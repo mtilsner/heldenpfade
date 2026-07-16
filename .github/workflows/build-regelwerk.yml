@@ -25,6 +25,7 @@ jobs:
         with:
           root_file: main.tex
           working_directory: Regelwerk
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -shell-escape
 
       - name: PDF in Regelwerk/build ablegen
         run: |
