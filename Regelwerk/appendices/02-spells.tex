@@ -4,7 +4,7 @@ Dieser Anhang enthält alle Zauber, die Helden im Laufe ihrer Abenteuer erlernen
 
 Die Zauber sind nach ihren \textbf{Manakosten} sortiert. Jeder Zauber nennt seine Schlüsselworte, seine Zauberzeit und seine Wirkung. Erfordert ein Zauber eine Zauberprobe, ist dies in seiner Effektbeschreibung angegeben.
 
-\newcommand{\zaubertabelle}{%
+\newcommand{\zaubertabelleleer}{%
 \begin{center}
 \renewcommand{\arraystretch}{1.25}
 \begin{tabularx}{\textwidth}{|p{2.8cm}|p{3.0cm}|>{\centering\arraybackslash}p{1.0cm}|p{2.5cm}|X|}
@@ -17,40 +17,45 @@ Die Zauber sind nach ihren \textbf{Manakosten} sortiert. Jeder Zauber nennt sein
 \end{center}%
 }
 
-\section{Zauber ohne Manakosten}
-
-\zaubertabelle
-
 \section{Zauber für 1 Mana}
 
-\zaubertabelle
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|p{2.8cm}|p{3.0cm}|>{\centering\arraybackslash}p{1.0cm}|p{2.5cm}|X|}
+\hline
+\textbf{Zaubername} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\hline
+\textbf{Eisblitz} & Angriff, Eis & 1 & \standardAction{} & Angriffsoption mit \emph{Zaubern}. Pro \star{} entsteht 1\orangeDmgDie. \\
+\hline
+\end{tabularx}
+\end{center}
 
 \section{Zauber für 2 Mana}
 
-\zaubertabelle
+\zaubertabelleleer
 
 \section{Zauber für 3 Mana}
 
-\zaubertabelle
+\zaubertabelleleer
 
 \section{Zauber für 4 Mana}
 
-\zaubertabelle
+\zaubertabelleleer
 
 \section{Zauber für 5 Mana}
 
-\zaubertabelle
+\zaubertabelleleer
 
 \section{Zauber für 6 Mana}
 
-\zaubertabelle
+\zaubertabelleleer
 
 \section{Zauber für 7 Mana}
 
-\zaubertabelle
+\zaubertabelleleer
 
 \section{Zauber für 8 oder mehr Mana}
 
-\zaubertabelle
+\zaubertabelleleer
 
-\let\zaubertabelle\relax
+\let\zaubertabelleleer\relax
