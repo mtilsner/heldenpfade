@@ -193,10 +193,12 @@
 \newenvironment{tip}[1][]{\begin{tipbox}[#1]}{\end{tipbox}}
 \newenvironment{kurzregel}[1][]{\begin{quickreference}[#1]}{\end{quickreference}}
 
-% Tabellen mit serifenloser Schrift und bewusst grosszuegigem Zeilenabstand
+% Tabellen mit serifenloser Schrift und bewusst grosszuegigem Zeilenabstand.
+% tabularx muss hier ueber \tabularx/\endtabularx gestartet werden, damit es
+% den Abschluss der umschliessenden hptable-Umgebung korrekt erkennt.
 \newenvironment{hptable}[1]
-  {\begingroup\HPUIFont\renewcommand{\arraystretch}{1.45}\setlength{\tabcolsep}{7pt}\emergencystretch=1.5em\begin{tabularx}{\linewidth}{#1}}
-  {\end{tabularx}\endgroup}
+  {\begingroup\HPUIFont\renewcommand{\arraystretch}{1.45}\setlength{\tabcolsep}{7pt}\emergencystretch=1.5em\tabularx{\linewidth}{#1}}
+  {\endtabularx\endgroup}
 
 % Zentrale Spielsymbole
 \input{shared/icons.tex}
