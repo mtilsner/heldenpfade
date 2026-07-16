@@ -86,7 +86,7 @@ Für die Angriffsfertigkeiten gelten folgende Reichweiten:
 
 Der Spieler legt mit der angegebenen Angriffsfertigkeit eine Angriffsprobe ab. Zeigt sie keinen \star, verfehlt der Angriff. Jeder erzielte \star{} wird anschließend nach der Schadensformel der Angriffsoption in Schadenswürfel umgerechnet.
 
-Helden erhalten Vorteil auf Angriffsproben gegen am Boden liegende Gegner.
+Helden erhalten Vorteil auf Angriffsproben gegen Gegner mit dem Statuseffekt \emph{Zu Boden}.
 
 Gegner weichen Angriffen von Helden grundsätzlich nicht aus.
 
@@ -136,7 +136,7 @@ Ein Held kann nur ausweichen, wenn seine \textbf{Ausrüstung oder ein Talent} di
 Jeder \star{} der Ausweichprobe entfernt einen beliebigen Schadenswürfel des Gegners. Überschüssige \star{} verfallen. Entfernte Schadenswürfel werden nicht geworfen.
 \end{kurzregel}
 
-Ein am Boden liegender Held hat Nachteil auf seine Ausweichprobe. Kann er aufgrund seiner Ausrüstung oder Talente nicht ausweichen, entfällt die Probe vollständig.
+Ein Held mit dem Statuseffekt \emph{Zu Boden} hat Nachteil auf seine Ausweichprobe. Kann er aufgrund seiner Ausrüstung oder Talente nicht ausweichen, entfällt die Probe vollständig.
 
 Die verbleibenden Schadenswürfel werden geworfen. Anschließend verhindert jedes \armor{} des Helden 1 Schaden. Für den übrigen Schaden verliert der Held entsprechend viele Lebenspunkte \lifeLoss.
 
@@ -152,7 +152,7 @@ Lebenspunkte können niemals unter 0 sinken.
 
 Sinkt ein Gegner auf 0 Lebenspunkte, ist er besiegt.
 
-Sinkt ein Held auf 0 Lebenspunkte, ist er kampfunfähig und kann nicht handeln. Wird er geheilt und erhält mindestens 1 \textbf{Lebenspunkt (\lifeGain)}, ist er wieder kampfbereit, erhält aber den Status \emph{Am Boden}. Er muss daher zunächst entsprechend den Statusregeln aufstehen.
+Sinkt ein Held auf 0 Lebenspunkte, ist er kampfunfähig und kann nicht handeln. Wird er geheilt und erhält mindestens 1 \textbf{Lebenspunkt (\lifeGain)}, ist er wieder kampfbereit, erhält aber den Statuseffekt \emph{Zu Boden}. Er muss daher zunächst entsprechend den Statusregeln aufstehen.
 
 Wenn alle Helden kampfunfähig sind, sind die Helden besiegt. Das bedeutet nicht automatisch, dass sie sterben.
 
