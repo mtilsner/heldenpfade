@@ -6,13 +6,40 @@ Ausrüstung sind Gegenstände, die ein Held bei sich trägt und verwenden kann. 
 
 \section{Ausrüstungsplätze}
 
-Ein Held besitzt die Ausrüstungsplätze Kopf, zwei Hände, Körper, Gürtel und Füße. Nur Gegenstände, die an ihrem passenden Platz liegen, gelten als ausgerüstet und können verwendet werden.
+Ein Held besitzt die Ausrüstungsplätze Kopf, zwei Hände, Körper und Füße. Nur Gegenstände, die an ihrem passenden Platz liegen, gelten als ausgerüstet und können verwendet werden.
 
 Ein Held kann außerdem beliebig viel verstaute Ausrüstung mit sich tragen. Verstaute Ausrüstung gilt nicht als ausgerüstet und ihre Angaben und Effekte können nicht genutzt werden.
+
+\begin{kurzregel}[title=Ausgerüstet und verstaut]
+Nur \textbf{ausgerüstete} Gegenstände können verwendet werden. Angaben und Effekte \textbf{verstauter} Gegenstände gelten nicht.
+\end{kurzregel}
+
+\begin{kurzregel}[title=Ausrüstungsplätze]
+Ein Held besitzt folgende Ausrüstungsplätze:
+
+\begin{itemize}
+  \item Kopf,
+  \item zwei Hände,
+  \item Körper,
+  \item Füße.
+\end{itemize}
+\end{kurzregel}
 
 \subsection{Hände}
 
 Ein Held hat zwei Hände. Manche Gegenstände benötigen eine Hand, andere beide Hände. Die ausgerüsteten Gegenstände dürfen zusammen höchstens zwei Hände belegen.
+
+\begin{kurzregel}[title=Ein- und zweihändige Gegenstände]
+Ein einhändiger Gegenstand belegt \textbf{eine Hand}. Ein zweihändiger Gegenstand belegt \textbf{beide Hände}.
+\end{kurzregel}
+
+\subsection{Kleine Gegenstände}
+
+Manche kleinen Gegenstände benötigen keinen Ausrüstungsplatz. Ob ein Gegenstand als klein gilt, ergibt sich aus seiner Karte.
+
+\begin{kurzregel}[title=Kleine Gegenstände]
+Kleine Gegenstände benötigen \textbf{keinen Ausrüstungsplatz}.
+\end{kurzregel}
 
 \section{Ausrüstung wechseln}
 
@@ -22,11 +49,43 @@ Der Körperplatz ist eine Ausnahme: Einen Gegenstand am Körperplatz auszurüste
 
 \section{Ausrüstungskarten lesen}
 
-Waffen besitzen eine oder mehrere Angriffsoptionen. Jede Angriffsoption nennt die Angriffsfertigkeit, die Umrechnung von \star{} in Schadenswürfel und mögliche besondere Effekte.
+Viele Waffen besitzen eine oder mehrere Angriffsoptionen. Angriffsoptionen können jedoch ebenso durch Zauber oder -- seltener -- durch andere Ausrüstungsgegenstände oder Talente bereitgestellt werden.
 
-Rüstungen und andere Gegenstände können eine Ausweichprobe (\evade) erlauben oder zusätzliche \blueDie{} dafür gewähren. Trägt ein Held keine Rüstung am Körperplatz, darf er mit einer Turnen-Probe ausweichen.
+Jede Angriffsoption nennt die verwendete Angriffsfertigkeit, die Umrechnung von \star{} in Schadenswürfel und mögliche besondere Effekte. Die Reichweite ergibt sich aus der Angriffsfertigkeit.
 
-Schutz wird durch Schild-Symbole (\armor) dargestellt. Jedes \armor{} verhindert 1 Schaden. Rüstungsdurchdringung (\armorPierce) ignoriert die angegebene Anzahl an \armor{} des Ziels.
+\begin{kurzregel}[title=Angriffsoptionen]
+Jede Angriffsoption legt fest,
+
+\begin{itemize}
+  \item welche Angriffsfertigkeit verwendet wird,
+  \item welche Schadensformel gilt und
+  \item welche besonderen Effekte angewendet werden.
+\end{itemize}
+
+Angriffsoptionen befinden sich meist auf Waffen, können aber auch von Zaubern, anderen Ausrüstungsgegenständen oder Talenten stammen.
+\end{kurzregel}
+
+\begin{beispiel}[title=Beispiel: Eine Angriffsoption lesen]
+Eine Angriffsoption verwendet \textbf{Schlagen} und erzeugt pro \star{} zwei \orangeDmgDie. Schlagen bestimmt, welche Ziele in Reichweite sind; die Schadensformel bestimmt die Anzahl der Schadenswürfel.
+\end{beispiel}
+
+Rüstungen und andere Gegenstände können eine Ausweichprobe (\evade) erlauben oder zusätzliche \blueDie{} dafür gewähren.
+
+\begin{beispiel}[title=Beispiel: Ausweichen durch Ausrüstung]
+Erlaubt eine ausgerüstete Karte eine Ausweichprobe, verwendet der Held die dort angegebenen Würfel. Zusätzliche \blueDie{} auf anderen ausgerüsteten Karten werden dem Würfelpool hinzugefügt.
+\end{beispiel}
+
+Schutz wird durch Schild-Symbole (\armor) dargestellt. Jedes \armor{} verhindert 1 Schaden. Mehrere \armor{} werden addiert. Rüstungsdurchdringung (\armorPierce) ignoriert die angegebene Anzahl an \armor{} des Ziels.
+
+\begin{kurzregel}[title=Schutz durch Schilde]
+Jedes \armor{} verhindert \textbf{1 Schaden}. Mehrere \armor{} werden addiert.
+\end{kurzregel}
+
+Besondere Effekte gelten genau so, wie sie auf der jeweiligen Karte beschrieben sind.
+
+\begin{kurzregel}[title=Besondere Effekte]
+Die Beschreibung auf der Karte bestimmt vollständig, wie und wann ein besonderer Effekt angewendet wird.
+\end{kurzregel}
 
 \section{Erschöpfte Karten}
 

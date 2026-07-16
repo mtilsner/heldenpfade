@@ -4,53 +4,66 @@ Dieser Anhang enthält alle Zauber, die Helden im Laufe ihrer Abenteuer erlernen
 
 Die Zauber sind nach ihren \textbf{Manakosten} sortiert. Jeder Zauber nennt seine Schlüsselworte, seine Zauberzeit und seine Wirkung. Erfordert ein Zauber eine Zauberprobe, ist dies in seiner Effektbeschreibung angegeben.
 
-\newcommand{\zaubertabelle}{%
-\begin{center}
-\renewcommand{\arraystretch}{1.25}
-\begin{tabularx}{\textwidth}{|p{2.8cm}|p{3.0cm}|>{\centering\arraybackslash}p{1.0cm}|p{2.5cm}|X|}
-\hline
-\textbf{Zaubername} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
-\hline
-\multicolumn{5}{|c|}{\emph{Noch keine Zauber eingetragen.}} \\
-\hline
-\end{tabularx}
-\end{center}%
-}
-
-\section{Zauber ohne Manakosten}
-
-\zaubertabelle
-
 \section{Zauber für 1 Mana}
 
-\zaubertabelle
+\begin{hptable}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
+\textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\textbf{Eisblitz} & Eismagie, Kampfmagie & 1 & \standardAction{} & \emph{Zaubern}: \star{} $\rightarrow$ \orangeDmgDie. \\
+\textbf{Weißer Speer} & Beschwörung, Waffenmagie & 1 & \freeAction{} & Besitzt du einen Speer, wird dieser bereitgemacht. Andernfalls erscheint ein Speer in deinen Händen, sofern deine Hände-Plätze frei sind. \\
+\textbf{Heilender Funke} & Heilmagie, Lebensmagie & 1 & \moveAction{} & Ein benachbarter Verbündeter erhält 4\lifeGain{} zurück. \\
+\end{hptable}
 
 \section{Zauber für 2 Mana}
 
-\zaubertabelle
+\begin{hptable}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
+\textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\textbf{Herzschlag spüren} & Lebensmagie, Wahrnehmungsmagie & 2 & \standardAction{} & Finde alle Lebewesen innerhalb von 10 Metern. \\
+\textbf{Zielscheibe} & Kampfmagie, Schicksalsmagie & 2 & \standardAction{} & Du erhältst bis zum Ende des Kampfes +1\blueDie{} auf Angriffsproben gegen einen Gegner deiner Wahl. \\
+\end{hptable}
 
 \section{Zauber für 3 Mana}
 
-\zaubertabelle
+\begin{hptable}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
+\textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\textbf{Geisterschritt} & Raummagie, Geistermagie & 3 & \standardAction{} & \emph{Zaubern}: Erschaffe ein Portal. Es verschwindet, sobald eine Anzahl verbündeter Wesen in Höhe deiner erzielten \star{} es durchschritten hat oder dieselbe Anzahl Minuten vergangen ist. Das Portal kann von beiden Seiten durchquert werden. \\
+\textbf{Geisterblick} & Erkenntnismagie, Geistermagie & 3 & \standardAction{} & Du siehst für 5 Minuten Geheimtüren und Geheimgänge. \\
+\end{hptable}
 
 \section{Zauber für 4 Mana}
 
-\zaubertabelle
+\begin{hptable}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
+\textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\textbf{Freundschaft} & Einflussmagie, Gefühlsmagie & 4 & \standardAction{} & Eine Kreatur betrachtet dich für 5 Minuten als Freund. Im Kampf setzt ein Gegner für 1 Runde aus. \\
+\end{hptable}
+
+\begin{todo}
+Widerstand, gültige Ziele und Grenzen des Zaubers \emph{Freundschaft} festlegen.
+\end{todo}
 
 \section{Zauber für 5 Mana}
 
-\zaubertabelle
+\begin{hptable}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
+\textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\multicolumn{5}{c}{\emph{Noch keine Zauber eingetragen.}} \\
+\end{hptable}
 
 \section{Zauber für 6 Mana}
 
-\zaubertabelle
+\begin{hptable}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
+\textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\multicolumn{5}{c}{\emph{Noch keine Zauber eingetragen.}} \\
+\end{hptable}
 
 \section{Zauber für 7 Mana}
 
-\zaubertabelle
+\begin{hptable}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
+\textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\multicolumn{5}{c}{\emph{Noch keine Zauber eingetragen.}} \\
+\end{hptable}
 
 \section{Zauber für 8 oder mehr Mana}
 
-\zaubertabelle
-
-\let\zaubertabelle\relax
+\begin{hptable}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
+\textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\multicolumn{5}{c}{\emph{Noch keine Zauber eingetragen.}} \\
+\end{hptable}

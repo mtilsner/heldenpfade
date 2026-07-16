@@ -15,6 +15,7 @@
 \RequirePackage{tabularx}
 \RequirePackage{array}
 \RequirePackage{etoolbox}
+\RequirePackage{environ}
 \RequirePackage{csquotes}
 \RequirePackage{parskip}
 \RequirePackage{titlesec}
@@ -34,6 +35,8 @@
 \definecolor{hpTipLine}{HTML}{7FA46F}
 \definecolor{hpQuick}{HTML}{F7EEDB}
 \definecolor{hpQuickLine}{HTML}{B68A42}
+\definecolor{hpTodo}{HTML}{FBE8E8}
+\definecolor{hpTodoLine}{HTML}{B83A3A}
 
 \color{hpText}
 \pagecolor{hpPaper}
@@ -191,6 +194,26 @@
   boxed title style={colback=hpQuickLine!24},
   fontupper=\HPUIFont\large,
   #1
+}
+
+% TODO: interne Autorenhinweise. Bis Version 1.0 sichtbar, danach global abschaltbar.
+\newif\ifshowtodos
+\showtodostrue
+\newcounter{hptodo}
+\newtcolorbox{todobox}[1][]{
+  hpbox,
+  colback=hpTodo,
+  colframe=hpTodoLine,
+  boxed title style={colback=hpTodoLine!24},
+  #1
+}
+\NewEnviron{todo}[1][]{%
+  \ifshowtodos
+    \refstepcounter{hptodo}%
+    \begin{todobox}[title={TODO \#\thehptodo},#1]
+      \BODY
+    \end{todobox}%
+  \fi
 }
 
 % Deutsche Aliase fuer die Verwendung im Quelltext

@@ -1,18 +1,18 @@
-\chapter{Status}
+\chapter{Statuseffekte}
 
-Status beschreiben besondere Zustände, die eine Figur vorübergehend beeinflussen.
+Statuseffekte beschreiben besondere Zustände, die eine Figur vorübergehend beeinflussen.
 
-Ein Status gilt so lange, bis die bei ihm beschriebene Bedingung erfüllt ist oder ein anderer Effekt ihn beendet.
+Ein Statuseffekt gilt so lange, bis die bei ihm beschriebene Bedingung erfüllt ist oder ein anderer Effekt ihn beendet.
 
-\section{Am Boden}
+\begin{hptable}{L{3.0cm} Y L{4.0cm}}
+\textbf{Statuseffekt} & \textbf{Wirkung} & \textbf{Ende} \\
+\hline
+Kampfunfähig & Ein kampfunfähiger Held kann nicht handeln. & Sobald der Held geheilt wird und mindestens 1\lifeGain{} besitzt. Anschließend erhält er den Statuseffekt \emph{Zu Boden}. \\
+Zu Boden & Helden haben Vorteil auf Angriffsproben gegen zu Boden gegangene Gegner. Ein zu Boden gegangener Held hat Nachteil auf seine Ausweichprobe (\evade). Die Figur muss ihre nächste \moveAction{} verwenden, um aufzustehen. & Sobald die Figur aufgestanden ist. \\
+\end{hptable}
 
-Eine Figur, die am Boden liegt, kann sich nur eingeschränkt verteidigen und bewegen.
+\begin{todo}
+\textbf{Weitere Statuseffekte ergänzen}
 
-\begin{itemize}
-  \item Helden haben Vorteil auf Angriffsproben gegen am Boden liegende Gegner.
-  \item Liegt ein Held am Boden, hat er Nachteil auf seine Ausweichprobe (\evade).
-  \item Eine am Boden liegende Figur muss ihre nächste \moveAction{} verwenden, um aufzustehen.
-  \item Sobald die Figur aufgestanden ist, endet der Status \emph{Am Boden}.
-\end{itemize}
-
-Weitere Status können später ergänzt werden.
+Dieser Anhang wird mit weiteren Zaubern, Talenten und Gegnern erweitert. Mögliche spätere Statuseffekte sind unter anderem Brennen, Vergiften, Betäuben, Verlangsamen, Furcht und Versteinern.
+\end{todo}

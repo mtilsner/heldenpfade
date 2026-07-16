@@ -6,6 +6,10 @@ Ein Kampf ist eine besondere Szene, in der die Zeit in Runden und Züge aufgetei
 
 In jeder Runde handeln zuerst alle Helden, danach alle Gegner. Die Helden bestimmen ihre Reihenfolge selbst. Sobald alle Gegner vollständig aktiviert wurden, endet die Runde und die nächste beginnt.
 
+\begin{kurzregel}[title=Reihenfolge einer Kampfrunde]
+\textbf{Helden handeln} $\rightarrow$ \textbf{Gegner handeln}
+\end{kurzregel}
+
 \subsection{Der Zug eines Helden}
 
 Ein Held besitzt in seinem Zug normalerweise:
@@ -22,6 +26,12 @@ Mit einer \moveAction{} kann er sich bewegen oder seine Ausrüstung neu anordnen
 
 \freeAction{} sind kurze Handlungen wie etwas rufen, auf etwas zeigen oder einen Gegenstand fallen lassen. Sie dürfen keine umfangreiche Handlung ersetzen.
 
+Wird eine Aktion beschleunigt, wird eine \standardAction{} zur \moveAction{} und eine \moveAction{} zur \freeAction. Eine \freeAction{} kann nicht weiter beschleunigt werden.
+
+\begin{tip}[title=Tipp: Aktionen zuerst planen]
+Kläre zu Beginn deines Zuges kurz, was du mit deiner Standardaktion und deiner Bewegungsaktion erreichen möchtest. Das beschleunigt den Zug und verhindert unnötige Rückfragen während der Ausführung.
+\end{tip}
+
 \section{Bewegung, Nähe und Entfernung}
 
 Figuren können zueinander \textbf{benachbart} oder \textbf{entfernt} sein. Eine Figur kann gleichzeitig zu mehreren Figuren benachbart sein.
@@ -29,6 +39,12 @@ Figuren können zueinander \textbf{benachbart} oder \textbf{entfernt} sein. Eine
 Wie viele Bewegungen nötig oder mit einer \moveAction{} möglich sind, ergibt sich aus der Battlemap oder aus der Beschreibung der Spielleitung. Hindernisse und die konkrete Situation können eine Bewegung erschweren oder mehrere Bewegungen erforderlich machen.
 
 Ein Held darf sich von einem benachbarten Gegner entfernen, ohne dass dies automatisch eine weitere Folge auslöst. Gegnerfähigkeiten können davon abweichen.
+
+\begin{todo}
+\textbf{Regeldesign: Bewegung im Kampf}
+
+Die abstrakte Bewegung über \emph{benachbart} und \emph{entfernt} muss später mit den Battlemap-Regeln abgestimmt werden. Zu klären ist insbesondere, wie viele Felder oder Zonen eine Bewegungsaktion umfasst und wie Hindernisse behandelt werden.
+\end{todo}
 
 \section{Ausrüstung im Kampf wechseln}
 
@@ -38,7 +54,29 @@ Der Gegenstand am Körper-Ausrüstungsplatz ist davon ausgenommen. Eine Körperr
 
 \section{Einen Gegner angreifen}
 
-Ein Angriff benötigt eine \standardAction. Die gewählte Angriffsoption bestimmt die Angriffsfertigkeit, die Reichweite, die Schadensformel und mögliche besondere Effekte.
+Ein Angriff benötigt eine \standardAction. \textbf{Angriffsoptionen} beschreiben, wie eine Figur einen Angriff ausführt. Sie befinden sich meist auf \textbf{Waffen}, können aber auch auf \textbf{Zaubern} stehen. Vereinzelt verleihen auch andere \textbf{Ausrüstungsgegenstände} oder \textbf{Talente} eigene Angriffsoptionen.
+
+Jede Angriffsoption legt fest,
+
+\begin{itemize}
+  \item welche Angriffsfertigkeit verwendet wird,
+  \item welche Schadensformel gilt und
+  \item welche besonderen Effekte der Angriff besitzt.
+\end{itemize}
+
+\begin{kurzregel}[title=Einen Angriff durchführen]
+\begin{enumerate}
+  \item Angriffsoption wählen.
+  \item Zulässiges Ziel bestimmen.
+  \item Angriffsprobe ablegen.
+  \item Bei mindestens einem \star{} die Schadenswürfel bestimmen.
+  \item Schadenswürfel werfen und Schaden addieren.
+  \item \armor{} und \armorPierce{} anwenden.
+  \item Verbleibenden Schaden von den Lebenspunkten abziehen.
+\end{enumerate}
+\end{kurzregel}
+
+Für die Angriffsfertigkeiten gelten folgende Reichweiten:
 
 \begin{itemize}
   \item \textbf{Schlagen} kann benachbarte Gegner als Ziel haben.
@@ -50,7 +88,9 @@ Ein Angriff benötigt eine \standardAction. Die gewählte Angriffsoption bestimm
 
 Der Spieler legt mit der angegebenen Angriffsfertigkeit eine Angriffsprobe ab. Zeigt sie keinen \star, verfehlt der Angriff. Jeder erzielte \star{} wird anschließend nach der Schadensformel der Angriffsoption in Schadenswürfel umgerechnet.
 
-Helden erhalten Vorteil auf Angriffsproben gegen am Boden liegende Gegner.
+Helden erhalten Vorteil auf Angriffsproben gegen Gegner mit dem Statuseffekt \emph{Zu Boden}.
+
+Gegner weichen Angriffen von Helden grundsätzlich nicht aus.
 
 \subsection{Schaden machen}
 
@@ -62,13 +102,27 @@ Es gibt drei Arten von Schadenswürfeln:
   \item den \textbf{schwarzen Schadenswürfel (\blackDmgDie)} für schweren Schaden.
 \end{itemize}
 
-Die Schadensformel einer Angriffsoption bestimmt, wie viele Schadenswürfel jeder erzielte \star{} erzeugt.
+Die Schadensformel einer Angriffsoption bestimmt, wie viele Schadenswürfel jeder erzielte \star{} erzeugt. Die Schadenswürfel werden geworfen und ihre Ergebnisse anschließend addiert.
 
-\textbf{Beispiel:} Eine Angriffsoption erzeugt pro \star{} zwei \orangeDmgDie. Erzielt Kiera 3\star, würfelt sie 6\orangeDmgDie.
+\begin{kurzregel}[title=Schaden bestimmen]
+\begin{enumerate}
+  \item Erzielte \star{} nach der Schadensformel in Schadenswürfel umrechnen.
+  \item Schadenswürfel werfen.
+  \item Gewürfelten Schaden addieren.
+  \item Schutz durch \armor{} abziehen.
+  \item Verbleibenden Schaden als Verlust von Lebenspunkten anwenden.
+\end{enumerate}
+\end{kurzregel}
 
-Die Schadenswürfel werden geworfen und ihr Schaden wird addiert. Danach wird der Schaden durch Schild-Symbole verringert.
+\begin{beispiel}[title=Beispiel: Schadenswürfel bestimmen]
+Eine Angriffsoption erzeugt pro \star{} zwei \orangeDmgDie. Erzielt Kiera 3\star, würfelt sie 6\orangeDmgDie. Erst die Ergebnisse dieser sechs Würfel bestimmen den verursachten Schaden.
+\end{beispiel}
 
-Das \textbf{Schild-Symbol (\armor)} beschreibt Schutz durch Rüstung, Schilde oder andere Effekte. Jedes \armor{} verhindert 1 Schaden. \textbf{Rüstungsdurchdringung (\armorPierce)} ignoriert die angegebene Anzahl an \armor{} des Ziels.
+Das \textbf{Schild-Symbol (\armor)} beschreibt Schutz durch Rüstung, Schilde, Talente oder andere Effekte. Jedes \armor{} verhindert 1 Schaden. \textbf{Rüstungsdurchdringung (\armorPierce)} ignoriert die angegebene Anzahl sämtlicher \armor{} des Ziels, unabhängig von ihrer Quelle.
+
+\begin{kurzregel}[title=Schilde und Rüstungsdurchdringung]
+Jedes \armor{} verhindert \textbf{1 Schaden}. Jedes \armorPierce{} ignoriert \textbf{1 \armor{}} des Ziels.
+\end{kurzregel}
 
 Der verbleibende Schaden lässt die Figur entsprechend viele \textbf{Lebenspunkte verlieren (\lifeLoss)}.
 
@@ -76,13 +130,23 @@ Der verbleibende Schaden lässt die Figur entsprechend viele \textbf{Lebenspunkt
 
 Gegner legen keine Angriffsprobe ab. Ihr Profil gibt unmittelbar die verwendeten Schadenswürfel an.
 
-Bevor diese Würfel geworfen werden, darf der angegriffene Held gegebenenfalls \textbf{ausweichen (\evade)}. Welche Würfel er für seine Ausweichprobe verwendet, ergibt sich aus seiner Ausrüstung.
+Bevor diese Würfel geworfen werden, darf der angegriffene Held gegebenenfalls \textbf{ausweichen (\evade)}. Welche Würfel er für seine Ausweichprobe verwendet, ergibt sich aus seiner Ausrüstung oder seinen Talenten.
 
-Jeder \star{} der Ausweichprobe entfernt einen beliebigen Schadenswürfel des Gegners. Entfernte Schadenswürfel werden nicht geworfen.
+\begin{kurzregel}[title=Ausweichen]
+Ein Held kann nur ausweichen, wenn seine \textbf{Ausrüstung oder ein Talent} dies erlaubt.
 
-Ein am Boden liegender Held hat Nachteil auf seine Ausweichprobe. Kann er aufgrund seiner Ausrüstung nicht ausweichen, entfällt die Probe vollständig.
+Jeder \star{} der Ausweichprobe entfernt einen beliebigen Schadenswürfel des Gegners. Überschüssige \star{} verfallen. Entfernte Schadenswürfel werden nicht geworfen.
+\end{kurzregel}
+
+Ein Held mit dem Statuseffekt \emph{Zu Boden} hat Nachteil auf seine Ausweichprobe. Kann er aufgrund seiner Ausrüstung oder Talente nicht ausweichen, entfällt die Probe vollständig.
 
 Die verbleibenden Schadenswürfel werden geworfen. Anschließend verhindert jedes \armor{} des Helden 1 Schaden. Für den übrigen Schaden verliert der Held entsprechend viele Lebenspunkte \lifeLoss.
+
+\begin{todo}
+\textbf{Balancing: Wahl der Schadenswürfel beim Ausweichen}
+
+Aktuell darf der Held bei einem gemischten Schadenspool frei wählen, welche Schadenswürfel durch seine Ausweicherfolge entfernt werden. Prüfen, ob diese freie Wahl dauerhaft sinnvoll und ausgewogen ist.
+\end{todo}
 
 \section{Kampfunfähig oder besiegt}
 
@@ -90,7 +154,7 @@ Lebenspunkte können niemals unter 0 sinken.
 
 Sinkt ein Gegner auf 0 Lebenspunkte, ist er besiegt.
 
-Sinkt ein Held auf 0 Lebenspunkte, ist er kampfunfähig und kann nicht handeln. Wird er geheilt und erhält mindestens 1 \textbf{Lebenspunkt (\lifeGain)}, ist er wieder kampfbereit, erhält aber den Status \emph{Am Boden}. Er muss daher zunächst entsprechend den Statusregeln aufstehen.
+Sinkt ein Held auf 0 Lebenspunkte, ist er kampfunfähig und kann nicht handeln. Wird er geheilt und erhält mindestens 1 \textbf{Lebenspunkt (\lifeGain)}, ist er wieder kampfbereit, erhält aber den Statuseffekt \emph{Zu Boden}. Er muss daher zunächst entsprechend den Statusregeln aufstehen.
 
 Wenn alle Helden kampfunfähig sind, sind die Helden besiegt. Das bedeutet nicht automatisch, dass sie sterben.
 
@@ -99,3 +163,26 @@ Wenn alle Helden kampfunfähig sind, sind die Helden besiegt. Das bedeutet nicht
 Ein Kampf endet, wenn die gefährliche Auseinandersetzung vorbei ist, beispielsweise weil alle Gegner besiegt sind, eine Seite flieht oder aufgibt oder das Ziel des Kampfes erreicht wurde.
 
 Wenn der Kampf endet, wird wieder normal weitererzählt.
+
+\section{Beispiele}
+
+\begin{beispiel}[title=Beispiel: Ein Held greift an]
+\begin{enumerate}
+  \item \textbf{Angriffsoption wählen (Zahnschwert):} Kiera greift einen benachbarten Gegner mit ihrem Zahnschwert an.
+  \item \textbf{Angriffsprobe:} Sie legt die angegebene Schlagen-Probe ab und erzielt 2\star.
+  \item \textbf{Schadenswürfel bestimmen:} Das Zahnschwert erzeugt pro \star{} zwei \orangeDmgDie. Kiera würfelt daher 4\orangeDmgDie.
+  \item \textbf{Schaden würfeln:} Die Schadenswürfel verursachen zusammen 5 Schaden.
+  \item \textbf{Schutz anwenden:} Der Gegner besitzt 2\armor{} und verhindert damit 2 Schaden.
+  \item \textbf{Lebenspunkte verlieren:} Der Gegner verliert die verbleibenden 3 Lebenspunkte.
+\end{enumerate}
+\end{beispiel}
+
+\begin{beispiel}[title=Beispiel: Ein Gegner greift an]
+\begin{enumerate}
+  \item \textbf{Schadenspool bestimmen:} Ein Gegner greift Kiera mit 1\blackDmgDie{} und 2\orangeDmgDie{} an.
+  \item \textbf{Ausweichen:} Kieras Ausrüstung erlaubt eine Ausweichprobe. Sie erzielt 1\star{} und entfernt den \blackDmgDie.
+  \item \textbf{Schaden würfeln:} Die beiden verbleibenden \orangeDmgDie{} verursachen zusammen 3 Schaden.
+  \item \textbf{Schutz anwenden:} Kiera besitzt 1\armor{} und verhindert damit 1 Schaden.
+  \item \textbf{Lebenspunkte verlieren:} Kiera verliert die verbleibenden 2 Lebenspunkte.
+\end{enumerate}
+\end{beispiel}

@@ -28,7 +28,9 @@ KRA & Kraft & Körperliche Stärke und rohe Kraft\newline\emph{Beispiel: Türen 
 
 \subsection{Attributswerte}
 
-Jedes Attribut besitzt einen Wert zwischen 0 und 5.
+\begin{kurzregel}[title=Attributswerte]
+Attribute besitzen Werte von 0 bis 5. Je höher der Wert, desto stärker ist die natürliche Begabung des Helden.
+\end{kurzregel}
 
 \begin{hptable}{C{2.5cm} Y}
 \textbf{Wert} & \textbf{Bedeutung} \\
@@ -42,7 +44,9 @@ Jedes Attribut besitzt einen Wert zwischen 0 und 5.
 
 Auf dem Charakterbogen werden Attributswerte als grüne Attributswürfel (\greenDie) dargestellt.
 
-\textbf{Beispiel:} Ein Held mit KRA 2 ist kräftig. Ein Held mit KRA 4 ist außergewöhnlich stark. Ein Held mit KRA 0 ist körperlich schwach oder kaum belastbar.
+\begin{beispiel}[title=Beispiel]
+Kiera besitzt KRA 3. Auf ihrem Charakterbogen liegen deshalb drei grüne Attributswürfel bei Kraft. Immer wenn eine Probe Kraft verwendet, würfelt sie diese drei grünen Würfel.
+\end{beispiel}
 
 \section{Fertigkeiten}
 
@@ -92,7 +96,9 @@ Vorführen & CHA + FIN & Auftreten, musizieren, erzählen, kunstfertig präsenti
 
 \subsection{Fertigkeitswerte}
 
-Auch Fertigkeiten können Werte zwischen 0 und 5 besitzen.
+\begin{kurzregel}[title=Fertigkeitswerte]
+Fertigkeiten besitzen Werte von 0 bis 5. Je höher der Wert, desto erfahrener ist der Held in diesem Bereich.
+\end{kurzregel}
 
 \begin{hptable}{C{2.5cm} Y}
 \textbf{Wert} & \textbf{Bedeutung} \\
@@ -104,9 +110,11 @@ Auch Fertigkeiten können Werte zwischen 0 und 5 besitzen.
 5 & legendär \\
 \end{hptable}
 
-Ein hoher Fertigkeitswert bedeutet, dass ein Held in diesem Bereich mehr Übung und Erfahrung besitzt. Auf dem Charakterbogen werden Fertigkeitswerte als blaue Fertigkeitswürfel (\blueDie) dargestellt.
+Auf dem Charakterbogen werden Fertigkeitswerte als blaue Fertigkeitswürfel (\blueDie) dargestellt.
 
-\textbf{Beispiel:} Ein Held mit Basteln 2 ist vielleicht ein erfahrener Heimwerker. Ein Held mit Schleichen 4 ist ein Meisterspion. Ein Held mit Turnen 0 hat vielleicht zwei linke Füße.
+\begin{beispiel}[title=Beispiel]
+Lina besitzt Schleichen 3. Auf ihrem Charakterbogen liegen deshalb drei blaue Fertigkeitswürfel bei Schleichen. Immer wenn eine Probe Schleichen verwendet, würfelt sie diese drei blauen Würfel.
+\end{beispiel}
 
 \section{Lebenspunkte}
 
@@ -114,15 +122,13 @@ Lebenspunkte (\lifeGain/\lifeLoss) zeigen, wie viel Schaden ein Held aushalten k
 
 Die Anzahl der Lebenspunkte hängt von der Konstitution des Helden ab.
 
-\begin{hptable}{C{3cm} Y}
-\textbf{KON-Wert} & \textbf{Lebenspunkte} \\
-0 & 14 \\
-1 & 16 \\
-2 & 18 \\
-3 & 20 \\
-4 & 22 \\
-5 & 24 \\
-\end{hptable}
+\begin{kurzregel}[title=Lebenspunkte berechnen]
+\textbf{Lebenspunkte} $= 14 + 2 \times \mathrm{KON}$
+\end{kurzregel}
+
+\begin{beispiel}[title=Beispiel]
+Ein Held mit KON 3 besitzt $14 + 2 \times 3 = 20$ Lebenspunkte.
+\end{beispiel}
 
 Die genauen Regeln für Schaden, Schilde, Ausweichen und Kampfunfähigkeit stehen im Kampfkapitel.
 
@@ -132,19 +138,25 @@ Mana (\manaGain/\manaLoss) zeigt, wie viel magische Kraft einem Helden zur Verf�
 
 Jeder Held besitzt einen Manavorrat. Dieser gibt an, wie viel Mana ein Held höchstens besitzen kann. Die Höhe des Manavorrats hängt vom Charisma des Helden ab.
 
-\begin{hptable}{C{3cm} Y}
-\textbf{CHA-Wert} & \textbf{Mana} \\
-0 & 0 \\
-1 & 2 \\
-2 & 4 \\
-3 & 6 \\
-4 & 8 \\
-5 & 10 \\
-\end{hptable}
+\begin{kurzregel}[title=Manavorrat berechnen]
+\textbf{Manavorrat} $= 2 \times \mathrm{CHA}$
+\end{kurzregel}
+
+\begin{beispiel}[title=Beispiel]
+Ein Held mit CHA 3 besitzt $2 \times 3 = 6$ Mana.
+\end{beispiel}
 
 Talente und andere Effekte können den Manavorrat eines Helden erhöhen oder verringern.
 
-Besitzt ein Held das allgemeine Talent \textbf{Magiebegabt}, erhöht sich sein Manavorrat zusätzlich um 6. Erst mit diesem Talent kann ein Held sein Mana verwenden, um Zauber zu erlernen und zu wirken.
+\begin{kurzregel}[title=Magiebegabt]
+Das Talent \emph{Magiebegabt} erhöht den maximalen Manavorrat dauerhaft um 6 Mana.
+\end{kurzregel}
+
+\begin{beispiel}[title=Beispiel]
+Ein Held mit CHA 3 und dem Talent \emph{Magiebegabt} besitzt $(2 \times 3) + 6 = 12$ Mana.
+\end{beispiel}
+
+Erst mit dem Talent \emph{Magiebegabt} kann ein Held sein Mana verwenden, um Zauber zu erlernen und zu wirken.
 
 Sinkt der Manavorrat eines Helden unter sein aktuelles Mana, wird sein aktuelles Mana sofort auf den neuen Manavorrat reduziert.
 
@@ -171,6 +183,10 @@ Rüstung und Schilde bestimmen meist:
 \end{itemize}
 
 Besondere Gegenstände können eigene Regeln haben. Manche Gegenstände können erschöpft werden, ähnlich wie bestimmte Talente.
+
+\begin{kurzregel}[title=Ausrüstung im Überblick]
+Waffen bestimmen viele körperliche Angriffe; Zauber können eigene magische Angriffe ermöglichen. Rüstung und Schilde schützen vor Schaden. Besondere Gegenstände eröffnen zusätzliche Möglichkeiten.
+\end{kurzregel}
 
 \section{Talente}
 

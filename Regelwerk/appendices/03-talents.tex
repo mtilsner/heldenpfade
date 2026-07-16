@@ -2,60 +2,64 @@
 
 Dieser Anhang enthält alle allgemeinen Talente und Rollentalente, die Helden erlernen können.
 
+\begin{kurzregel}[title=Talente einsetzen]
+Nennt ein Talent keine Aktion, wird es als \freeAction{} eingesetzt. Alle angegebenen Voraussetzungen und Kosten müssen dennoch vollständig erfüllt sein.
+\end{kurzregel}
+
 \section{Allgemeine Talente}
 
 \subsection{Magietalente}
 
-\begin{tabularx}{\textwidth}{p{3.0cm} p{2.8cm} p{2.2cm} X}
+\begin{hptable}{L{2.8cm} L{2.7cm} L{2.1cm} Y}
 \textbf{Name} & \textbf{Voraussetzung} & \textbf{Auslöser} & \textbf{Effekt} \\
 \hline
 Magiebegabt & CHA 1+ & Dauerhaft & Du darfst Zauber erlernen und wirken. Dein Manavorrat erhöht sich um 6. \\
 Manavorrat & Magiebegabt & Dauerhaft & Dein Manavorrat erhöht sich um 2. \\
 Schnelles Zaubern & Magiebegabt & Dauerhaft & Wähle beim Trainieren ein Schlüsselwort. Alle Zauber mit diesem Schlüsselwort kannst du mit einer schnelleren Aktion wirken beziehungsweise außerhalb eines Kampfes 30\,\% schneller. \\
-Sparsames Zaubern & Magiebegabt & Dauerhaft & Wähle beim Trainieren ein Schlüsselwort. Für alle Zauber mit diesem Schlüsselwort musst du beim Wirken 1 Mana weniger ausgeben, mindestens jedoch 1 Mana. \\
-\end{tabularx}
+Sparsames Zaubern & Magiebegabt & Dauerhaft & Wähle beim Trainieren ein Schlüsselwort. Für alle Zauber mit diesem Schlüsselwort musst du beim Wirken 1 Mana weniger ausgeben, mindestens jedoch 1 Mana. Trainierst du das Talent neu, darfst du ein neues Schlüsselwort wählen. \\
+\end{hptable}
 
 \section{Rollentalente}
 
 \subsection{Draufgänger}
 
-\begin{tabularx}{\textwidth}{p{3.0cm} p{2.8cm} p{2.2cm} X}
+\begin{hptable}{L{2.8cm} L{2.7cm} L{2.1cm} Y}
 \textbf{Name} & \textbf{Voraussetzung} & \textbf{Auslöser} & \textbf{Effekt} \\
 \hline
 Perfekter Treffer & -- & 1 \crystal & Nach deinem Schadenswurf darfst du beliebig viele geworfene Schadenswürfel auf ihre höchste Seite drehen. \\
-Mehrfachangriff & Perfekter Treffer & 1 \crystal & Dieser Angriff trifft zusätzlich einen zweiten Gegner in Angriffsreichweite mit demselben Ergebnis. \\
-Schwachstelle & Perfekter Treffer & 1 \crystal & Bei diesem Angriff werden alle \armor{} des gewählten Gegners ignoriert. \\
+Mehrfachangriff & Perfekter Treffer & 1 \crystal & Wähle einen zweiten Gegner in Angriffsreichweite. Die Angriffsprobe und der Schadenswurf gelten auch gegen ihn. Seine Schild-Symbole und sonstigen Abwehrregeln werden separat angewendet. \\
+Schwachstelle & Perfekter Treffer & 1 \crystal & Bei diesem Angriff werden alle Schild-Symbole des gewählten Gegners ignoriert. \\
 Blutrausch & Perfekter Treffer & Dauerhaft & Hast du höchstens die Hälfte deiner Lebenspunkte, werden alle deine Schadenswürfel um eine Stufe verbessert: \orangeDmgDie{} $\rightarrow$ \redDmgDie{}, \redDmgDie{} $\rightarrow$ \blackDmgDie{}, \blackDmgDie{} bleibt \blackDmgDie{}. \\
-Zielen & Perfekter Treffer & \standardAction & Verzichte auf deinen Angriff. Beim nächsten Angriff in diesem Kampf zeigen alle \blueDie{} und \greenDie{} automatisch einen \star. \\
-\end{tabularx}
+Zielen & Perfekter Treffer & \standardAction & Verzichte auf deinen Angriff. Bei deinem nächsten Angriff in diesem Kampf zählt jede leere Seite deiner \blueDie{} und \greenDie{} als ein \star. \\
+\end{hptable}
 
 \subsection{Verteidiger}
 
-\begin{tabularx}{\textwidth}{p{3.0cm} p{2.8cm} p{2.2cm} X}
+\begin{hptable}{L{2.8cm} L{2.7cm} L{2.1cm} Y}
 \textbf{Name} & \textbf{Voraussetzung} & \textbf{Auslöser} & \textbf{Effekt} \\
 \hline
 Beschützen & -- & 1 \crystal & Wähle einen Gegner. Dieser muss dich mit seiner nächsten Aktion angreifen. Kann er das nicht, verfällt seine nächste Aktion. \\
-Bollwerk & Beschützen & Dauerhaft & Verlässt ein benachbarter Gegner deine Nähe, darfst du mit einer ausgerüsteten Angriffsoption mit Schlagen oder Zaubern einen Gelegenheitsangriff gegen ihn ausführen. Der erste erzielte \star{} beendet seine Bewegung. Für alle weiteren \star{} wird die Schadensformel der gewählten Angriffsoption angewandt. Erzielst du keinen \star, setzt der Gegner seine Bewegung fort. \\
-Schildwall & Beschützen & Dauerhaft & Benachbarte Verbündete können bei Angriffen gegen sie deine \armor{} anstelle ihrer eigenen verwenden. \\
-Verteidigen & Beschützen & \exhaust & Verdopple deine \armor{} bis zum Beginn deines nächsten Zugs. \\
+Bollwerk & Beschützen & Dauerhaft & Verlässt ein benachbarter Gegner deine Nähe, darfst du sofort einen Gelegenheitsangriff mit einer ausgerüsteten Angriffsoption für Schlagen oder Zaubern ausführen. Der erste erzielte \star{} beendet seine Bewegung. Für alle weiteren \star{} wird die Schadensformel der gewählten Angriffsoption angewandt. Erzielst du keinen \star, setzt der Gegner seine Bewegung fort. \\
+Schildwall & Beschützen & Dauerhaft & Benachbarte Verbündete können bei Angriffen gegen sie deine Schild-Symbole anstelle ihrer eigenen verwenden. \\
+Verteidigen & Beschützen & \exhaust & Verdopple deine Schild-Symbole bis zum Beginn deines nächsten Zugs. \\
 Unbeugsam & Beschützen & \exhaust & Würdest du auf 0 oder weniger Lebenspunkte sinken, sinkst du stattdessen auf $2 \times \mathrm{KON}$ Lebenspunkte. \\
-\end{tabularx}
+\end{hptable}
 
 \subsection{Anführer}
 
-\begin{tabularx}{\textwidth}{p{3.0cm} p{2.8cm} p{2.2cm} X}
+\begin{hptable}{L{2.8cm} L{2.7cm} L{2.1cm} Y}
 \textbf{Name} & \textbf{Voraussetzung} & \textbf{Auslöser} & \textbf{Effekt} \\
 \hline
-Heilen & -- & \standardAction & Heile einen Helden um dein CHA an Lebenspunkten. Gibst du währenddessen 1 \crystal{} aus, verdoppelt sich die Heilung auf $2 \times \mathrm{CHA}$. \\
-Ermutigen & Heilen & 1 \crystal & Ein Verbündeter darf alle \blueDie{} seiner aktuellen Probe neu würfeln. \\
-Inspiration & Heilen & Dauerhaft & Gibst du einen \crystal{} aus, erhält ein Verbündeter deiner Wahl diesen \crystal. \\
-Erneuern & Heilen & 3 \crystal{} + \exhaust & Decke eine umgedrehte Talent- oder Ausrüstungskarte eines Verbündeten wieder auf. \\
-Aufmuntern & Heilen & \exhaust & Richte einen kampfunfähigen Helden mit vollen Lebenspunkten wieder auf. \\
-\end{tabularx}
+Heilende Worte & -- & \standardAction & Heile einen Helden um dein CHA an Lebenspunkten. Gibst du währenddessen 1 \crystal{} aus, verdoppelt sich die Heilung auf $2 \times \mathrm{CHA}$. \\
+Ermutigen & Heilende Worte & 1 \crystal & Ein Verbündeter darf alle \blueDie{} seiner aktuellen Probe neu würfeln. \\
+Inspiration & Heilende Worte & Dauerhaft & Gibst du einen \crystal{} aus, erhält ein Verbündeter deiner Wahl diesen \crystal. \\
+Erneuern & Heilende Worte & 3 \crystal{} + \exhaust & Mache eine erschöpfte Talent- oder Ausrüstungskarte eines Verbündeten bereit. \\
+Aufmuntern & Heilende Worte & \exhaust & Richte einen kampfunfähigen Helden mit vollen Lebenspunkten wieder auf. \\
+\end{hptable}
 
 \subsection{Taktiker}
 
-\begin{tabularx}{\textwidth}{p{3.0cm} p{2.8cm} p{2.2cm} X}
+\begin{hptable}{L{2.8cm} L{2.7cm} L{2.1cm} Y}
 \textbf{Name} & \textbf{Voraussetzung} & \textbf{Auslöser} & \textbf{Effekt} \\
 \hline
 Taktieren & -- & 1 \crystal & Sieh dir die nächsten drei KI-Einträge eines Gegners an. Entscheide, zu welchem Eintrag die KI springt. \\
@@ -63,4 +67,8 @@ Zu Fall bringen & Taktieren & 1 \crystal & Ein Gegner geht zu Boden. Angriffe ge
 Umpositionieren & Taktieren & 1 \crystal & Zwei Helden erhalten eine kostenlose \moveAction, die sie sofort nutzen dürfen. \\
 Voraussicht & Taktieren & Dauerhaft & Du darfst bei deinen Proben nach dem Wurf beliebig viele \star{} als \moon{} werten. \\
 Meisterplan & Taktieren & \exhaust & Alle Helden führen sofort einen zusätzlichen Zug aus. Anschließend führen die Gegner zwei vollständige Gegnerphasen aus. \\
-\end{tabularx}
+\end{hptable}
+
+\begin{todo}
+Die Funktionsweise von \emph{Taktieren} muss mit dem finalen Gegner- und KI-System abgeglichen werden.
+\end{todo}

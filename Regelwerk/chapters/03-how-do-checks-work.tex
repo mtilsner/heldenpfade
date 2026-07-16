@@ -6,7 +6,14 @@ Manchmal ist sofort klar, was passiert. Dann erzählt ihr einfach weiter. Manchm
 
 \section{Wann wird gewürfelt?}
 
-Eine Probe wird nur dann gebraucht, wenn das Vorhaben grundsätzlich möglich ist, sein Ausgang unklar ist und Erfolg oder Fehlschlag einen Unterschied machen.
+\begin{kurzregel}[title=Wann ist eine Probe nötig?]
+Eine Probe wird nur durchgeführt, wenn
+\begin{itemize}
+  \item das Vorhaben grundsätzlich möglich ist,
+  \item der Ausgang unklar ist und
+  \item Erfolg oder Fehlschlag einen Unterschied machen.
+\end{itemize}
+\end{kurzregel}
 
 Ist ein Vorhaben leicht und spricht nichts dagegen, gelingt es ohne Probe. Ist es unmöglich, wird ebenfalls nicht gewürfelt.
 
@@ -23,6 +30,12 @@ Bei Proben werden vier grundlegende Symbole verwendet:
   \item der \textbf{Stern (\star)} als Erfolgssymbol.
 \end{itemize}
 
+\begin{kurzregel}[title=Grundregel einer Probe]
+\textbf{Würfelpool:} 1\heroDie{} + passende \greenDie{} + passende \blueDie
+
+\textbf{Erfolg:} erzielte \star{} $\geq$ Schwierigkeit
+\end{kurzregel}
+
 Jede Probe eines Helden enthält genau einen \heroDie. Dazu kommen die \greenDie{} der passenden Attribute und die \blueDie{} der passenden Fertigkeit.
 
 Nach dem Wurf werden alle \star{} zusammengezählt. Erreicht der Held mindestens die von der Spielleitung festgelegte Schwierigkeit, gelingt die Probe.
@@ -37,15 +50,35 @@ Jede Fertigkeit gehört zu zwei Attributen. Für eine Fertigkeitsprobe nimmt der
   \item die \blueDie{} der verwendeten Fertigkeit.
 \end{itemize}
 
-\textbf{Beispiel:} Turnen gehört zu GEW und KRA. Ein Held mit GEW 2, KRA 1 und Turnen 1 würfelt \heroDie{} + 3\greenDie{} + 1\blueDie.
+\begin{beispiel}[title=Würfelpool einer Fertigkeitsprobe]
+Turnen gehört zu GEW und KRA. Kiera besitzt GEW 2, KRA 1 und Turnen 1.
+
+Sie würfelt daher:
+
+\textbf{1\heroDie{} + 3\greenDie{} + 1\blueDie}
+\end{beispiel}
 
 \subsection{Attributsproben}
 
-Passt keine Fertigkeit, kann die Spielleitung eine Attributsprobe verlangen. Sie verwendet entweder zwei passende Attribute oder ein besonders wichtiges Attribut doppelt.
+Passt keine Fertigkeit, kann die Spielleitung eine Attributsprobe verlangen.
 
-Auch eine Attributsprobe enthält immer \heroDie.
+\begin{kurzregel}[title=Attributsprobe]
+Für eine Attributsprobe verwendet der Held
+\begin{itemize}
+  \item immer 1\heroDie{} und
+  \item entweder die \greenDie{} zweier passender Attribute oder die \greenDie{} eines besonders wichtigen Attributs zweimal.
+\end{itemize}
+\end{kurzregel}
 
-\section{Ablauf einer Probe}
+\begin{beispiel}[title=Ein Attribut doppelt verwenden]
+Kiera versucht, eine schwere Tür aufzudrücken. Die Spielleitung entscheidet, dass allein ihre Kraft entscheidend ist.
+
+Kiera besitzt KRA 3. Da Kraft doppelt verwendet wird, würfelt sie:
+
+\textbf{1\heroDie{} + 3\greenDie{} + 3\greenDie}
+\end{beispiel}
+
+\section{Eine Probe in sieben Schritten}
 
 \begin{enumerate}
   \item Der Spieler beschreibt das Vorhaben.
@@ -53,24 +86,22 @@ Auch eine Attributsprobe enthält immer \heroDie.
   \item Die Spielleitung bestimmt Fertigkeit oder Attribute und nennt die Schwierigkeit.
   \item Der Spieler bildet den Würfelpool und würfelt.
   \item Vorteil, Nachteil und Mondkristalle werden angewendet.
-  \item Alle \star{} werden gezählt.
-  \item Die Spielleitung beschreibt das Ergebnis.
+  \item Alle \star{} werden gezählt und mit der Schwierigkeit verglichen.
+  \item Die Spielleitung beschreibt Erfolg, Fehlschlag oder Teilerfolg.
 \end{enumerate}
 
 \section{Schwierigkeit}
 
-\begin{center}
-\begin{tabular}{ll}
-\textbf{Schwierigkeit} & \textbf{Benötigte \star} \\
-Leicht & 1 \\
-Normal & 2 \\
-Schwierig & 3 \\
-Sehr schwierig & 4 \\
-Heldentat & 5 \\
-\end{tabular}
-\end{center}
+\begin{hptable}{L{3cm} C{2.5cm} Y}
+\textbf{Schwierigkeit} & \textbf{Benötigte \star} & \textbf{Beispiel} \\
+Leicht & 1 & Über einen breiten Bach springen \\
+Normal & 2 & Sich an einer Wache vorbeischleichen \\
+Schwierig & 3 & Einen verschlossenen Tresor knacken \\
+Sehr schwierig & 4 & Eine außergewöhnlich anspruchsvolle Aufgabe unter Zeitdruck bewältigen \\
+Heldentat & 5 & Etwas vollbringen, das selbst für erfahrene Helden beinahe unmöglich ist \\
+\end{hptable}
 
-Die Spielleitung legt die Schwierigkeit passend zur Situation fest.
+Die Spielleitung legt die Schwierigkeit passend zur Situation fest. Die Beispiele dienen nur als Orientierung; Umstände, Zeitdruck, Vorbereitung und verfügbare Hilfsmittel können dieselbe Aufgabe leichter oder schwerer machen.
 
 \section{Erfolg, Fehlschlag und Teilerfolg}
 
@@ -80,9 +111,17 @@ Ein Fehlschlag soll die Geschichte nicht anhalten. Er verändert die Situation: 
 
 Ein Teilerfolg bedeutet, dass das Vorhaben gelingt, aber ein Problem entsteht.
 
+\begin{beispiel}[title=Teilerfolg]
+Kiera knackt ein Schloss, erreicht aber nicht genügend \star{} für einen vollständigen Erfolg. Die Tür öffnet sich trotzdem, doch das Werkzeug bricht ab und verursacht so viel Lärm, dass eine Wache aufmerksam wird.
+\end{beispiel}
+
 \section{Vorteil und Nachteil}
 
-Vorteil und Nachteil gelten nur für Proben von Helden, nicht für Gegner oder Schadenswürfe. Treffen beide gleichzeitig zu, heben sie sich gegenseitig auf.
+\begin{kurzregel}[title=Vorteil und Nachteil]
+Vorteil und Nachteil gelten nur für Proben von Helden, nicht für Gegner oder Schadenswürfe.
+
+Treffen Vorteil und Nachteil gleichzeitig zu, heben sie sich gegenseitig auf.
+\end{kurzregel}
 
 \subsection{Vorteil}
 
@@ -94,28 +133,69 @@ Bei Nachteil darf der Spieler für diese Probe keine Mondkristalle einsetzen.
 
 \section{Monde und Mondkristalle}
 
-Der \textbf{Mond (\moon)} ist ein besonderes Würfelergebnis. Ein \moon{} zählt nicht als \star. Zeigt eine Würfelseite beides, wird der \star{} trotzdem normal gezählt.
+\begin{kurzregel}[title=Monde]
+Ein \moon{} zählt nicht als \star.
 
-Jeder gewürfelte \moon{} erzeugt sofort einen \textbf{Mondkristall (\crystal)}. Der Spieler kann ihn noch in derselben Probe oder später einsetzen. Ein Held kann beliebig viele \crystal{} besitzen.
+Zeigt eine Würfelseite sowohl \moon{} als auch \star, wird der \star{} trotzdem normal gezählt.
+\end{kurzregel}
+
+Jeder gewürfelte \moon{} erzeugt sofort einen \textbf{Mondkristall (\crystal)}. Effekte oder besondere Würfel können später auch mehrere Mondkristalle erzeugen. Der Spieler kann erhaltene \crystal{} noch in derselben Probe oder später einsetzen. Ein Held kann beliebig viele \crystal{} besitzen.
 
 Wann ungenutzte \crystal{} verfallen, bestimmt die Spielleitung passend zum Abenteuer.
 
+\begin{todo}[title={TODO \#1 -- Regeldesign: Mondkristalle außerhalb einer Probe}]
+\textbf{Offene Designentscheidung}
+
+Der Umgang mit Mondkristallen außerhalb einer Probe ist noch nicht endgültig festgelegt.
+
+Zu klären:
+\begin{itemize}
+  \item Gibt es ein Maximum für gespeicherte Mondkristalle?
+  \item Wann verfallen ungenutzte Mondkristalle?
+  \item Bleiben Mondkristalle zwischen Szenen, Begegnungen oder Abenteuern erhalten?
+\end{itemize}
+\end{todo}
+
 \subsection{Mondkristalle einsetzen}
 
-Ein Spieler kann einen \crystal{} ausgeben, um alle Würfel einer Farbe neu zu würfeln:
-
+\begin{kurzregel}[title=Mondkristall einsetzen]
+Gib 1\crystal{} aus und würfle alle Würfel \textbf{einer Farbe} neu:
 \begin{itemize}
   \item den \heroDie,
-  \item alle \greenDie,
-  \item oder alle \blueDie.
+  \item alle \greenDie{} oder
+  \item alle \blueDie.
 \end{itemize}
+Danach gilt das neue Ergebnis.
+\end{kurzregel}
 
-Danach gilt das neue Ergebnis. Mehrere \crystal{} können in derselben Probe eingesetzt werden. Würfel, die bereits für einen anderen Effekt verwendet wurden, sind fest und dürfen in dieser Probe nicht mehr neu gewürfelt werden.
+Mehrere \crystal{} können in derselben Probe eingesetzt werden. Würfel, die bereits für einen anderen Effekt verwendet wurden, sind fest und dürfen in dieser Probe nicht mehr neu gewürfelt werden.
 
 Talente und andere Effekte können zusätzliche Möglichkeiten bieten, \crystal{} auszugeben.
 
-\section{Beispiel}
+\section{Ausführliches Beispiel}
 
-Kiera legt eine schwierige Turnen-Probe ab und benötigt 3\star. Sie würfelt \heroDie{} + 3\greenDie{} + 1\blueDie. Der \heroDie{} zeigt einen \moon, zwei andere Würfel zeigen zusammen 2\star.
+\begin{beispiel}[title=Eine schwierige Turnen-Probe]
+\textbf{1. Würfelpool}
 
-Kiera erhält sofort 1\crystal{} und gibt ihn aus, um alle \greenDie{} neu zu würfeln. Danach erzielt sie insgesamt 3\star{} und besteht die Probe.
+Kiera besitzt GEW 2, KRA 1 und Turnen 1. Sie würfelt daher \heroDie{} + 3\greenDie{} + 1\blueDie.
+
+\textbf{2. Schwierigkeit}
+
+Die Spielleitung legt die Schwierigkeit auf \textbf{schwierig} fest. Kiera benötigt also 3\star.
+
+\textbf{3. Erster Wurf}
+
+Der \heroDie{} zeigt einen \moon. Zwei andere Würfel zeigen zusammen 2\star.
+
+\textbf{4. Mondkristall}
+
+Der gewürfelte \moon{} erzeugt sofort 1\crystal.
+
+\textbf{5. Neuwurf}
+
+Kiera gibt den \crystal{} aus und würfelt alle \greenDie{} neu. Der \heroDie{} und der \blueDie{} bleiben liegen.
+
+\textbf{6. Ergebnis}
+
+Nach dem Neuwurf erzielt Kiera insgesamt 3\star{} und besteht die Probe.
+\end{beispiel}
