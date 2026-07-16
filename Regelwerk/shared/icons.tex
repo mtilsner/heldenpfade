@@ -1,9 +1,59 @@
 % Zentrale Symbolbefehle fuer Heldenpfade
-% SVG-Quelldateien liegen unter Regelwerk/assets/icons.
-% Der Build konvertiert sie vor dem LaTeX-Lauf nach assets/icons/generated.
+% SVG-Dateien liegen unter Regelwerk/assets/icons.
 
 % Einheitliche Einbindung mit sauberer Ausrichtung an der Textgrundlinie.
+% Die Icons enthalten keinen SVG-Text. Deshalb wird der LaTeX-Overlay-Export
+% von Inkscape deaktiviert und nur die reine Vektorgrafik eingebunden.
 \newcommand{\hpIcon}[2][1em]{%
-  \raisebox{-0.14em}{\includegraphics[height=#1]{assets/icons/generated/#2.pdf}}%
+  \raisebox{-0.14em}{\includesvg[height=#1,inkscapelatex=false]{assets/icons/#2}}%
 }
 
+\newcommand{\hpActionIcon}[1]{%
+  \raisebox{0.1ex}{\textcircled{\sffamily\bfseries\scriptsize #1}}%
+}
+
+% Farben fuer Symbole, fuer die noch keine eigene Grafik vorliegt
+\definecolor{hpGreen}{RGB}{46,125,50}
+\definecolor{hpRed}{RGB}{192,38,45}
+\definecolor{hpMana}{RGB}{55,95,180}
+
+% Wuerfel
+\newcommand{\heroDie}{\hpIcon{icon-die-white}}
+\newcommand{\greenDie}{\hpIcon{icon-die-green}}
+\newcommand{\blueDie}{\hpIcon{icon-die-blue}}
+\newcommand{\orangeDmgDie}{\hpIcon{icon-die-orange}}
+\newcommand{\redDmgDie}{\hpIcon{icon-die-red}}
+\newcommand{\blackDmgDie}{\hpIcon{icon-die-black}}
+
+% Sterne und Monde
+% \star ist bereits ein LaTeX-Mathematikbefehl und wird hier bewusst
+% als Heldenpfade-Symbol neu definiert.
+\renewcommand{\star}{\hpIcon{icon-star}}
+\newcommand{\moon}{\hpIcon{icon-moon}}
+
+% Leben und Mana
+\newcommand{\lifeLoss}{\textcolor{hpRed}{\ensuremath{\heartsuit}}}
+\newcommand{\lifeGain}{\textcolor{hpGreen}{\ensuremath{\heartsuit}}}
+\newcommand{\manaLoss}{\textcolor{hpRed}{\ensuremath{\blacklozenge}}}
+\newcommand{\manaGain}{\textcolor{hpGreen}{\ensuremath{\blacklozenge}}}
+
+% Ressourcen
+\newcommand{\crystal}{\hpIcon{icon-crystal}}
+
+% Aktionen
+\newcommand{\standardAction}{\hpActionIcon{A}}
+\newcommand{\moveAction}{\hpActionIcon{B}}
+\newcommand{\freeAction}{\hpActionIcon{F}}
+
+% Angriffsarten
+\newcommand{\meleeAttack}{\hpIcon{icon-attack-melee}}
+\newcommand{\rangedAttack}{\hpIcon{icon-attack-range}}
+\newcommand{\magicAttack}{\hpIcon{icon-attack-magic}}
+
+% Kampf
+\newcommand{\armor}{\hpIcon{icon-shield}}
+\newcommand{\armorPierce}{\hpIcon{icon-shield-break}}
+\newcommand{\evade}{\hpIcon{icon-evade}}
+
+% Karten
+\newcommand{\exhaust}{\ensuremath{\circlearrowright}}
