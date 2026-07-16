@@ -2,7 +2,7 @@
 
 \input{shared/enemies.tex}
 
-Der Gegner-Almanach versammelt die spielrelevanten Werte, Angriffe und Verhaltensregeln der Gegner. Jeder Eintrag ist als kompaktes Profil aufgebaut: Das Werteband zeigt die wichtigsten Kennzahlen, darunter stehen Angriffe und Verhalten direkt nebeneinander.
+Der Gegner-Almanach versammelt die spielrelevanten Werte, Angriffe und Verhaltensregeln der Gegner. Jeder Eintrag ist als geschlossenes Profil aufgebaut. Darin ordnen sich die Informationskarten frei in zwei Spalten an und nutzen den vorhandenen Platz entsprechend ihres Inhalts.
 
 \section{Höhlenspinne}
 
@@ -14,7 +14,7 @@ Der Gegner-Almanach versammelt die spielrelevanten Werte, Angriffe und Verhalten
   \smallskip
   Eine lauernde Jägerin, die ihre Beute zunächst mit klebrigen Netzen schwächt und anschließend aus nächster Nähe zubeißt.
 
-  \begin{enemygrid}
+  \begin{enemycolumns}
     \begin{enemysectionbox}{Angriffe}
       \textbf{Netzspucken} \hfill \rangedAttack
 
@@ -28,25 +28,20 @@ Der Gegner-Almanach versammelt die spielrelevanten Werte, Angriffe und Verhalten
       3~\redDmgDie{} Schadenswürfel
     \end{enemysectionbox}
 
-    \begin{enemysectionbox}{Verhalten}
-      Solange mindestens ein Held keinen Netzmarker besitzt, setzt die Höhlenspinne \textbf{Netzspucken} ein.
-
-      Besitzen alle Helden mindestens einen Netzmarker, führt sie einen \textbf{Biss} aus.
-    \end{enemysectionbox}
-
     \begin{enemysectionbox}{Netzmarker}
       Jeder Netzmarker verhindert den nächsten Angriffserfolg oder Ausweicherfolg des betroffenen Helden.
 
       Anschließend wird der Marker entfernt.
     \end{enemysectionbox}
 
-    \begin{enemysectionbox}{Taktische Rolle}
-      \enemyrole{Kontrolle und Vorbereitung}
+    \enemycolumnbreak
 
-      \medskip
-      \enemydesign{Die Höhlenspinne verursacht zunächst wenig direkten Schaden. Ihre Netze schwächen jedoch gezielt die nächsten Angriffe oder Ausweichversuche und erhöhen so den Druck nachfolgender Aktionen.}
+    \begin{enemysectionbox}{Verhalten}
+      Solange mindestens ein Held keinen Netzmarker besitzt, setzt die Höhlenspinne \textbf{Netzspucken} ein.
+
+      Besitzen alle Helden mindestens einen Netzmarker, führt sie einen \textbf{Biss} aus.
     \end{enemysectionbox}
-  \end{enemygrid}
+  \end{enemycolumns}
 \end{enemyprofile}
 
 \section{Baumdrache}
@@ -59,7 +54,7 @@ Der Gegner-Almanach versammelt die spielrelevanten Werte, Angriffe und Verhalten
   \smallskip
   Ein mächtiger Gegner mit einer vorhersehbaren, aber abwechslungsreichen Angriffsfolge. Wer seine Muster erkennt, kann sich gezielt auf den nächsten Schlag vorbereiten.
 
-  \begin{enemygrid}
+  \begin{enemycolumns}
     \begin{enemysectionbox}{Angriffe}
       \textbf{Feueratem} \hfill \rangedAttack
 
@@ -81,6 +76,8 @@ Der Gegner-Almanach versammelt die spielrelevanten Werte, Angriffe und Verhalten
       4~\orangeDmgDie{}
     \end{enemysectionbox}
 
+    \enemycolumnbreak
+
     \begin{enemysectionbox}{Angriffsfolge}
       Der Baumdrache führt pro Runde genau eine Aktion aus:
 
@@ -96,18 +93,5 @@ Der Gegner-Almanach versammelt die spielrelevanten Werte, Angriffe und Verhalten
 
       Danach beginnt die Folge erneut.
     \end{enemysectionbox}
-
-    \begin{enemysectionbox}{Prolog-Regel}
-      Im Prolog endet der Kampf nicht mit dem Tod des Baumdrachen.
-
-      Sobald er insgesamt \textbf{30 Schaden} erlitten hat, flieht er.
-    \end{enemysectionbox}
-
-    \begin{enemysectionbox}{Taktische Rolle}
-      \enemyrole{Boss mit lernbarer Rotation}
-
-      \medskip
-      \enemydesign{Der Baumdrache verbindet Flächenschaden, hohen Einzelschaden und Positionskontrolle. Seine feste Reihenfolge macht die Bedrohung planbar und belohnt vorausschauendes Handeln.}
-    \end{enemysectionbox}
-  \end{enemygrid}
+  \end{enemycolumns}
 \end{enemyprofile}
