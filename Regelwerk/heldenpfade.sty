@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{heldenpfade}[2026/07/15 Moderner Regelwerkstil]
+\ProvidesPackage{heldenpfade}[2026/07/16 Moderner Regelwerkstil]
 
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
@@ -14,12 +14,14 @@
 \RequirePackage{amssymb}
 \RequirePackage{tabularx}
 \RequirePackage{array}
+\RequirePackage{etoolbox}
 \RequirePackage{csquotes}
 \RequirePackage{parskip}
 \RequirePackage{titlesec}
 \RequirePackage{fancyhdr}
 \RequirePackage{enumitem}
 \RequirePackage[most]{tcolorbox}
+\RequirePackage{svg}
 
 % Farbpalette
 \definecolor{hpText}{HTML}{2A2A2A}
@@ -74,6 +76,10 @@
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
+% Alle Tabellen im Regelwerk verwenden die serifenlose UI-Schrift.
+\AtBeginEnvironment{tabular}{\HPUIFont}
+\AtBeginEnvironment{tabularx}{\HPUIFont}
+
 % Kapitel und Abschnitte
 \titleformat{\chapter}[display]
   {\normalfont\HPHeadingFont\color{hpBrown}}
@@ -99,7 +105,7 @@
 
 \titleformat{\subsubsection}
   {\normalfont\HPHeadingFont\normalsize\color{hpBrown}}
-  {\thesubsubsection}
+  {\thesubsection}
   {0.6em}
   {}
 \titlespacing*{\subsubsection}{0pt}{1.0\baselineskip}{0.25\baselineskip}
@@ -192,10 +198,12 @@
 \newenvironment{tip}[1][]{\begin{tipbox}[#1]}{\end{tipbox}}
 \newenvironment{kurzregel}[1][]{\begin{quickreference}[#1]}{\end{quickreference}}
 
-% Tabellen mit serifenloser Schrift und bewusst grosszuegigem Zeilenabstand
+% Tabellen mit serifenloser Schrift und bewusst grosszuegigem Zeilenabstand.
+% tabularx muss hier ueber \tabularx/\endtabularx gestartet werden, damit es
+% den Abschluss der umschliessenden hptable-Umgebung korrekt erkennt.
 \newenvironment{hptable}[1]
-  {\begingroup\HPUIFont\renewcommand{\arraystretch}{1.45}\setlength{\tabcolsep}{7pt}\emergencystretch=1.5em\begin{tabularx}{\linewidth}{#1}}
-  {\end{tabularx}\endgroup}
+  {\begingroup\HPUIFont\renewcommand{\arraystretch}{1.45}\setlength{\tabcolsep}{7pt}\emergencystretch=1.5em\tabularx{\linewidth}{#1}}
+  {\endtabularx\endgroup}
 
-% Zentrale, spaeter austauschbare Spielsymbole
+% Zentrale Spielsymbole
 \input{shared/icons.tex}

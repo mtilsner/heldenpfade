@@ -9,6 +9,10 @@ on:
       - '.gitignore'
   workflow_dispatch:
 
+concurrency:
+  group: build-regelwerk-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -19,12 +23,33 @@ jobs:
     steps:
       - name: Repository auschecken
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Inkscape installieren
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y inkscape
+
+      - name: SVG-Icons in PDF-Vektorgrafiken konvertieren
+        run: |
+          mkdir -p Regelwerk/assets/icons/generated
+          find Regelwerk/assets/icons -maxdepth 1 -type f -name '*.svg' -print0 |
+            while IFS= read -r -d '' svg; do
+              name="$(basename "${svg}" .svg)"
+              inkscape "${svg}" \
+                --export-type=pdf \
+                --export-filename="Regelwerk/assets/icons/generated/${name}.pdf"
+            done
+
+          test -f Regelwerk/assets/icons/generated/icon-die-white.pdf
 
       - name: LaTeX kompilieren
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
           working_directory: Regelwerk
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
 
       - name: PDF in Regelwerk/build ablegen
         run: |
@@ -35,12 +60,18 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
+
           git add -f Regelwerk/build/Heldenpfade-Regelwerk.pdf
-          
+
           if git diff --cached --quiet; then
             echo "PDF ist unverändert. Kein Commit notwendig."
-          else
-            git commit -m "ci: update generated Regelwerk PDF"
-            git push
+            exit 0
+          fi
+
+          git commit -m "ci: update generated Regelwerk PDF"
+
+          if ! git push origin "HEAD:${GITHUB_REF_NAME}"; then
+            echo "Der Branch wurde während des Builds aktualisiert. Rebase und erneuter Push."
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
