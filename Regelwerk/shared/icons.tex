@@ -1,38 +1,32 @@
 % Zentrale Symbolbefehle fuer Heldenpfade
-% Die aktuellen Darstellungen sind bewusst einfache Platzhalter.
-% Spaeter koennen sie hier zentral durch Bilddateien ersetzt werden.
+% SVG-Dateien liegen unter Regelwerk/assets/icons.
 
-% Hilfsbefehle
-\newcommand{\hpDieIcon}[2]{%
-  \begingroup
-  \setlength{\fboxsep}{1.2pt}%
-  \raisebox{0.1ex}{\fcolorbox{black}{#1}{\textcolor{#2}{\sffamily\bfseries\scriptsize W}}}%
-  \endgroup
+% Einheitliche Einbindung mit sauberer Ausrichtung an der Textgrundlinie.
+\newcommand{\hpIcon}[2][1em]{%
+  \raisebox{-0.14em}{\includesvg[height=#1]{assets/icons/#2}}%
 }
 
 \newcommand{\hpActionIcon}[1]{%
   \raisebox{0.1ex}{\textcircled{\sffamily\bfseries\scriptsize #1}}%
 }
 
-% Farben
+% Farben fuer Symbole, fuer die noch keine eigene Grafik vorliegt
 \definecolor{hpGreen}{RGB}{46,125,50}
-\definecolor{hpBlue}{RGB}{30,100,190}
-\definecolor{hpOrange}{RGB}{230,126,34}
 \definecolor{hpRed}{RGB}{192,38,45}
 \definecolor{hpMana}{RGB}{55,95,180}
 
 % Wuerfel
-\newcommand{\heroDie}{\hpDieIcon{white}{black}}
-\newcommand{\greenDie}{\hpDieIcon{hpGreen}{white}}
-\newcommand{\blueDie}{\hpDieIcon{hpBlue}{white}}
-\newcommand{\orangeDmgDie}{\hpDieIcon{hpOrange}{white}}
-\newcommand{\redDmgDie}{\hpDieIcon{hpRed}{white}}
-\newcommand{\blackDmgDie}{\hpDieIcon{black}{white}}
+\newcommand{\heroDie}{\hpIcon{icon-die-white}}
+\newcommand{\greenDie}{\hpIcon{icon-die-green}}
+\newcommand{\blueDie}{\hpIcon{icon-die-blue}}
+\newcommand{\orangeDmgDie}{\hpIcon{icon-die-orange}}
+\newcommand{\redDmgDie}{\hpIcon{icon-die-red}}
+\newcommand{\blackDmgDie}{\hpIcon{icon-die-black}}
 
 % Sterne und Monde
 % \star ist bereits ein LaTeX-Mathematikbefehl und wird hier bewusst
 % als Heldenpfade-Symbol neu definiert.
-\renewcommand{\star}{\ensuremath{\ast}}
+\renewcommand{\star}{\hpIcon{icon-star}}
 \newcommand{\moon}{\ensuremath{\mathord{\mathrm{C}}}}
 
 % Leben und Mana
@@ -42,17 +36,22 @@
 \newcommand{\manaGain}{\textcolor{hpGreen}{\ensuremath{\blacklozenge}}}
 
 % Ressourcen
-\newcommand{\crystal}{\textcolor{hpMana}{\ensuremath{\blacklozenge}}}
+\newcommand{\crystal}{\hpIcon{icon-crystal}}
 
 % Aktionen
 \newcommand{\standardAction}{\hpActionIcon{A}}
 \newcommand{\moveAction}{\hpActionIcon{B}}
 \newcommand{\freeAction}{\hpActionIcon{F}}
 
+% Angriffsarten
+\newcommand{\meleeAttack}{\hpIcon{icon-attack-melee}}
+\newcommand{\rangedAttack}{\hpIcon{icon-attack-range}}
+\newcommand{\magicAttack}{\hpIcon{icon-attack-magic}}
+
 % Kampf
-\newcommand{\armor}{\ensuremath{\square}}
-\newcommand{\armorPierce}{\ensuremath{\square\mkern-9mu/}}
-\newcommand{\evade}{\ensuremath{\curvearrowright}}
+\newcommand{\armor}{\hpIcon{icon-shield}}
+\newcommand{\armorPierce}{\hpIcon{icon-shield-break}}
+\newcommand{\evade}{\hpIcon{icon-evade}}
 
 % Karten
 \newcommand{\exhaust}{\ensuremath{\circlearrowright}}
