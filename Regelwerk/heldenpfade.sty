@@ -137,6 +137,11 @@
   pdfborder={0 0 0}
 }
 
+% Verweise auf Kapitel und Anhaenge
+% Die gesamte Bezeichnung ist anklickbar; \ref* verhindert verschachtelte Links.
+\newcommand{\chapterref}[1]{\hyperref[#1]{Kapitel~\ref*{#1}}}
+\newcommand{\appendixref}[1]{\hyperref[#1]{Anhang~\ref*{#1}}}
+
 % Gemeinsamer Stil fuer Hervorhebungen
 \tcbset{
   hpbox/.style={
