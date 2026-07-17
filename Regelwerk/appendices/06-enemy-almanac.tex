@@ -7,7 +7,7 @@ Der Gegner-Almanach versammelt die spielrelevanten Werte, Angriffe und Verhalten
 
 \begin{enemyprofile}{Höhlenspinne}
   \begin{enemystats}
-    Lebenspunkte & 12~\lifeLoss & Schilde & 1~\armor & Rolle & Kontrollgegner \\
+    Lebenspunkte & 12~\lifeLoss & Schild-Symbole & 1~\armor & Rolle & Kontrollgegner \\
   \end{enemystats}
 
   \smallskip
@@ -49,7 +49,7 @@ Der Gegner-Almanach versammelt die spielrelevanten Werte, Angriffe und Verhalten
 
 \begin{enemyprofile}{Baumdrache}
   \begin{enemystats}
-    Lebenspunkte & 50~\lifeLoss & Schilde & 3~\armor & Rolle & Bossgegner \\
+    Lebenspunkte & 50~\lifeLoss & Schild-Symbole & 3~\armor & Rolle & Bossgegner \\
   \end{enemystats}
 
   \smallskip
@@ -59,7 +59,7 @@ Der Gegner-Almanach versammelt die spielrelevanten Werte, Angriffe und Verhalten
     \begin{enemysectionbox}{Angriffe}
       \textbf{Feueratem} \hfill \rangedAttack
 
-      5~\orangeDmgDie{} gegen alle Helden
+      6~\orangeDmgDie{} gegen alle Helden
 
       \medskip
       \textbf{Biss} \hfill \meleeAttack
@@ -80,26 +80,24 @@ Der Gegner-Almanach versammelt die spielrelevanten Werte, Angriffe und Verhalten
     \enemycolumnbreak
 
     \begin{enemysectionbox}{Gegner-KI}
-      Der Baumdrache führt pro Runde genau eine Aktion aus. Er verwendet jeweils den nächsten Angriff dieser Reihenfolge:
+      Hat der Baumdrache 35 oder mehr Schaden erlitten, flieht er aus dem Kampf. Andernfalls verwendet er jeweils den nächsten Eintrag dieser Reihenfolge:
 
       \begin{enumerate}[leftmargin=1.5em,itemsep=0.15\baselineskip]
         \item Feueratem
-        \item Biss
-        \item Schwanzschlag
+        \item Biss und Schwanzschlag
         \item Krallenhieb
-        \item Biss
-        \item Schwanzschlag
+        \item Biss und Schwanzschlag
         \item Krallenhieb
       \end{enumerate}
 
-      Danach beginnt die Reihenfolge erneut.
+      Bei \textbf{Biss und Schwanzschlag} führt der Baumdrache beide Angriffe nacheinander aus. Danach beginnt die Reihenfolge erneut.
     \end{enemysectionbox}
   \end{enemycolumns}
 \end{enemyprofile}
 
 \begin{enemyprofile}{Krähe}
   \begin{enemystats}
-    Lebenspunkte & 24~\lifeLoss & Schilde & 0~\armor & Rolle & Mobiler Plänkler \\
+    Lebenspunkte & 24~\lifeLoss & Schild-Symbole & 0~\armor & Rolle & Mobiler Plänkler \\
   \end{enemystats}
 
   \smallskip
