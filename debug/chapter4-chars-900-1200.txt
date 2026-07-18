@@ -1,0 +1,5 @@
+ähigkeit einsetzen.
+
+Mit einer \moveAction{} kann er sich bewegen oder seine Ausrüstung neu anordnen. Seine \standardAction{} darf er stattdessen als zweite \moveAction{} verwenden.
+
+\freeAction{} sind kurze Handlungen wie etwas rufen, auf etwas zeigen oder einen Gegenstand fallen lassen. Sie dürfen
