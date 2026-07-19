@@ -61,7 +61,7 @@ Jede Angriffsoption legt fest,
 
 \begin{itemize}
   \item welche Angriffsfertigkeit verwendet wird,
-  \item welche Kaufoptionen zur Verfügung stehen und
+  \item wie erzielte \star{} ausgegeben werden können und
   \item welche zusätzlichen Folgen nach dem Angriff eintreten.
 \end{itemize}
 
@@ -72,13 +72,13 @@ Eine Angriffsoption auf einer Ausrüstungskarte kann nur gewählt werden, wenn s
   \item Angriffsoption wählen.
   \item Zulässiges Ziel bestimmen.
   \item Angriffsprobe ablegen.
-  \item Bei mindestens einem \star{} Kaufoptionen erwerben.
+  \item Bei mindestens einem \star{} Sterne gemäß der Angriffsoption ausgeben.
   \item Verbleibende \star{} zum Verbessern erhaltener Schadenswürfel ausgeben.
   \item Schadenspools durch Effekte verändern und gegebenenfalls vor dem Wurf auf mehrere Ziele verteilen.
   \item Jeden Schadenspool getrennt werfen und den Schaden addieren.
   \item Rüstungsbruch und \armor{} für jedes Ziel anwenden.
   \item Verbleibenden Schaden von den jeweiligen Lebenspunkten abziehen.
-  \item Gekaufte Kampfeffekte und zusätzliche Folgen zu ihrem jeweils angegebenen Zeitpunkt abhandeln.
+  \item Ausgelöste Kampfeffekte und zusätzliche Folgen zu ihrem jeweils angegebenen Zeitpunkt abhandeln.
 \end{enumerate}
 \end{kurzregel}
 
@@ -92,13 +92,13 @@ Für die Angriffsfertigkeiten gelten folgende Reichweiten:
 
 \subsection{Treffen}
 
-Der Spieler legt mit der angegebenen Angriffsfertigkeit eine Angriffsprobe nach den Regeln aus \chapterref{chap:checks} ab. Zeigt sie keinen \star, verfehlt der Angriff. Jeder erzielte \star{} kann anschließend ausgegeben werden, um eine oder mehrere Kaufoptionen der gewählten Angriffsoption zu erwerben. Die vollständigen Regeln für Kaufoptionen stehen in \chapterref{chap:equipment}.
+Der Spieler legt mit der angegebenen Angriffsfertigkeit eine Angriffsprobe nach den Regeln aus \chapterref{chap:checks} ab. Zeigt sie keinen \star, verfehlt der Angriff. Jeder erzielte \star{} kann anschließend gemäß den Angaben der gewählten Angriffsoption ausgegeben werden. Die vollständigen Regeln zum Ausgeben von Sternen stehen in \chapterref{chap:equipment}.
 
 Helden erhalten Vorteil auf Angriffsproben gegen Gegner mit dem Statuseffekt \emph{Zu Boden}. Ein Held mit dem Statuseffekt \emph{Zu Boden} hat Nachteil auf seine eigenen Angriffsproben.
 
 Gegner weichen Angriffen von Helden grundsätzlich nicht aus.
 
-\subsection{Kaufoptionen und Schaden}
+\subsection{Sterne ausgeben und Schaden}
 
 Es gibt drei Arten von Schadenswürfeln:
 
@@ -108,15 +108,15 @@ Es gibt drei Arten von Schadenswürfeln:
   \item den \textbf{schwarzen Schadenswürfel (\blackDmgDie)} für schweren Schaden.
 \end{itemize}
 
-Eine Kaufoption nennt ihre Kosten in \star{} und den dafür erhaltenen Effekt. Jede Kaufoption der gewählten Angriffsoption darf pro Angriff höchstens einmal gekauft werden. Der Angreifer darf mehrere unterschiedliche Kaufoptionen in beliebiger Kombination kaufen, solange er ihre Kosten bezahlt und alle Voraussetzungen erfüllt.
+Jede aufgeführte Zeile nennt ihre Kosten in \star{} und den dafür erhaltenen Effekt. Jede Zeile der gewählten Angriffsoption darf pro Angriff höchstens einmal genutzt werden. Der Angreifer darf mehrere unterschiedliche Zeilen in beliebiger Kombination nutzen, solange er die angegebenen \star{} ausgibt und alle Voraussetzungen erfüllt.
 
-Nachdem alle gewünschten Kaufoptionen gekauft wurden, dürfen verbleibende \star{} bereits erhaltene Schadenswürfel verbessern. Jeder ausgegebene \star{} verbessert einen Würfel um eine Stufe: \orangeDmgDie{} wird zu \redDmgDie{}, \redDmgDie{} wird zu \blackDmgDie{}. Derselbe Würfel darf mehrfach verbessert werden; \blackDmgDie{} können nicht weiter verbessert werden. Danach verfallen noch übrige \star{}.
+Nachdem alle gewünschten Zeilen genutzt wurden, dürfen verbleibende \star{} bereits erhaltene Schadenswürfel verbessern. Jeder ausgegebene \star{} verbessert einen Würfel um eine Stufe: \orangeDmgDie{} wird zu \redDmgDie{}, \redDmgDie{} wird zu \blackDmgDie{}. Derselbe Würfel darf mehrfach verbessert werden; \blackDmgDie{} können nicht weiter verbessert werden. Danach verfallen noch übrige \star{}.
 
-Alle gekauften und verbesserten Schadenswürfel bilden einen gemeinsamen Schadenspool. Sie werden gemeinsam geworfen und ihre Ergebnisse anschließend addiert. Kaufoptionen können statt Schadenswürfeln oder zusätzlich zu ihnen Kampfeffekte verleihen.
+Alle erhaltenen und verbesserten Schadenswürfel bilden einen gemeinsamen Schadenspool. Sie werden gemeinsam geworfen und ihre Ergebnisse anschließend addiert. Durch das Ausgeben von \star{} können statt Schadenswürfeln oder zusätzlich zu ihnen Kampfeffekte ausgelöst werden.
 
 \begin{kurzregel}[title=Schaden bestimmen]
 \begin{enumerate}
-  \item Kaufoptionen jeweils höchstens einmal kaufen.
+  \item \star{} gemäß den aufgeführten Zeilen ausgeben; jede Zeile höchstens einmal nutzen.
   \item Alle erhaltenen Schadenswürfel zu einem Schadenspool zusammenfügen.
   \item Verbleibende \star{} ausgeben, um Schadenswürfel stufenweise zu verbessern.
   \item Den Schadenspool durch weitere Effekte verändern.
@@ -128,12 +128,12 @@ Alle gekauften und verbesserten Schadenswürfel bilden einen gemeinsamen Schaden
 \end{enumerate}
 \end{kurzregel}
 
-\begin{beispiel}[title=Beispiel: Schadenswürfel kaufen und verbessern]
-Ein Schwert besitzt die Kaufoptionen 2\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{} und 3\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}. Mit 6\star{} kauft ein Held beide Optionen je einmal. Für den verbleibenden \star{} verbessert er einen der fünf orangen Würfel zu einem roten Würfel. Sein Schadenspool besteht aus 1\redDmgDie{} und 4\orangeDmgDie{}.
+\begin{beispiel}[title=Beispiel: Sterne für Schadenswürfel ausgeben und Würfel verbessern]
+Beim Schwert können 2\star{} für 2\orangeDmgDie{} und 3\star{} für 3\orangeDmgDie{} ausgegeben werden. Mit 6\star{} nutzt ein Held beide Zeilen je einmal und gibt dafür insgesamt 5\star{} aus. Mit dem verbleibenden \star{} verbessert er einen der fünf orangen Würfel zu einem roten Würfel. Sein Schadenspool besteht aus 1\redDmgDie{} und 4\orangeDmgDie{}.
 \end{beispiel}
 
 \begin{beispiel}[title=Beispiel: Schaden und Kampfeffekt kombinieren]
-Eine Axt besitzt unter anderem die Kaufoptionen 2\star{} $\rightarrow$ \redDmgDie{} und 2\star{} $\rightarrow$ \effectArmorBreak{} 2. Mit 4\star{} kann ein Held beide Optionen kaufen. Der Angriff verursacht Schaden mit 1\redDmgDie{} und erhält zusätzlich 2 Rüstungsbruch. Beide Kaufoptionen sind damit für diesen Angriff verbraucht.
+Bei einer Axt können unter anderem 2\star{} für 1\redDmgDie{} und weitere 2\star{} für \effectArmorBreak{} 2 ausgegeben werden. Mit 4\star{} kann ein Held beide Zeilen nutzen. Der Angriff verursacht Schaden mit 1\redDmgDie{} und erhält zusätzlich 2 Rüstungsbruch. Beide Zeilen können bei diesem Angriff nicht erneut genutzt werden.
 \end{beispiel}
 
 Das \textbf{Schild-Symbol (\armor)} beschreibt Schutz durch Rüstung, Schilde, Talente oder andere Effekte. Jedes \armor{} verhindert 1 Schaden. \textbf{Rüstungsbruch (\armorPierce)} ignoriert die angegebene Anzahl an Schild-Symbolen des Ziels, unabhängig von ihrer Quelle.
@@ -188,7 +188,7 @@ Wenn der Kampf endet, wird wieder normal weitererzählt.
 \begin{enumerate}
   \item \textbf{Angriffsoption wählen (Zahnschwert):} Kiera greift einen benachbarten Gegner mit ihrem Zahnschwert an.
   \item \textbf{Angriffsprobe:} Sie legt die angegebene Schlagen-Probe ab und erzielt 6\star.
-  \item \textbf{Kaufoptionen erwerben:} Kiera kauft für 2\star{} zwei \redDmgDie{} und für 3\star{} drei \orangeDmgDie{}.
+  \item \textbf{Sterne ausgeben:} Kiera gibt 2\star{} für zwei \redDmgDie{} und 3\star{} für drei \orangeDmgDie{} aus.
   \item \textbf{Schadenswürfel verbessern:} Mit dem verbleibenden \star{} verbessert sie einen \orangeDmgDie{} zu einem \redDmgDie{}.
   \item \textbf{Schaden würfeln:} Ihr Schadenspool aus 3\redDmgDie{} und 2\orangeDmgDie{} verursacht zusammen 8 Schaden.
   \item \textbf{Schutz anwenden:} Der Gegner besitzt 2\armor{} und verhindert damit 2 Schaden.
