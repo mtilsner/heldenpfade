@@ -70,28 +70,41 @@ Angriffsoptionen befinden sich meist auf Waffen, können aber auch von Zaubern, 
 
 \subsection{Kaufoptionen}
 
-Nach einer erfolgreichen Angriffsprobe darf der Angreifer die erzielten \star{} ausgeben, um Kaufoptionen der gewählten Angriffsoption zu erwerben. Jede Kaufoption nennt ihre Kosten in \star{} und den dafür erhaltenen Effekt. Kaufoptionen dürfen in beliebiger Reihenfolge und Kombination gekauft werden, solange genügend \star{} vorhanden sind und ihre Häufigkeit nicht überschritten wird.
+Nach einer erfolgreichen Angriffsprobe darf der Angreifer die erzielten \star{} ausgeben, um Kaufoptionen der gewählten Angriffsoption zu erwerben. Jede Kaufoption nennt ihre Kosten in \star{} und den dafür erhaltenen Effekt.
 
-Eine mit $\infty$ gekennzeichnete Kaufoption darf beliebig oft gekauft werden. Eine mit 1$\times$ gekennzeichnete Kaufoption darf pro Angriff höchstens einmal gekauft werden. Entsprechend dürfen Kaufoptionen mit einer anderen Zahl höchstens so oft gekauft werden, wie angegeben.
+Jede Kaufoption darf pro Angriff höchstens einmal gekauft werden. Mehrere unterschiedliche Kaufoptionen dürfen in beliebiger Reihenfolge und Kombination gekauft werden, solange genügend \star{} vorhanden sind. Voraussetzungen einer Kaufoption, etwa \emph{wenn versteckt}, müssen beim Kauf erfüllt sein.
 
-Nicht ausgegebene \star{} verfallen am Ende des Angriffs. Alle durch Kaufoptionen erhaltenen Schadenswürfel werden zu einem gemeinsamen Schadenspool zusammengefügt und anschließend gemeinsam geworfen. Gekaufte Kampfeffekte werden nach ihrer jeweiligen Regel angewendet.
+Nachdem alle gewünschten Kaufoptionen gekauft wurden, dürfen verbleibende \star{} verwendet werden, um bereits für diesen Angriff erhaltene Schadenswürfel zu verbessern. Jeder dafür ausgegebene \star{} verbessert einen Schadenswürfel um genau eine Stufe: \orangeDmgDie{} wird zu \redDmgDie{} und \redDmgDie{} wird zu \blackDmgDie{}. Ein Würfel darf mehrfach verbessert werden, also für 2\star{} von \orangeDmgDie{} zu \blackDmgDie{}. \blackDmgDie{} können nicht weiter verbessert werden.
+
+Nicht ausgegebene \star{} verfallen am Ende des Angriffs. Alle gekauften und verbesserten Schadenswürfel bilden einen gemeinsamen Schadenspool und werden anschließend gemeinsam geworfen. Gekaufte Kampfeffekte werden nach ihrer jeweiligen Regel angewendet.
 
 \begin{kurzregel}[title=Kaufoptionen erwerben]
 \begin{enumerate}
   \item Erzielte \star{} bestimmen.
-  \item Kaufoptionen in beliebiger Kombination erwerben.
-  \item Kosten jeder gekauften Option bezahlen.
-  \item Häufigkeitsbegrenzungen beachten.
-  \item Alle erhaltenen Schadenswürfel und Effekte gemeinsam abhandeln.
+  \item Gewünschte Kaufoptionen jeweils höchstens einmal kaufen.
+  \item Alle erhaltenen Schadenswürfel zu einem Schadenspool zusammenfügen.
+  \item Verbleibende \star{} ausgeben, um Schadenswürfel stufenweise zu verbessern.
+  \item Schadenswürfel und gekaufte Kampfeffekte gemeinsam abhandeln.
 \end{enumerate}
 \end{kurzregel}
 
+\begin{kurzregel}[title=Schadenswürfel verbessern]
+\star{}: \orangeDmgDie{} $\rightarrow$ \redDmgDie{} \qquad
+\star{}: \redDmgDie{} $\rightarrow$ \blackDmgDie{}
+
+\blackDmgDie{} können nicht weiter verbessert werden.
+\end{kurzregel}
+
 \begin{beispiel}[title=Beispiel: Kaufoptionen eines Schwerts]
-Ein Schwert besitzt die Kaufoptionen $\infty$\;\star{} $\rightarrow$ \orangeDmgDie{} und 1$\times$\;3\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}. Erzielt ein Held 3\star{}, kann er entweder die erste Kaufoption dreimal erwerben und 3\orangeDmgDie{} erhalten oder die zweite Kaufoption einmal erwerben und 4\orangeDmgDie{} erhalten.
+Ein Schwert besitzt die Kaufoptionen 2\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{} und 3\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}. Mit 5\star{} kann ein Held beide Kaufoptionen je einmal kaufen und erhält 5\orangeDmgDie{}. Mit 6\star{} kauft er ebenfalls beide Optionen und verbessert mit dem verbleibenden \star{} einen Würfel. Sein Schadenspool besteht dann aus 1\redDmgDie{} und 4\orangeDmgDie{}. Erzielt er nur 1\star{}, kann er keine Kaufoption des Schwerts kaufen.
 \end{beispiel}
 
-\begin{beispiel}[title=Beispiel: Kaufoptionen kombinieren]
-Das Zahnschwert besitzt die Kaufoptionen $\infty$\;\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{} und 1$\times$\;\star{} $\rightarrow$ \redDmgDie{}\redDmgDie{}. Erzielt Kiera 2\star{}, kann sie die erste Kaufoption zweimal erwerben und 4\orangeDmgDie{} erhalten. Sie kann stattdessen beide Kaufoptionen jeweils einmal erwerben und mit 2\orangeDmgDie{} und 2\redDmgDie{} angreifen. Die zweite Kaufoption darf sie nicht zweimal kaufen, da sie mit 1$\times$ gekennzeichnet ist.
+\begin{beispiel}[title=Beispiel: Kaufoptionen kombinieren und Würfel verbessern]
+Das Zahnschwert besitzt die Kaufoptionen 2\star{} $\rightarrow$ \redDmgDie{}\redDmgDie{} und 3\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}. Mit 6\star{} kauft Kiera beide Optionen und verbessert anschließend mit dem verbleibenden \star{} einen der drei orangen Würfel. Ihr Schadenspool besteht aus 3\redDmgDie{} und 2\orangeDmgDie{}.
+\end{beispiel}
+
+\begin{beispiel}[title=Beispiel: Schwarze Schadenswürfel]
+Eine Muskete bietet 2\star{} $\rightarrow$ \blackDmgDie{}. Erzielt ein Held 3\star{} und kauft diese Option, kann er den verbleibenden \star{} nicht zum Verbessern dieses Würfels verwenden, da \blackDmgDie{} bereits die höchste Stufe ist. Kann er keine andere Kaufoption erwerben, verfällt der \star{}.
 \end{beispiel}
 
 \subsection{Weitere Angaben auf Ausrüstungskarten}
