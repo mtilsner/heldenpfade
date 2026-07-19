@@ -62,37 +62,37 @@ Auf einer Ausrüstungskarte stehen alle Angaben, Werte und Effekte des Gegenstan
 
 Viele Waffen besitzen eine oder mehrere Angriffsoptionen. Angriffsoptionen können jedoch ebenso durch Zauber oder -- seltener -- durch andere Ausrüstungsgegenstände oder Talente bereitgestellt werden.
 
-Jede Angriffsoption nennt die verwendete Angriffsfertigkeit, eine oder mehrere Kaufoptionen und mögliche zusätzliche Folgen. Die Reichweite ergibt sich aus der Angriffsfertigkeit.
+Jede Angriffsoption nennt die verwendete Angriffsfertigkeit, zeigt, wie erzielte \star{} ausgegeben werden können, und nennt mögliche zusätzliche Folgen. Die Reichweite ergibt sich aus der Angriffsfertigkeit.
 
 \begin{kurzregel}[title=Angriffsoptionen]
 Jede Angriffsoption legt fest,
 
 \begin{itemize}
   \item welche Angriffsfertigkeit verwendet wird,
-  \item welche Kaufoptionen zur Verfügung stehen und
+  \item wie erzielte \star{} ausgegeben werden können und
   \item welche zusätzlichen Folgen nach dem Angriff eintreten.
 \end{itemize}
 
 Angriffsoptionen befinden sich meist auf Waffen, können aber auch von Zaubern, anderen Ausrüstungsgegenständen oder Talenten stammen.
 \end{kurzregel}
 
-\subsection{Kaufoptionen}
+\subsection{Sterne ausgeben}
 
-Nach einer erfolgreichen Angriffsprobe darf der Angreifer die erzielten \star{} ausgeben, um Kaufoptionen der gewählten Angriffsoption zu erwerben. Jede Kaufoption nennt ihre Kosten in \star{} und den dafür erhaltenen Effekt.
+Nach einer erfolgreichen Angriffsprobe darf der Angreifer die erzielten \star{} gemäß den Angaben der gewählten Angriffsoption ausgeben. Jede aufgeführte Zeile nennt ihre Kosten in \star{} und den dafür erhaltenen Effekt.
 
-Jede Kaufoption darf pro Angriff höchstens einmal gekauft werden. Mehrere unterschiedliche Kaufoptionen dürfen in beliebiger Reihenfolge und Kombination gekauft werden, solange genügend \star{} vorhanden sind. Voraussetzungen einer Kaufoption, etwa \emph{wenn versteckt}, müssen beim Kauf erfüllt sein.
+Jede aufgeführte Zeile darf pro Angriff höchstens einmal genutzt werden. Mehrere unterschiedliche Zeilen dürfen in beliebiger Reihenfolge und Kombination genutzt werden, solange genügend \star{} vorhanden sind. Angegebene Voraussetzungen, etwa \emph{wenn versteckt}, müssen beim Ausgeben der \star{} erfüllt sein.
 
-Nachdem alle gewünschten Kaufoptionen gekauft wurden, dürfen verbleibende \star{} verwendet werden, um bereits für diesen Angriff erhaltene Schadenswürfel zu verbessern. Jeder dafür ausgegebene \star{} verbessert einen Schadenswürfel um genau eine Stufe: \orangeDmgDie{} wird zu \redDmgDie{} und \redDmgDie{} wird zu \blackDmgDie{}. Ein Würfel darf mehrfach verbessert werden, also für 2\star{} von \orangeDmgDie{} zu \blackDmgDie{}. \blackDmgDie{} können nicht weiter verbessert werden.
+Nachdem alle gewünschten Zeilen genutzt wurden, dürfen verbleibende \star{} verwendet werden, um bereits für diesen Angriff erhaltene Schadenswürfel zu verbessern. Jeder dafür ausgegebene \star{} verbessert einen Schadenswürfel um genau eine Stufe: \orangeDmgDie{} wird zu \redDmgDie{} und \redDmgDie{} wird zu \blackDmgDie{}. Ein Würfel darf mehrfach verbessert werden, also für 2\star{} von \orangeDmgDie{} zu \blackDmgDie{}. \blackDmgDie{} können nicht weiter verbessert werden.
 
-Nicht ausgegebene \star{} verfallen am Ende des Angriffs. Alle gekauften und verbesserten Schadenswürfel bilden einen gemeinsamen Schadenspool und werden anschließend gemeinsam geworfen. Gekaufte Kampfeffekte werden nach ihrer jeweiligen Regel angewendet.
+Nicht ausgegebene \star{} verfallen am Ende des Angriffs. Alle erhaltenen und verbesserten Schadenswürfel bilden einen gemeinsamen Schadenspool und werden anschließend gemeinsam geworfen. Ausgelöste Kampfeffekte werden nach ihrer jeweiligen Regel angewendet.
 
-\begin{kurzregel}[title=Kaufoptionen erwerben]
+\begin{kurzregel}[title=Sterne ausgeben]
 \begin{enumerate}
   \item Erzielte \star{} bestimmen.
-  \item Gewünschte Kaufoptionen jeweils höchstens einmal kaufen.
+  \item \star{} gemäß den aufgeführten Zeilen ausgeben; jede Zeile höchstens einmal nutzen.
   \item Alle erhaltenen Schadenswürfel zu einem Schadenspool zusammenfügen.
   \item Verbleibende \star{} ausgeben, um Schadenswürfel stufenweise zu verbessern.
-  \item Schadenswürfel und gekaufte Kampfeffekte gemeinsam abhandeln.
+  \item Schadenswürfel und ausgelöste Kampfeffekte gemeinsam abhandeln.
 \end{enumerate}
 \end{kurzregel}
 
@@ -103,16 +103,16 @@ Nicht ausgegebene \star{} verfallen am Ende des Angriffs. Alle gekauften und ver
 \blackDmgDie{} können nicht weiter verbessert werden.
 \end{kurzregel}
 
-\begin{beispiel}[title=Beispiel: Kaufoptionen eines Schwerts]
-Ein Schwert besitzt die Kaufoptionen 2\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{} und 3\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}. Mit 5\star{} kann ein Held beide Kaufoptionen je einmal kaufen und erhält 5\orangeDmgDie{}. Mit 6\star{} kauft er ebenfalls beide Optionen und verbessert mit dem verbleibenden \star{} einen Würfel. Sein Schadenspool besteht dann aus 1\redDmgDie{} und 4\orangeDmgDie{}. Erzielt er nur 1\star{}, kann er keine Kaufoption des Schwerts kaufen.
+\begin{beispiel}[title=Beispiel: Sterne beim Schwert ausgeben]
+Beim Schwert können 2\star{} für 2\orangeDmgDie{} und 3\star{} für 3\orangeDmgDie{} ausgegeben werden. Mit 5\star{} kann ein Held beide Zeilen je einmal nutzen und erhält 5\orangeDmgDie{}. Mit 6\star{} nutzt er ebenfalls beide Zeilen und verbessert mit dem verbleibenden \star{} einen Würfel. Sein Schadenspool besteht dann aus 1\redDmgDie{} und 4\orangeDmgDie{}. Erzielt er nur 1\star{}, kann er keine der aufgeführten Zeilen nutzen.
 \end{beispiel}
 
-\begin{beispiel}[title=Beispiel: Kaufoptionen kombinieren und Würfel verbessern]
-Das Zahnschwert besitzt die Kaufoptionen 2\star{} $\rightarrow$ \redDmgDie{}\redDmgDie{} und 3\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}. Mit 6\star{} kauft Kiera beide Optionen und verbessert anschließend mit dem verbleibenden \star{} einen der drei orangen Würfel. Ihr Schadenspool besteht aus 3\redDmgDie{} und 2\orangeDmgDie{}.
+\begin{beispiel}[title=Beispiel: Mehrere Zeilen nutzen und Würfel verbessern]
+Beim Zahnschwert können 2\star{} für 2\redDmgDie{} und 3\star{} für 3\orangeDmgDie{} ausgegeben werden. Mit 6\star{} nutzt Kiera beide Zeilen und verbessert anschließend mit dem verbleibenden \star{} einen der drei orangen Würfel. Ihr Schadenspool besteht aus 3\redDmgDie{} und 2\orangeDmgDie{}.
 \end{beispiel}
 
 \begin{beispiel}[title=Beispiel: Schwarze Schadenswürfel]
-Eine Muskete bietet 2\star{} $\rightarrow$ \blackDmgDie{}. Erzielt ein Held 3\star{} und kauft diese Option, kann er den verbleibenden \star{} nicht zum Verbessern dieses Würfels verwenden, da \blackDmgDie{} bereits die höchste Stufe ist. Kann er keine andere Kaufoption erwerben, verfällt der \star{}.
+Bei einer Muskete können 2\star{} für 1\blackDmgDie{} ausgegeben werden. Erzielt ein Held 3\star{} und nutzt diese Zeile, kann er den verbleibenden \star{} nicht zum Verbessern dieses Würfels verwenden, da \blackDmgDie{} bereits die höchste Stufe ist. Kann er keine andere Zeile nutzen, verfällt der \star{}.
 \end{beispiel}
 
 \subsection{Weitere Angaben auf Ausrüstungskarten}
