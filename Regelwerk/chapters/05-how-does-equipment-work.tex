@@ -36,10 +36,18 @@ Ein einhändiger Gegenstand belegt \textbf{eine Hand}. Ein zweihändiger Gegenst
 
 \subsection{Kleine Gegenstände}
 
-Manche kleinen Gegenstände benötigen keinen Ausrüstungsplatz. Ob ein Gegenstand als klein gilt, ergibt sich aus seiner Karte.
+Manche Gegenstände gelten als klein. Sie können wie andere Gegenstände ausgerüstet oder verstaut werden, benötigen ausgerüstet jedoch keinen Ausrüstungsplatz. Ein Held darf beliebig viele kleine Gegenstände gleichzeitig ausrüsten. Ob ein Gegenstand als klein gilt, ergibt sich aus seiner Karte.
 
 \begin{kurzregel}[title=Kleine Gegenstände]
-Kleine Gegenstände benötigen \textbf{keinen Ausrüstungsplatz}.
+Ausgerüstete kleine Gegenstände benötigen \textbf{keinen Ausrüstungsplatz}. Verstaute kleine Gegenstände können wie andere verstaute Ausrüstung nicht verwendet werden.
+\end{kurzregel}
+
+Einige kleine Gegenstände sind verbrauchbar. Nach ihrer Benutzung werden sie aus dem Spiel abgelegt. Welche Handlung für die Benutzung erforderlich ist und welchen Effekt der Gegenstand auslöst, steht auf seiner Karte. Besitzt der Effekt eine Dauer, bleibt er nach dem Ablegen für die angegebene Dauer bestehen.
+
+Ein Held kann einen Heiltrank oder eine Manaessenz mit der auf der Karte angegebenen Handlung selbst trinken oder einer benachbarten, einverstandenen Kreatur einflößen. Die Kreatur, die den Gegenstand trinkt, erhält dessen Heilung beziehungsweise Mana. Ihre aktuellen Lebenspunkte oder ihr aktuelles Mana können dadurch niemals über ihr jeweiliges Maximum steigen.
+
+\begin{kurzregel}[title=Verbrauchsgegenstände]
+Einen verbrauchbaren Gegenstand nach seiner Benutzung \textbf{aus dem Spiel ablegen}. Die benötigte Handlung und der Effekt stehen auf dem Gegenstand.
 \end{kurzregel}
 
 \section{Ausrüstung wechseln}
@@ -50,25 +58,64 @@ Der Körperplatz ist eine Ausnahme: Einen Gegenstand am Körperplatz auszurüste
 
 \section{Ausrüstungskarten lesen}
 
+Auf einer Ausrüstungskarte stehen alle Angaben, Werte und Effekte des Gegenstands. Es gelten ausschließlich die Angaben auf der aktuell sichtbaren Kartenseite.
+
 Viele Waffen besitzen eine oder mehrere Angriffsoptionen. Angriffsoptionen können jedoch ebenso durch Zauber oder -- seltener -- durch andere Ausrüstungsgegenstände oder Talente bereitgestellt werden.
 
-Jede Angriffsoption nennt die verwendete Angriffsfertigkeit, die Umrechnung von \star{} in Schadenswürfel und mögliche besondere Effekte. Die Reichweite ergibt sich aus der Angriffsfertigkeit.
+Jede Angriffsoption nennt die verwendete Angriffsfertigkeit, eine oder mehrere Kaufoptionen und mögliche zusätzliche Folgen. Die Reichweite ergibt sich aus der Angriffsfertigkeit.
 
 \begin{kurzregel}[title=Angriffsoptionen]
 Jede Angriffsoption legt fest,
 
 \begin{itemize}
   \item welche Angriffsfertigkeit verwendet wird,
-  \item welche Schadensformel gilt und
-  \item welche besonderen Effekte angewendet werden.
+  \item welche Kaufoptionen zur Verfügung stehen und
+  \item welche zusätzlichen Folgen nach dem Angriff eintreten.
 \end{itemize}
 
 Angriffsoptionen befinden sich meist auf Waffen, können aber auch von Zaubern, anderen Ausrüstungsgegenständen oder Talenten stammen.
 \end{kurzregel}
 
-\begin{beispiel}[title=Beispiel: Eine Angriffsoption lesen]
-Eine Angriffsoption verwendet \textbf{Schlagen} und erzeugt pro \star{} zwei \orangeDmgDie. Schlagen bestimmt, welche Ziele in Reichweite sind; die Schadensformel bestimmt die Anzahl der Schadenswürfel.
+\subsection{Kaufoptionen}
+
+Nach einer erfolgreichen Angriffsprobe darf der Angreifer die erzielten \star{} ausgeben, um Kaufoptionen der gewählten Angriffsoption zu erwerben. Jede Kaufoption nennt ihre Kosten in \star{} und den dafür erhaltenen Effekt.
+
+Jede Kaufoption darf pro Angriff höchstens einmal gekauft werden. Mehrere unterschiedliche Kaufoptionen dürfen in beliebiger Reihenfolge und Kombination gekauft werden, solange genügend \star{} vorhanden sind. Voraussetzungen einer Kaufoption, etwa \emph{wenn versteckt}, müssen beim Kauf erfüllt sein.
+
+Nachdem alle gewünschten Kaufoptionen gekauft wurden, dürfen verbleibende \star{} verwendet werden, um bereits für diesen Angriff erhaltene Schadenswürfel zu verbessern. Jeder dafür ausgegebene \star{} verbessert einen Schadenswürfel um genau eine Stufe: \orangeDmgDie{} wird zu \redDmgDie{} und \redDmgDie{} wird zu \blackDmgDie{}. Ein Würfel darf mehrfach verbessert werden, also für 2\star{} von \orangeDmgDie{} zu \blackDmgDie{}. \blackDmgDie{} können nicht weiter verbessert werden.
+
+Nicht ausgegebene \star{} verfallen am Ende des Angriffs. Alle gekauften und verbesserten Schadenswürfel bilden einen gemeinsamen Schadenspool und werden anschließend gemeinsam geworfen. Gekaufte Kampfeffekte werden nach ihrer jeweiligen Regel angewendet.
+
+\begin{kurzregel}[title=Kaufoptionen erwerben]
+\begin{enumerate}
+  \item Erzielte \star{} bestimmen.
+  \item Gewünschte Kaufoptionen jeweils höchstens einmal kaufen.
+  \item Alle erhaltenen Schadenswürfel zu einem Schadenspool zusammenfügen.
+  \item Verbleibende \star{} ausgeben, um Schadenswürfel stufenweise zu verbessern.
+  \item Schadenswürfel und gekaufte Kampfeffekte gemeinsam abhandeln.
+\end{enumerate}
+\end{kurzregel}
+
+\begin{kurzregel}[title=Schadenswürfel verbessern]
+\star{}: \orangeDmgDie{} $\rightarrow$ \redDmgDie{} \qquad
+\star{}: \redDmgDie{} $\rightarrow$ \blackDmgDie{}
+
+\blackDmgDie{} können nicht weiter verbessert werden.
+\end{kurzregel}
+
+\begin{beispiel}[title=Beispiel: Kaufoptionen eines Schwerts]
+Ein Schwert besitzt die Kaufoptionen 2\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{} und 3\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}. Mit 5\star{} kann ein Held beide Kaufoptionen je einmal kaufen und erhält 5\orangeDmgDie{}. Mit 6\star{} kauft er ebenfalls beide Optionen und verbessert mit dem verbleibenden \star{} einen Würfel. Sein Schadenspool besteht dann aus 1\redDmgDie{} und 4\orangeDmgDie{}. Erzielt er nur 1\star{}, kann er keine Kaufoption des Schwerts kaufen.
 \end{beispiel}
+
+\begin{beispiel}[title=Beispiel: Kaufoptionen kombinieren und Würfel verbessern]
+Das Zahnschwert besitzt die Kaufoptionen 2\star{} $\rightarrow$ \redDmgDie{}\redDmgDie{} und 3\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}. Mit 6\star{} kauft Kiera beide Optionen und verbessert anschließend mit dem verbleibenden \star{} einen der drei orangen Würfel. Ihr Schadenspool besteht aus 3\redDmgDie{} und 2\orangeDmgDie{}.
+\end{beispiel}
+
+\begin{beispiel}[title=Beispiel: Schwarze Schadenswürfel]
+Eine Muskete bietet 2\star{} $\rightarrow$ \blackDmgDie{}. Erzielt ein Held 3\star{} und kauft diese Option, kann er den verbleibenden \star{} nicht zum Verbessern dieses Würfels verwenden, da \blackDmgDie{} bereits die höchste Stufe ist. Kann er keine andere Kaufoption erwerben, verfällt der \star{}.
+\end{beispiel}
+
+\subsection{Weitere Angaben auf Ausrüstungskarten}
 
 Rüstungen und andere Gegenstände können eine Ausweichprobe (\evade) erlauben oder zusätzliche \blueDie{} dafür gewähren.
 
@@ -76,7 +123,7 @@ Rüstungen und andere Gegenstände können eine Ausweichprobe (\evade) erlauben 
 Erlaubt eine ausgerüstete Karte eine Ausweichprobe, verwendet der Held die dort angegebenen Würfel. Zusätzliche \blueDie{} auf anderen ausgerüsteten Karten werden dem Würfelpool hinzugefügt.
 \end{beispiel}
 
-Schutz wird durch Schild-Symbole (\armor) dargestellt. Jedes \armor{} verhindert 1 Schaden. Mehrere \armor{} werden addiert. Rüstungsdurchdringung (\armorPierce) ignoriert die angegebene Anzahl an \armor{} des Ziels.
+Schutz wird durch Schild-Symbole (\armor) dargestellt. Jedes \armor{} verhindert 1 Schaden. Mehrere \armor{} werden addiert. Rüstungsbruch (\armorPierce) ignoriert die angegebene Anzahl an \armor{} des Ziels.
 
 \begin{kurzregel}[title=Schutz durch Schilde]
 Jedes \armor{} verhindert \textbf{1 Schaden}. Mehrere \armor{} werden addiert.
@@ -88,13 +135,27 @@ Besondere Effekte gelten genau so, wie sie auf der jeweiligen Karte beschrieben 
 Die Beschreibung auf der Karte bestimmt vollständig, wie und wann ein besonderer Effekt angewendet wird.
 \end{kurzregel}
 
-\section{Erschöpfte Karten}
+\section{Vorder- und Rückseiten}
 
-Manche Effekte fordern den Spieler auf, eine Karte zu \textbf{erschöpfen (\exhaust)}. Dazu wird die Karte umgedreht.
+Eine Ausrüstungskarte kann mit ihrer Vorderseite oder ihrer Rückseite nach oben liegen. Es gelten ausschließlich die Angaben, Werte und Effekte der aktuell sichtbaren Seite. Angaben der verdeckten Seite gelten nicht.
 
-Eine erschöpfte Karte bleibt ausgerüstet und belegt weiterhin ihren Ausrüstungsplatz. Da ihre Vorderseite nicht sichtbar ist, können jedoch keine ihrer Angaben, Werte oder Effekte genutzt werden.
+Fordert eine Regel dazu auf, eine Ausrüstungskarte umzudrehen (\exhaust), wird sie auf ihre andere Seite gedreht. Der Gegenstand bleibt dabei ausgerüstet und belegt weiterhin seinen Ausrüstungsplatz.
 
-Erschöpfte Karten werden spätestens bei der nächsten Rast wieder bereitgemacht. Andere Regeln können sie früher bereitmachen.
+Eine Waffe kann nur für einen Angriff verwendet werden, wenn auf ihrer aktuell sichtbaren Seite eine passende Angriffsoption abgebildet ist. Liegt ihre Rückseite oben und zeigt diese keine Angriffsoption, ist die Waffe nicht einsatzbereit.
+
+Manche Kartenrückseiten geben eine Handlung an, mit der die Ausrüstung wieder bereit gemacht wird. Nach Ausführung dieser Handlung wird die Karte auf ihre Vorderseite gedreht. Zeigt die Rückseite keine solche Regel, kann die Karte nicht durch eine allgemeine Aktion bereit gemacht werden. Ob und wie der Gegenstand zurückerlangt oder wieder einsatzbereit wird, ergibt sich dann aus der Spielsituation oder aus anderen Regeln.
+
+\begin{kurzregel}[title=Nur die sichtbare Seite gilt]
+Es gelten ausschließlich die Angaben der \textbf{aktuell sichtbaren Kartenseite}. Wird eine Karte umgedreht, gelten ihre bisherigen Angaben nicht mehr.
+\end{kurzregel}
+
+\begin{beispiel}[title=Beispiel: Eine Armbrust bereit machen]
+Nach einem Angriff mit einer leichten Armbrust wird ihre Karte umgedreht. Auf ihrer Rückseite ist keine Angriffsoption abgebildet, sondern eine \moveAction{} zum Bereitmachen der Waffe. Solange die Rückseite oben liegt, kann die Armbrust nicht für einen Angriff verwendet werden. Führt der Held die angegebene \moveAction{} aus, dreht er die Karte wieder auf ihre Vorderseite.
+\end{beispiel}
+
+\begin{beispiel}[title=Beispiel: Eine geworfene Waffe]
+Nach dem Werfen eines Speers wird dessen Karte umgedreht. Da seine Rückseite keine Handlung zum Bereitmachen zeigt, kann der Held ihn nicht allein durch eine allgemeine Aktion wieder einsatzbereit machen. Er muss den Speer zunächst entsprechend der Spielsituation zurückerlangen.
+\end{beispiel}
 
 \section{Weiterführende Informationen}
 

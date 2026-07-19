@@ -25,11 +25,11 @@ Um Zauber wirken zu können, muss ein Held das Talent \emph{Magiebegabt} besitze
 
 Jeder Zauber wird durch eine Zauberkarte beschrieben. Die Karte nennt den Namen, die Manakosten, die Zauberzeit und den Effekt des Zaubers. Sie kann außerdem Ziele, eine Wirkungsdauer, Schlüsselwörter oder weitere Voraussetzungen angeben.
 
-Ein \textbf{Zauber} ist die gesamte Karte. Um ihn zu wirken, bezahlt der Held seine Manakosten und führt den beschriebenen \textbf{Effekt} aus. Ein Effekt kann eine \textbf{Angriffsoption} sein. In diesem Fall bestimmt die Angriffsoption wie gewohnt die Angriffsfertigkeit, die Schadensformel und mögliche besondere Effekte.
+Ein \textbf{Zauber} ist die gesamte Karte. Um ihn zu wirken, bezahlt der Held seine Manakosten und führt den beschriebenen \textbf{Effekt} aus. Ein Effekt kann eine \textbf{Angriffsoption} sein. In diesem Fall bestimmt die Angriffsoption wie gewohnt die Angriffsfertigkeit, die verfügbaren Kaufoptionen und mögliche zusätzliche Folgen. Jede Kaufoption darf pro Angriff höchstens einmal gekauft werden; verbleibende \star{} können anschließend erhaltene Schadenswürfel verbessern.
 
-Zauberkarten werden durch das Wirken eines Zaubers nicht automatisch erschöpft. Nur wenn eine Zauberkarte ausdrücklich das Symbol \textbf{Erschöpfen (\exhaust)} zeigt oder der Regeltext dies verlangt, wird genau diese Karte umgedreht. Solange sie erschöpft ist, können ihre Angaben und Effekte nicht genutzt werden.
+Zauberkarten werden durch das Wirken eines Zaubers nicht automatisch erschöpft. Nur wenn eine Zauberkarte ausdrücklich das Symbol \textbf{Erschöpfen (\exhaust)} zeigt oder der Regeltext dies verlangt, wird genau diese Karte umgedreht. Danach gelten ausschließlich die Angaben und Effekte der nun sichtbaren Kartenseite.
 
-Ein Held kann einen erlernten Zauber wiederholt wirken, solange genügend Mana vorhanden ist, die Karte nicht erschöpft ist und alle Voraussetzungen erfüllt sind.
+Ein Held kann einen erlernten Zauber wiederholt wirken, solange genügend Mana vorhanden ist, die aktuell sichtbare Kartenseite das Wirken erlaubt und alle Voraussetzungen erfüllt sind.
 
 \section{Einen Zauber wirken}
 
@@ -60,9 +60,9 @@ Manakosten bezahlen $\rightarrow$ Angriffsoption nach den normalen Kampfregeln a
 \end{kurzregel}
 
 \begin{beispiel}[title=Beispiel: Eisblitz]
-Lina wirkt \emph{Eisblitz}. Der Zauber kostet 1\manaLoss{} und benötigt eine \standardAction. Sein Effekt ist eine Angriffsoption mit der Angriffsfertigkeit \emph{Zaubern}, die pro erzieltem \star{} einen \orangeDmgDie{} erzeugt.
+Lina wirkt \emph{Eisblitz}. Der Zauber kostet 1\manaLoss{} und benötigt eine \standardAction. Sein Effekt ist eine Angriffsoption mit der Angriffsfertigkeit \emph{Zaubern} und der Kaufoption \star{} $\rightarrow$ \orangeDmgDie{}.
 
-Lina bezahlt 1 Mana, bestimmt einen gültigen Gegner als Ziel und legt anschließend die Angriffsprobe mit \emph{Zaubern} ab. Sie erzielt 2\star{} und würfelt deshalb 2\orangeDmgDie. Der weitere Ablauf folgt den normalen Regeln für Schaden, \armor{} und Lebenspunktverlust.
+Lina bezahlt 1 Mana, bestimmt einen gültigen Gegner als Ziel und legt anschließend die Angriffsprobe mit \emph{Zaubern} ab. Sie erzielt 2\star{}, kauft für 1\star{} den \orangeDmgDie{} und verbessert ihn mit dem verbleibenden \star{} zu einem \redDmgDie{}. Der weitere Ablauf folgt den normalen Regeln für Schaden, Rüstungsbruch, \armor{} und Lebenspunktverlust.
 \end{beispiel}
 
 \section{Zauberproben}
@@ -90,8 +90,9 @@ Lina möchte im Kampf einen entfernten Gegner mit \emph{Eisblitz} angreifen.
   \item \textbf{Mana bezahlen:} Sie bezahlt die Kosten von 1\manaLoss.
   \item \textbf{Ziel bestimmen:} Da die Angriffsoption \emph{Zaubern} verwendet, darf sie einen benachbarten oder entfernten Gegner als Ziel wählen.
   \item \textbf{Angriffsprobe:} Lina legt eine Angriffsprobe mit \emph{Zaubern} ab und erzielt 3\star.
-  \item \textbf{Schadenswürfel bestimmen:} \emph{Eisblitz} erzeugt pro \star{} einen \orangeDmgDie. Lina würfelt deshalb 3\orangeDmgDie.
-  \item \textbf{Angriff abschließen:} Die Würfelergebnisse werden addiert. Anschließend werden \armor{} und mögliche weitere Effekte nach den normalen Kampfregeln angewendet.
+  \item \textbf{Kaufoption erwerben:} Lina kauft für 1\star{} die Kaufoption des \emph{Eisblitzes} und erhält 1\orangeDmgDie{}.
+  \item \textbf{Schadenswürfel verbessern:} Mit den beiden verbleibenden \star{} verbessert sie den Würfel zunächst zu einem \redDmgDie{} und anschließend zu einem \blackDmgDie{}.
+  \item \textbf{Angriff abschließen:} Lina würfelt den \blackDmgDie{}. Anschließend werden Rüstungsbruch, \armor{} und mögliche weitere Effekte nach den normalen Kampfregeln angewendet.
 \end{enumerate}
 
 \section{Weiterführende Informationen}
