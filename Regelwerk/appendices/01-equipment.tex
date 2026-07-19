@@ -25,11 +25,12 @@ Kampfeffekte sind standardisierte Regeln des Kampfsystems. Sie können durch Ang
 \begin{hptable}{L{3.2cm} C{1.5cm} L{2.4cm} Y}
 \textbf{Waffe} & \textbf{Hände} & \textbf{Typ} & \textbf{Details} \\
 \hline
-Dolch & 1 & Schlagen & -- \\
-Schwert & 1 & Schlagen & -- \\
-Axt & 1 & Schlagen & -- \\
-Kriegshammer & 1 & Schlagen & -- \\
-Speer & 2 & Schlagen & -- \\
+Dolch & 1 & Schlagen & $\infty$\;2\star{} $\rightarrow$ \orangeDmgDie{}\newline 1$\times$ wenn versteckt: \star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{} \\
+ & & Werfen & $\infty$\;2\star{} $\rightarrow$ \orangeDmgDie{}\newline Danach \exhaust{} \\
+Schwert & 1 & Schlagen & $\infty$\;\star{} $\rightarrow$ \orangeDmgDie{}\newline 1$\times$\;3\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{} \\
+Axt & 1 & Schlagen & $\infty$\;\star{} $\rightarrow$ \orangeDmgDie{}\newline 1$\times$\;2\star{} $\rightarrow$ \effectArmorBreak{} 2 \\
+Kriegshammer & 1 & Schlagen & $\infty$\;2\star{} $\rightarrow$ \redDmgDie{}\newline 1$\times$\;\star{} $\rightarrow$ \effectPush{} \\
+Speer & 2 & Schlagen & $\infty$\;\star{} $\rightarrow$ \orangeDmgDie{}\newline 1$\times$\;\star{} $\rightarrow$ \effectArmorBreak{} 1 \\
  & & Schießen & -- \\
 Zahnschwert & 2 & Schlagen & -- \\
 Zweihandaxt & 2 & Schlagen & -- \\
