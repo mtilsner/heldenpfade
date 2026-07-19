@@ -74,10 +74,11 @@ Eine Angriffsoption auf einer Ausrüstungskarte kann nur gewählt werden, wenn s
   \item Angriffsprobe ablegen.
   \item Bei mindestens einem \star{} Kaufoptionen erwerben.
   \item Verbleibende \star{} zum Verbessern erhaltener Schadenswürfel ausgeben.
-  \item Erhaltene Schadenswürfel werfen und Schaden addieren.
-  \item Gekaufte Kampfeffekte sowie \armor{} und \armorPierce{} anwenden.
-  \item Verbleibenden Schaden von den Lebenspunkten abziehen.
-  \item Zusätzliche Folgen der Angriffsoption abhandeln.
+  \item Schadenspools durch Effekte verändern und gegebenenfalls vor dem Wurf auf mehrere Ziele verteilen.
+  \item Jeden Schadenspool getrennt werfen und den Schaden addieren.
+  \item Rüstungsbruch und \armor{} für jedes Ziel anwenden.
+  \item Verbleibenden Schaden von den jeweiligen Lebenspunkten abziehen.
+  \item Gekaufte Kampfeffekte und zusätzliche Folgen zu ihrem jeweils angegebenen Zeitpunkt abhandeln.
 \end{enumerate}
 \end{kurzregel}
 
@@ -93,7 +94,7 @@ Für die Angriffsfertigkeiten gelten folgende Reichweiten:
 
 Der Spieler legt mit der angegebenen Angriffsfertigkeit eine Angriffsprobe nach den Regeln aus \chapterref{chap:checks} ab. Zeigt sie keinen \star, verfehlt der Angriff. Jeder erzielte \star{} kann anschließend ausgegeben werden, um eine oder mehrere Kaufoptionen der gewählten Angriffsoption zu erwerben. Die vollständigen Regeln für Kaufoptionen stehen in \chapterref{chap:equipment}.
 
-Helden erhalten Vorteil auf Angriffsproben gegen Gegner mit dem Statuseffekt \emph{Zu Boden}.
+Helden erhalten Vorteil auf Angriffsproben gegen Gegner mit dem Statuseffekt \emph{Zu Boden}. Ein Held mit dem Statuseffekt \emph{Zu Boden} hat Nachteil auf seine eigenen Angriffsproben.
 
 Gegner weichen Angriffen von Helden grundsätzlich nicht aus.
 
@@ -118,10 +119,12 @@ Alle gekauften und verbesserten Schadenswürfel bilden einen gemeinsamen Schaden
   \item Kaufoptionen jeweils höchstens einmal kaufen.
   \item Alle erhaltenen Schadenswürfel zu einem Schadenspool zusammenfügen.
   \item Verbleibende \star{} ausgeben, um Schadenswürfel stufenweise zu verbessern.
-  \item Schadenswürfel werfen und gewürfelten Schaden addieren.
-  \item Gekaufte Kampfeffekte anwenden.
-  \item Schutz durch \armor{} abziehen.
+  \item Den Schadenspool durch weitere Effekte verändern.
+  \item Falls ein Effekt wie Spalten dies erlaubt, die Würfel vor dem Wurf auf Ziele verteilen.
+  \item Jeden Schadenspool getrennt werfen und den gewürfelten Schaden addieren.
+  \item Rüstungsbruch und Schutz durch \armor{} für jedes Ziel anwenden.
   \item Verbleibenden Schaden als Verlust von Lebenspunkten anwenden.
+  \item Weitere Kampfeffekte zu ihrem angegebenen Zeitpunkt abhandeln.
 \end{enumerate}
 \end{kurzregel}
 
@@ -133,9 +136,9 @@ Ein Schwert besitzt die Kaufoptionen 2\star{} $\rightarrow$ \orangeDmgDie{}\oran
 Eine Axt besitzt unter anderem die Kaufoptionen 2\star{} $\rightarrow$ \redDmgDie{} und 2\star{} $\rightarrow$ \effectArmorBreak{} 2. Mit 4\star{} kann ein Held beide Optionen kaufen. Der Angriff verursacht Schaden mit 1\redDmgDie{} und erhält zusätzlich 2 Rüstungsbruch. Beide Kaufoptionen sind damit für diesen Angriff verbraucht.
 \end{beispiel}
 
-Das \textbf{Schild-Symbol (\armor)} beschreibt Schutz durch Rüstung, Schilde, Talente oder andere Effekte. Jedes \armor{} verhindert 1 Schaden. \textbf{Rüstungsdurchdringung (\armorPierce)} ignoriert die angegebene Anzahl an Schild-Symbolen des Ziels, unabhängig von ihrer Quelle.
+Das \textbf{Schild-Symbol (\armor)} beschreibt Schutz durch Rüstung, Schilde, Talente oder andere Effekte. Jedes \armor{} verhindert 1 Schaden. \textbf{Rüstungsbruch (\armorPierce)} ignoriert die angegebene Anzahl an Schild-Symbolen des Ziels, unabhängig von ihrer Quelle.
 
-\begin{kurzregel}[title=Schild-Symbole und Rüstungsdurchdringung]
+\begin{kurzregel}[title=Schild-Symbole und Rüstungsbruch]
 Jedes \armor{} verhindert \textbf{1 Schaden}. Jedes \armorPierce{} ignoriert \textbf{1 \armor{}} des Ziels.
 \end{kurzregel}
 
@@ -153,7 +156,7 @@ Ein Held kann nur ausweichen, wenn seine \textbf{Ausrüstung oder ein Talent} di
 Jeder \star{} der Ausweichprobe entfernt einen beliebigen Schadenswürfel des Gegners. Überschüssige \star{} verfallen. Entfernte Schadenswürfel werden nicht geworfen.
 \end{kurzregel}
 
-Ein Held mit dem Statuseffekt \emph{Zu Boden} hat Nachteil auf seine Ausweichprobe. Kann er aufgrund seiner Ausrüstung oder Talente nicht ausweichen, entfällt die Probe vollständig.
+Ein Held mit dem Statuseffekt \emph{Zu Boden} hat Nachteil auf seine Ausweichprobe. Greift ein Gegner mit dem Statuseffekt \emph{Zu Boden} an, hat der angegriffene Held Vorteil auf seine Ausweichprobe. Kann der Held aufgrund seiner Ausrüstung oder Talente nicht ausweichen, entfällt die Probe vollständig.
 
 Die verbleibenden Schadenswürfel werden geworfen. Anschließend verhindert jedes \armor{} des Helden 1 Schaden. Für den übrigen Schaden verliert der Held entsprechend viele Lebenspunkte \lifeLoss.
 
