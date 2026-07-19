@@ -22,9 +22,13 @@ Kampfeffekte sind standardisierte Regeln des Kampfsystems. Sie können durch Ang
 \effectStun{} \textbf{Betäuben} & Das Ziel setzt seinen nächsten Zug vollständig aus. \\
 \end{hptable}
 
-\begin{hptable}{L{3.2cm} C{1.5cm} L{2.4cm} Y}
+\begin{hplongtable}{L{3.2cm} C{1.5cm} L{2.4cm} Y}
 \textbf{Waffe} & \textbf{Hände} & \textbf{Typ} & \textbf{Details} \\
 \hline
+\endfirsthead
+\textbf{Waffe} & \textbf{Hände} & \textbf{Typ} & \textbf{Details} \\
+\hline
+\endhead
 Dolch & 1 & Schlagen & \star{} $\rightarrow$ \orangeDmgDie{}\newline 2\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\newline Wenn versteckt: \star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{} \\
  & & Schießen & 2\star{} $\rightarrow$ \orangeDmgDie{}\newline Danach \exhaust{} \\
 Schwert & 1 & Schlagen & 2\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\newline 3\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{} \\
@@ -52,7 +56,7 @@ Steinschlosspistole & 1 & Schießen & \star{} $\rightarrow$ \redDmgDie{}\redDmgD
  & & Rückseite & \moveAction{} $\rightarrow$ Waffe bereit machen \\
 Blunderbüchse & 2 & Schießen & \star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}\newline 2\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}\newline 2\star{} $\rightarrow$ \effectCleave{}\newline Danach \exhaust{} \\
  & & Rückseite & \standardAction{} $\rightarrow$ Waffe bereit machen \\
-\end{hptable}
+\end{hplongtable}
 
 \subsection{Einsteigerwaffen}
 
