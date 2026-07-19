@@ -238,8 +238,8 @@
 % Mehrseitige Variante fuer lange Tabellen. xltabular verbindet die
 % anpassbaren X-Spalten von tabularx mit den Seitenumbruechen von longtable.
 \newenvironment{hplongtable}[1]
-  {\begingroup\HPUIFont\renewcommand{\arraystretch}{1.45}\setlength{\tabcolsep}{7pt}\emergencystretch=1.5em\xltabular{\linewidth}{#1}}
-  {\endxltabular\endgroup}
+  {\begingroup\HPUIFont\renewcommand{\arraystretch}{1.45}\setlength{\tabcolsep}{7pt}\emergencystretch=1.5em\begin{xltabular}{\linewidth}{#1}}
+  {\end{xltabular}\endgroup}
 
 % Zentrale Spielsymbole
 \input{shared/icons.tex}
