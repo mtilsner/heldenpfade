@@ -235,11 +235,14 @@
   {\begingroup\HPUIFont\renewcommand{\arraystretch}{1.45}\setlength{\tabcolsep}{7pt}\emergencystretch=1.5em\tabularx{\linewidth}{#1}}
   {\endtabularx\endgroup}
 
-% Mehrseitige Variante fuer lange Tabellen. xltabular verbindet die
-% anpassbaren X-Spalten von tabularx mit den Seitenumbruechen von longtable.
-\newenvironment{hplongtable}[1]
-  {\begingroup\HPUIFont\renewcommand{\arraystretch}{1.45}\setlength{\tabcolsep}{7pt}\emergencystretch=1.5em\begin{xltabular}{\linewidth}{#1}}
-  {\end{xltabular}\endgroup}
+% Gemeinsamer Stil fuer mehrseitige xltabular-Tabellen. xltabular muss
+% direkt verwendet werden, damit es sein Tabellenende beim Einlesen erkennt.
+\newcommand{\hplongtablestyle}{%
+  \HPUIFont
+  \renewcommand{\arraystretch}{1.45}%
+  \setlength{\tabcolsep}{7pt}%
+  \emergencystretch=1.5em
+}
 
 % Zentrale Spielsymbole
 \input{shared/icons.tex}
