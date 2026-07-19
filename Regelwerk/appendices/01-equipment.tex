@@ -5,7 +5,7 @@ Dieser Anhang enthält die derzeit verfügbaren Ausrüstungsgegenstände. Die Be
 
 \section{Waffen}
 
-Waffen können eine oder mehrere Angriffsoptionen besitzen. Jede Angriffsoption nennt als Typ die verwendete Angriffsfertigkeit. Die zugehörigen Kaufoptionen werden in der Spalte \emph{Details} untereinander aufgeführt. Passive Effekte einer Waffe stehen als eigene Zeile unterhalb ihrer Angriffsoptionen.
+Waffen können eine oder mehrere Angriffsoptionen besitzen. Jede Angriffsoption nennt als Typ die verwendete Angriffsfertigkeit. In der Spalte \emph{Details} steht untereinander, wie erzielte \star{} ausgegeben werden können. Passive Effekte einer Waffe stehen als eigene Zeile unterhalb ihrer Angriffsoptionen.
 
 \subsection{Allgemeine Kampfeffekte}
 
@@ -15,16 +15,22 @@ Kampfeffekte sind standardisierte Regeln des Kampfsystems. Sie können durch Ang
 \textbf{Kampfeffekt} & \textbf{Wirkung} \\
 \hline
 \effectArmorBreak{} \textbf{Rüstungsbruch} & Ignoriert bei der Schadensabwicklung die angegebene Anzahl an Schild-Symbolen jedes betroffenen Ziels. \\
-\effectDefensive{} \textbf{Defensiv} & Der Angreifer erhält bis zum Beginn seines nächsten Zuges den bei der Kaufoption angegebenen Bonus auf Ausweichen oder die angegebenen Schild-Symbole. \\
-\effectCleave{} \textbf{Spalten} & Vor dem Schadenswurf dürfen die Schadenswürfel des Angriffs auf beliebig viele Gegner in Reichweite verteilt werden. Die einem Gegner zugeteilten Würfel bilden einen eigenen Schadenspool. Rüstungsbruch wird bei jedem dieser Schadenspools berücksichtigt. Alle weiteren gekauften Kampfeffekte gelten für jeden betroffenen Gegner, der durch seinen Schadenspool mindestens 1 Lebenspunkt verliert. Wird der Schadenspool zuvor durch Mehrfachangriff verdoppelt, werden anschließend alle Würfel des verdoppelten Pools verteilt. \\
+\effectDefensive{} \textbf{Defensiv} & Der Angreifer erhält bis zum Beginn seines nächsten Zuges den angegebenen Bonus auf Ausweichen oder die angegebenen Schild-Symbole. \\
+\effectCleave{} \textbf{Spalten} & Vor dem Schadenswurf dürfen die Schadenswürfel des Angriffs auf beliebig viele Gegner in Reichweite verteilt werden. Die einem Gegner zugeteilten Würfel bilden einen eigenen Schadenspool. Rüstungsbruch wird bei jedem dieser Schadenspools berücksichtigt. Alle weiteren ausgelösten Kampfeffekte gelten für jeden betroffenen Gegner, der durch seinen Schadenspool mindestens 1 Lebenspunkt verliert. Wird der Schadenspool zuvor durch Mehrfachangriff verdoppelt, werden anschließend alle Würfel des verdoppelten Pools verteilt. \\
 \effectKnockdown{} \textbf{Zu Fall bringen} & Das Ziel erhält den Statuseffekt \emph{Zu Boden}. \\
 \effectPush{} \textbf{Wegstoßen} & Das Ziel wird ein Feld direkt vom Angreifer weg bewegt. War es zuvor benachbart, gilt es anschließend als entfernt. \\
 \effectStun{} \textbf{Betäuben} & Das Ziel setzt seinen nächsten Zug vollständig aus. \\
 \end{hptable}
 
-\begin{hptable}{L{3.2cm} C{1.5cm} L{2.4cm} Y}
+\begingroup
+\hplongtablestyle
+\begin{xltabular}{\linewidth}{L{3.2cm} C{1.5cm} L{2.4cm} Y}
 \textbf{Waffe} & \textbf{Hände} & \textbf{Typ} & \textbf{Details} \\
 \hline
+\endfirsthead
+\textbf{Waffe} & \textbf{Hände} & \textbf{Typ} & \textbf{Details} \\
+\hline
+\endhead
 Dolch & 1 & Schlagen & \star{} $\rightarrow$ \orangeDmgDie{}\newline 2\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\newline Wenn versteckt: \star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{} \\
  & & Schießen & 2\star{} $\rightarrow$ \orangeDmgDie{}\newline Danach \exhaust{} \\
 Schwert & 1 & Schlagen & 2\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\newline 3\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{} \\
@@ -52,6 +58,19 @@ Steinschlosspistole & 1 & Schießen & \star{} $\rightarrow$ \redDmgDie{}\redDmgD
  & & Rückseite & \moveAction{} $\rightarrow$ Waffe bereit machen \\
 Blunderbüchse & 2 & Schießen & \star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}\newline 2\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}\newline 2\star{} $\rightarrow$ \effectCleave{}\newline Danach \exhaust{} \\
  & & Rückseite & \standardAction{} $\rightarrow$ Waffe bereit machen \\
+\end{xltabular}
+\endgroup
+
+\subsection{Einsteigerwaffen}
+
+Einsteigerwaffen verwenden ein einfaches Schadensprofil. Jeder erzielte \star{} wird automatisch gemäß der angegebenen Schadensformel in Schadenswürfel umgewandelt.
+
+\begin{hptable}{L{3.5cm} C{1.5cm} L{2.4cm} Y}
+\textbf{Waffe} & \textbf{Hände} & \textbf{Typ} & \textbf{Schadensformel} \\
+\hline
+Einfache Klinge & 1 & Schlagen & Jeder \star{} $\rightarrow$ \orangeDmgDie{} \\
+Einfacher Zweihänder & 2 & Schlagen & Jeder \star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{} \\
+Einfacher Bogen & 2 & Schießen & Jeder \star{} $\rightarrow$ \orangeDmgDie{} \\
 \end{hptable}
 
 \section{Rüstungen und Schilde}

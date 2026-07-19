@@ -13,6 +13,7 @@
 \RequirePackage{hyperref}
 \RequirePackage{amssymb}
 \RequirePackage{tabularx}
+\RequirePackage{xltabular}
 \RequirePackage{array}
 \RequirePackage{etoolbox}
 \RequirePackage{environ}
@@ -82,6 +83,7 @@
 % Alle Tabellen im Regelwerk verwenden die serifenlose UI-Schrift.
 \AtBeginEnvironment{tabular}{\HPUIFont}
 \AtBeginEnvironment{tabularx}{\HPUIFont}
+\AtBeginEnvironment{xltabular}{\HPUIFont}
 
 % Kapitel und Abschnitte
 \titleformat{\chapter}[display]
@@ -232,6 +234,15 @@
 \newenvironment{hptable}[1]
   {\begingroup\HPUIFont\renewcommand{\arraystretch}{1.45}\setlength{\tabcolsep}{7pt}\emergencystretch=1.5em\tabularx{\linewidth}{#1}}
   {\endtabularx\endgroup}
+
+% Gemeinsamer Stil fuer mehrseitige xltabular-Tabellen. xltabular muss
+% direkt verwendet werden, damit es sein Tabellenende beim Einlesen erkennt.
+\newcommand{\hplongtablestyle}{%
+  \HPUIFont
+  \renewcommand{\arraystretch}{1.45}%
+  \setlength{\tabcolsep}{7pt}%
+  \emergencystretch=1.5em
+}
 
 % Zentrale Spielsymbole
 \input{shared/icons.tex}
