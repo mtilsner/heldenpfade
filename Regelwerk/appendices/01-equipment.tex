@@ -5,7 +5,7 @@ Dieser Anhang enthält die derzeit verfügbaren Ausrüstungsgegenstände. Die Be
 
 \section{Waffen}
 
-Waffen können eine oder mehrere Angriffsoptionen besitzen. Jede Angriffsoption nennt die verwendete Angriffsfertigkeit, die verfügbaren Kaufoptionen und gegebenenfalls besondere Voraussetzungen.
+Waffen können eine oder mehrere Angriffsoptionen besitzen. Jede Angriffsoption nennt als Typ die verwendete Angriffsfertigkeit. Die zugehörigen Kaufoptionen werden in der Spalte \emph{Details} untereinander aufgeführt. Passive Effekte einer Waffe stehen als eigene Zeile unterhalb ihrer Angriffsoptionen.
 
 \subsection{Allgemeine Kampfeffekte}
 
@@ -22,26 +22,28 @@ Kampfeffekte sind standardisierte Regeln des Kampfsystems. Sie können durch Ang
 \effectStun{} \textbf{Betäuben} & Das Ziel setzt seinen nächsten Zug vollständig aus. \\
 \end{hptable}
 
-\begin{hptable}{L{2.6cm} C{1.7cm} L{2.7cm} L{3.2cm} Y}
-\textbf{Name} & \textbf{Plätze} & \textbf{Angriffsfertigkeit} & \textbf{Schaden} & \textbf{Effekt} \\
+\begin{hptable}{L{3.2cm} C{1.5cm} L{2.4cm} Y}
+\textbf{Waffe} & \textbf{Hände} & \textbf{Typ} & \textbf{Details} \\
 \hline
-Dolch & 1 Hand & Schlagen & -- & -- \\
-Schwert & 1 Hand & Schlagen & -- & -- \\
-Axt & 1 Hand & Schlagen & -- & -- \\
-Kriegshammer & 1 Hand & Schlagen & -- & -- \\
-Speer & 2 Hände & Schlagen & -- & -- \\
-Zahnschwert & 2 Hände & Schlagen & -- & -- \\
-Zweihandaxt & 2 Hände & Schlagen & -- & -- \\
-Zweihandhammer & 2 Hände & Schlagen & -- & -- \\
-Stab & 2 Hände & Schlagen & -- & -- \\
-Kurzbogen & 2 Hände & Schießen & -- & -- \\
-Langbogen & 2 Hände & Schießen & -- & -- \\
-Leichte Armbrust & 2 Hände & Schießen & -- & -- \\
-Schwere Armbrust & 2 Hände & Schießen & -- & -- \\
-Arkebuse & 2 Hände & Schießen & -- & -- \\
-Muskete & 2 Hände & Schießen & -- & -- \\
-Steinschlosspistole & 1 Hand & Schießen & -- & -- \\
-Blunderbüchse & 2 Hände & Schießen & -- & -- \\
+Dolch & 1 & Schlagen & -- \\
+Schwert & 1 & Schlagen & -- \\
+Axt & 1 & Schlagen & -- \\
+Kriegshammer & 1 & Schlagen & -- \\
+Speer & 2 & Schlagen & -- \\
+ & & Schießen & -- \\
+Zahnschwert & 2 & Schlagen & -- \\
+Zweihandaxt & 2 & Schlagen & -- \\
+Zweihandhammer & 2 & Schlagen & -- \\
+Stab & 2 & Schlagen & -- \\
+ & & Passiv & +\blueDie{} auf Ausweichen \\
+Kurzbogen & 2 & Schießen & -- \\
+Langbogen & 2 & Schießen & -- \\
+Leichte Armbrust & 2 & Schießen & -- \\
+Schwere Armbrust & 2 & Schießen & -- \\
+Arkebuse & 2 & Schießen & -- \\
+Muskete & 2 & Schießen & -- \\
+Steinschlosspistole & 1 & Schießen & -- \\
+Blunderbüchse & 2 & Schießen & -- \\
 \end{hptable}
 
 \begin{todo}[title=Offen: Handlungsart besonderer Ausrüstungseffekte]
