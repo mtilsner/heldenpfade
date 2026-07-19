@@ -61,19 +61,22 @@ Jede Angriffsoption legt fest,
 
 \begin{itemize}
   \item welche Angriffsfertigkeit verwendet wird,
-  \item welche Schadensformel gilt und
-  \item welche besonderen Effekte der Angriff besitzt.
+  \item welche Kaufoptionen zur Verfügung stehen und
+  \item welche zusätzlichen Folgen nach dem Angriff eintreten.
 \end{itemize}
+
+Eine Angriffsoption auf einer Ausrüstungskarte kann nur gewählt werden, wenn sie auf der aktuell sichtbaren Kartenseite abgebildet ist.
 
 \begin{kurzregel}[title=Einen Angriff durchführen]
 \begin{enumerate}
   \item Angriffsoption wählen.
   \item Zulässiges Ziel bestimmen.
   \item Angriffsprobe ablegen.
-  \item Bei mindestens einem \star{} die Schadenswürfel bestimmen.
-  \item Schadenswürfel werfen und Schaden addieren.
-  \item \armor{} und \armorPierce{} anwenden.
+  \item Bei mindestens einem \star{} Kaufoptionen erwerben.
+  \item Erhaltene Schadenswürfel werfen und Schaden addieren.
+  \item Gekaufte Kampfeffekte sowie \armor{} und \armorPierce{} anwenden.
   \item Verbleibenden Schaden von den Lebenspunkten abziehen.
+  \item Zusätzliche Folgen der Angriffsoption abhandeln.
 \end{enumerate}
 \end{kurzregel}
 
@@ -87,13 +90,13 @@ Für die Angriffsfertigkeiten gelten folgende Reichweiten:
 
 \subsection{Treffen}
 
-Der Spieler legt mit der angegebenen Angriffsfertigkeit eine Angriffsprobe nach den Regeln aus \chapterref{chap:checks} ab. Zeigt sie keinen \star, verfehlt der Angriff. Jeder erzielte \star{} wird anschließend nach der Schadensformel der Angriffsoption in Schadenswürfel umgerechnet.
+Der Spieler legt mit der angegebenen Angriffsfertigkeit eine Angriffsprobe nach den Regeln aus \chapterref{chap:checks} ab. Zeigt sie keinen \star, verfehlt der Angriff. Jeder erzielte \star{} kann anschließend ausgegeben werden, um eine oder mehrere Kaufoptionen der gewählten Angriffsoption zu erwerben. Die vollständigen Regeln für Kaufoptionen stehen in \chapterref{chap:equipment}.
 
 Helden erhalten Vorteil auf Angriffsproben gegen Gegner mit dem Statuseffekt \emph{Zu Boden}.
 
 Gegner weichen Angriffen von Helden grundsätzlich nicht aus.
 
-\subsection{Schaden machen}
+\subsection{Kaufoptionen und Schaden}
 
 Es gibt drei Arten von Schadenswürfeln:
 
@@ -103,20 +106,27 @@ Es gibt drei Arten von Schadenswürfeln:
   \item den \textbf{schwarzen Schadenswürfel (\blackDmgDie)} für schweren Schaden.
 \end{itemize}
 
-Die Schadensformel einer Angriffsoption bestimmt, wie viele Schadenswürfel jeder erzielte \star{} erzeugt. Die Schadenswürfel werden geworfen und ihre Ergebnisse anschließend addiert.
+Eine Kaufoption nennt ihre Kosten in \star{} und den dafür erhaltenen Effekt. Der Angreifer darf seine erzielten \star{} in beliebiger Kombination für die Kaufoptionen der gewählten Angriffsoption ausgeben. Mit $\infty$ gekennzeichnete Kaufoptionen dürfen beliebig oft, mit 1$\times$ gekennzeichnete Kaufoptionen höchstens einmal pro Angriff gekauft werden. Nicht ausgegebene \star{} verfallen.
+
+Alle durch Kaufoptionen erhaltenen Schadenswürfel werden zu einem gemeinsamen Schadenspool zusammengefügt. Sie werden gemeinsam geworfen und ihre Ergebnisse anschließend addiert. Kaufoptionen können statt Schadenswürfeln oder zusätzlich zu ihnen Kampfeffekte verleihen.
 
 \begin{kurzregel}[title=Schaden bestimmen]
 \begin{enumerate}
-  \item Erzielte \star{} nach der Schadensformel in Schadenswürfel umrechnen.
-  \item Schadenswürfel werfen.
-  \item Gewürfelten Schaden addieren.
+  \item Erzielte \star{} für Kaufoptionen ausgeben.
+  \item Alle erhaltenen Schadenswürfel zu einem Schadenspool zusammenfügen.
+  \item Schadenswürfel werfen und gewürfelten Schaden addieren.
+  \item Gekaufte Kampfeffekte anwenden.
   \item Schutz durch \armor{} abziehen.
   \item Verbleibenden Schaden als Verlust von Lebenspunkten anwenden.
 \end{enumerate}
 \end{kurzregel}
 
-\begin{beispiel}[title=Beispiel: Schadenswürfel bestimmen]
-Eine Angriffsoption erzeugt pro \star{} zwei \orangeDmgDie. Erzielt Kiera 3\star, würfelt sie 6\orangeDmgDie. Erst die Ergebnisse dieser sechs Würfel bestimmen den verursachten Schaden.
+\begin{beispiel}[title=Beispiel: Schadenswürfel kaufen]
+Ein Schwert besitzt die Kaufoptionen $\infty$\;\star{} $\rightarrow$ \orangeDmgDie{} und 1$\times$\;3\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}. Erzielt ein Held 3\star{}, kann er die erste Kaufoption dreimal kaufen und 3\orangeDmgDie{} erhalten. Er kann stattdessen die zweite Kaufoption einmal kaufen und erhält 4\orangeDmgDie{}.
+\end{beispiel}
+
+\begin{beispiel}[title=Beispiel: Verschiedene Kaufoptionen kombinieren]
+Kiera erzielt mit ihrem Zahnschwert 2\star{}. Sie kann für beide \star{} zweimal die unbegrenzte Kaufoption erwerben und erhält 4\orangeDmgDie{}. Alternativ kauft sie einmal 2\orangeDmgDie{} und einmal die auf 1$\times$ begrenzte Kaufoption für 2\redDmgDie{}. In diesem Fall besteht ihr gemeinsamer Schadenspool aus 2\orangeDmgDie{} und 2\redDmgDie{}.
 \end{beispiel}
 
 Das \textbf{Schild-Symbol (\armor)} beschreibt Schutz durch Rüstung, Schilde, Talente oder andere Effekte. Jedes \armor{} verhindert 1 Schaden. \textbf{Rüstungsdurchdringung (\armorPierce)} ignoriert die angegebene Anzahl an Schild-Symbolen des Ziels, unabhängig von ihrer Quelle.
@@ -171,10 +181,10 @@ Wenn der Kampf endet, wird wieder normal weitererzählt.
 \begin{enumerate}
   \item \textbf{Angriffsoption wählen (Zahnschwert):} Kiera greift einen benachbarten Gegner mit ihrem Zahnschwert an.
   \item \textbf{Angriffsprobe:} Sie legt die angegebene Schlagen-Probe ab und erzielt 2\star.
-  \item \textbf{Schadenswürfel bestimmen:} Das Zahnschwert erzeugt pro \star{} zwei \orangeDmgDie. Kiera würfelt daher 4\orangeDmgDie.
-  \item \textbf{Schaden würfeln:} Die Schadenswürfel verursachen zusammen 5 Schaden.
+  \item \textbf{Kaufoptionen erwerben:} Kiera kauft für 1\star{} zwei \orangeDmgDie{} und für den zweiten \star{} einmalig zwei \redDmgDie{}.
+  \item \textbf{Schaden würfeln:} Ihr Schadenspool aus 2\orangeDmgDie{} und 2\redDmgDie{} verursacht zusammen 6 Schaden.
   \item \textbf{Schutz anwenden:} Der Gegner besitzt 2\armor{} und verhindert damit 2 Schaden.
-  \item \textbf{Lebenspunkte verlieren:} Der Gegner verliert die verbleibenden 3 Lebenspunkte.
+  \item \textbf{Lebenspunkte verlieren:} Der Gegner verliert die verbleibenden 4 Lebenspunkte.
 \end{enumerate}
 \end{beispiel}
 
