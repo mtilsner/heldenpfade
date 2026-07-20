@@ -1,0 +1,107 @@
+name: Automatische Build-Version
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: automatic-release-version
+  cancel-in-progress: false
+
+jobs:
+  create-release:
+    name: Patch-Version erhöhen und Release erstellen
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Nächste Version bestimmen und Release erstellen
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const semanticTag = /^v(\d+)\.(\d+)\.(\d+)$/;
+
+            const releases = await github.paginate(
+              github.rest.repos.listReleases,
+              {
+                owner,
+                repo,
+                per_page: 100,
+              },
+            );
+
+            const semanticReleases = releases
+              .filter((release) => !release.draft)
+              .map((release) => {
+                const match = semanticTag.exec(release.tag_name);
+                if (!match) {
+                  return null;
+                }
+
+                return {
+                  release,
+                  major: Number(match[1]),
+                  minor: Number(match[2]),
+                  patch: Number(match[3]),
+                };
+              })
+              .filter(Boolean);
+
+            async function resolveTagCommit(tagName) {
+              const ref = await github.rest.git.getRef({
+                owner,
+                repo,
+                ref: `tags/${tagName}`,
+              });
+
+              let object = ref.data.object;
+              while (object.type === "tag") {
+                const tag = await github.rest.git.getTag({
+                  owner,
+                  repo,
+                  tag_sha: object.sha,
+                });
+                object = tag.data.object;
+              }
+
+              return object.type === "commit" ? object.sha : null;
+            }
+
+            for (const entry of semanticReleases) {
+              const commitSha = await resolveTagCommit(entry.release.tag_name);
+              if (commitSha === context.sha) {
+                core.notice(
+                  `Für Commit ${context.sha} existiert bereits das Release ${entry.release.tag_name}.`,
+                );
+                return;
+              }
+            }
+
+            semanticReleases.sort(
+              (left, right) =>
+                right.major - left.major ||
+                right.minor - left.minor ||
+                right.patch - left.patch,
+            );
+
+            const highest = semanticReleases[0];
+            const nextTag = highest
+              ? `v${highest.major}.${highest.minor}.${highest.patch + 1}`
+              : "v0.0.1";
+
+            await github.rest.repos.createRelease({
+              owner,
+              repo,
+              tag_name: nextTag,
+              target_commitish: context.sha,
+              name: nextTag,
+              body: `Automatisch für Commit ${context.sha} erstellt.`,
+              draft: false,
+              prerelease: false,
+            });
+
+            core.notice(`Release ${nextTag} für Commit ${context.sha} erstellt.`);
