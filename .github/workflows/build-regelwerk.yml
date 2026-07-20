@@ -1,7 +1,17 @@
 name: Build Regelwerk
 
 on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'Regelwerk/**'
+      - '!Regelwerk/build/**'
+      - '.github/workflows/build-regelwerk.yml'
+      - '.gitignore'
   push:
+    branches:
+      - main
     paths:
       - 'Regelwerk/**'
       - '!Regelwerk/build/**'
@@ -10,11 +20,13 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: build-regelwerk-${{ github.ref }}
+  group: build-regelwerk-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build-pdf:
@@ -23,8 +35,6 @@ jobs:
     steps:
       - name: Repository auschecken
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Inkscape installieren
         run: |
@@ -51,27 +61,39 @@ jobs:
           working_directory: Regelwerk
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
 
-      - name: PDF in Regelwerk/build ablegen
+      - name: PDF für Veröffentlichung vorbereiten
         run: |
-          mkdir -p Regelwerk/build
-          cp Regelwerk/main.pdf Regelwerk/build/Heldenpfade-Regelwerk.pdf
+          mkdir -p publish
+          cp Regelwerk/main.pdf publish/Heldenpfade-Regelwerk.pdf
 
-      - name: PDF committen
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: PR-PDF als Artefakt hochladen
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Heldenpfade-Regelwerk-PR-${{ github.event.pull_request.number }}
+          path: publish/Heldenpfade-Regelwerk.pdf
+          retention-days: 14
+          if-no-files-found: error
 
-          git add -f Regelwerk/build/Heldenpfade-Regelwerk.pdf
+      - name: GitHub Pages konfigurieren
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/configure-pages@v5
 
-          if git diff --cached --quiet; then
-            echo "PDF ist unverändert. Kein Commit notwendig."
-            exit 0
-          fi
+      - name: Pages-Artefakt hochladen
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: publish
 
-          git commit -m "ci: update generated Regelwerk PDF"
+  deploy-pages:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build-pdf
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
-          if ! git push origin "HEAD:${GITHUB_REF_NAME}"; then
-            echo "Der Branch wurde während des Builds aktualisiert. Rebase und erneuter Push."
-            git pull --rebase origin "${GITHUB_REF_NAME}"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
-          fi
+    steps:
+      - name: Regelwerk auf GitHub Pages veröffentlichen
+        id: deployment
+        uses: actions/deploy-pages@v4
