@@ -1,7 +1,22 @@
 name: Build Regelwerk
 
 on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - closed
+    paths:
+      - 'Regelwerk/**'
+      - '!Regelwerk/build/**'
+      - '.github/workflows/build-regelwerk.yml'
+      - '.gitignore'
   push:
+    branches:
+      - main
     paths:
       - 'Regelwerk/**'
       - '!Regelwerk/build/**'
@@ -10,21 +25,21 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: build-regelwerk-${{ github.ref }}
-  cancel-in-progress: true
+  group: regelwerk-pages
+  cancel-in-progress: false
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   build-pdf:
+    if: github.event_name != 'pull_request' || github.event.action != 'closed'
     runs-on: ubuntu-latest
 
     steps:
       - name: Repository auschecken
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Inkscape installieren
         run: |
@@ -51,27 +66,88 @@ jobs:
           working_directory: Regelwerk
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
 
-      - name: PDF in Regelwerk/build ablegen
+      - name: PDF für Veröffentlichung vorbereiten
         run: |
-          mkdir -p Regelwerk/build
-          cp Regelwerk/main.pdf Regelwerk/build/Heldenpfade-Regelwerk.pdf
+          mkdir -p publish
+          if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]]; then
+            cp Regelwerk/main.pdf "publish/Heldenpfade-Regelwerk-PR-${{ github.event.pull_request.number }}.pdf"
+          else
+            cp Regelwerk/main.pdf publish/Heldenpfade-Regelwerk.pdf
+          fi
 
-      - name: PDF committen
+      - name: PR-Vorschau auf gh-pages veröffentlichen
+        if: github.event_name == 'pull_request'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: publish
+          destination_dir: pr-preview/pr-${{ github.event.pull_request.number }}
+          keep_files: true
+
+      - name: Link zur PR-Vorschau kommentieren
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const marker = '<!-- regelwerk-preview -->';
+            const url = `https://${context.repo.owner}.github.io/${context.repo.repo}/pr-preview/pr-${context.issue.number}/Heldenpfade-Regelwerk-PR-${context.issue.number}.pdf`;
+            const body = `${marker}\n📄 **Regelwerk-Vorschau:** ${url}`;
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const existing = comments.find(comment =>
+              comment.user.type === 'Bot' && comment.body.includes(marker)
+            );
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+      - name: Aktuelles Regelwerk auf gh-pages veröffentlichen
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: publish
+          keep_files: true
+
+  cleanup-pr-preview:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: gh-pages auschecken
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+
+      - name: PR-Vorschau entfernen
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add -f Regelwerk/build/Heldenpfade-Regelwerk.pdf
-
-          if git diff --cached --quiet; then
-            echo "PDF ist unverändert. Kein Commit notwendig."
+          preview_dir="pr-preview/pr-${{ github.event.pull_request.number }}"
+          if [[ ! -d "${preview_dir}" ]]; then
+            echo "Keine Vorschau vorhanden."
             exit 0
           fi
 
-          git commit -m "ci: update generated Regelwerk PDF"
-
-          if ! git push origin "HEAD:${GITHUB_REF_NAME}"; then
-            echo "Der Branch wurde während des Builds aktualisiert. Rebase und erneuter Push."
-            git pull --rebase origin "${GITHUB_REF_NAME}"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
-          fi
+          rm -rf "${preview_dir}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "ci: remove preview for PR #${{ github.event.pull_request.number }}"
+          git push origin gh-pages
