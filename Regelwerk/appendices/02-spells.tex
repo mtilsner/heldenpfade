@@ -9,8 +9,15 @@ Bei Angriffszaubern werden \star{} wie bei Waffen gemäß den aufgeführten Zeil
 
 \section{Zauber für 1 Mana}
 
-\begin{hptable}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
+\begingroup
+\hplongtablestyle
+\begin{xltabular}{\linewidth}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
 \textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\hline
+\endfirsthead
+\textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\hline
+\endhead
 \textbf{Flammenstrahl} & Elementar, Feuer & 1 & \standardAction{} & \emph{Zaubern}: \star{} $\rightarrow$ \redDmgDie{}\newline 2\star{} $\rightarrow$ \redDmgDie{}\redDmgDie{}\newline \star{} $\rightarrow$ Das Ziel erhält \emph{Brennend 1}.\newline 1\manaLoss{} $\rightarrow$ Wähle ein weiteres, bisher nicht gewähltes Ziel in Reichweite. Es ist von allen gekauften Schadenswürfeln und Effekten betroffen. Diese Option darf mehrfach gewählt werden. \\
 \textbf{Eisblitz} & Elementar, Eis & 1 & \standardAction{} & \emph{Zaubern}: \star{} $\rightarrow$ \redDmgDie{}\newline 2\star{} $\rightarrow$ \redDmgDie{}\redDmgDie{}\newline 3\star{} $\rightarrow$ Das Ziel erhält \emph{Festgefroren}.\newline 1\manaLoss{} $\rightarrow$ Wähle ein weiteres, bisher nicht gewähltes Ziel in Reichweite. Es ist von allen gekauften Schadenswürfeln und Effekten betroffen. Diese Option darf mehrfach gewählt werden. \\
 \textbf{Windklinge} & Elementar, Wind & 1 & \standardAction{} & \emph{Zaubern}: \star{} $\rightarrow$ \redDmgDie{}\newline 2\star{} $\rightarrow$ \redDmgDie{}\redDmgDie{}\newline \star{} $\rightarrow$ \effectPush{}\newline 1\manaLoss{} $\rightarrow$ Wähle ein weiteres, bisher nicht gewähltes Ziel in Reichweite. Es ist von allen gekauften Schadenswürfeln und Effekten betroffen. Diese Option darf mehrfach gewählt werden. \\
@@ -24,12 +31,20 @@ Bei Angriffszaubern werden \star{} wie bei Waffen gemäß den aufgeführten Zeil
 \textbf{Leichter Schritt} & Bewegung & 1 & \freeAction{} & Du ignorierst bis zum Ende deines Zuges schwieriges Gelände und kannst dich über nicht tragfähigen natürlichen Untergrund wie Schnee, Schlamm oder loses Geröll bewegen, ohne einzusinken. \\
 \textbf{Fall brechen} & Bewegung & 1 & \freeAction{} & Wirke diesen Zauber, wenn du oder ein sichtbarer Verbündeter in bis zu 10 Metern Entfernung fällt. Das Ziel landet sicher und erleidet durch diesen Sturz keinen Schaden. \\
 \textbf{Beruhigen} & Einfluss & 1 & \standardAction{} & Ein sichtbares Wesen in bis zu 10 Metern Entfernung wird für 5 Minuten ruhiger. Unmittelbare Panik, unkontrollierte Wut oder vergleichbare starke Erregung endet, sofern das Ziel nicht weiterhin akut bedroht wird. Der Zauber erzwingt weder Vertrauen noch Gehorsam. \\
-\end{hptable}
+\end{xltabular}
+\endgroup
 
 \section{Zauber für 2 Mana}
 
-\begin{hptable}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
+\begingroup
+\hplongtablestyle
+\begin{xltabular}{\linewidth}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
 \textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\hline
+\endfirsthead
+\textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\hline
+\endhead
 \textbf{Rückenwind} & Elementar, Wind & 2 & \moveAction{} & Ein sichtbarer Verbündeter in bis zu 10 Metern Entfernung darf sich sofort um bis zu seine Bewegungsweite bewegen. Diese Bewegung löst keine zusätzliche Bewegungsaktion aus. \\
 \textbf{Steinhaut} & Elementar, Erde & 2 & \standardAction{} & Ein benachbarter Verbündeter erhält bis zum Beginn deines nächsten Zuges 2\armor{}. Solange der Zauber wirkt, ist seine Bewegungsweite um 1 Feld reduziert. \\
 \textbf{Seil aus Licht} & Beschwörung & 2 & \standardAction{} & Erschaffe für 1 Stunde ein bis zu 15 Meter langes, leuchtendes Seil. Es kann sich an einem sichtbaren festen Punkt befestigen, trägt bis zu drei Personen gleichzeitig und verschwindet, wenn es zerschnitten oder weiter als 30 Meter von dir entfernt wird. \\
@@ -38,12 +53,20 @@ Bei Angriffszaubern werden \star{} wie bei Waffen gemäß den aufgeführten Zeil
 \textbf{Zielscheibe} & Erkenntnis & 2 & \standardAction{} & Du erhältst bis zum Ende des Kampfes +1\blueDie{} auf Angriffsproben gegen einen Gegner deiner Wahl. \\
 \textbf{Seele beruhigen} & Jenseits & 2 & \standardAction{} & Ein sichtbarer Geist oder ein von Furcht, Besessenheit oder jenseitiger Unruhe betroffenes Wesen wird für 5 Minuten beruhigt. Ein feindseliger Geist greift in dieser Zeit nicht an, solange er nicht provoziert wird. \\
 \textbf{Mut} & Einfluss & 2 & \standardAction{} & Ein sichtbarer Verbündeter in bis zu 10 Metern Entfernung erhält bis zum Ende des Kampfes Vorteil auf Proben gegen Furcht und Einschüchterung. Ein bereits durch Furcht verursachter Nachteil endet. \\
-\end{hptable}
+\end{xltabular}
+\endgroup
 
 \section{Zauber für 3 Mana}
 
-\begin{hptable}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
+\begingroup
+\hplongtablestyle
+\begin{xltabular}{\linewidth}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
 \textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\hline
+\endfirsthead
+\textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\hline
+\endhead
 \textbf{Schneesturm} & Elementar, Eis & 3 & \standardAction{} & Wähle einen sichtbaren Bereich von bis zu 3 $\times$ 5 Metern. Durch den Bereich kann nicht gesehen werden. Angriffe und Zauber, die Sicht auf ihr Ziel benötigen, können nicht durch den Bereich hindurch ausgeführt werden. Betritt eine Figur den Bereich oder bewegt sie sich darin, muss sie einmal pro Bewegung eine schwierige Probe mit \emph{Turnen} ablegen. Misslingt die Probe, geht sie zu Boden. Beginnt eine brennende Figur ihren Zug im Schneesturm, endet \emph{Brennend}. Zu Beginn der nächsten Runde endet der Schneesturm, sofern der Zaubernde nicht 1\manaLoss{} bezahlt. Dies darf zu Beginn jeder folgenden Runde wiederholt werden. \\
 \textbf{Geisterross} & Beschwörung & 3 & \standardAction{} & Beschwöre für 8 Stunden ein geisterhaftes Reittier. Es trägt bis zu zwei Personen, benötigt weder Futter noch Ruhe und kann nicht angreifen. Erleidet es Schaden, verschwindet es. \\
 \textbf{Spiegelbild} & Beschwörung & 3 & \standardAction{} & Erschaffe bis zum Beginn deines nächsten Zuges zwei bewegungsgleiche Abbilder deiner selbst. Wirst du Ziel eines Angriffs, würfle einen \blueDie{}. Bei mindestens einem \star{} trifft der Angriff stattdessen ein Spiegelbild und zerstört es. Sind beide Spiegelbilder zerstört, endet der Zauber. \\
@@ -53,18 +76,27 @@ Bei Angriffszaubern werden \star{} wie bei Waffen gemäß den aufgeführten Zeil
 \textbf{Geisterblick} & Erkenntnis, Jenseits & 3 & \standardAction{} & Du erkennst für 5 Minuten Geister, unsichtbare Wesen, Illusionen, Geheimtüren, Geheimgänge und andere übernatürlich verborgene Erscheinungen in deinem Sichtfeld. Der Zauber durchdringt keine festen Hindernisse. \\
 \textbf{Schattenmantel} & Jenseits & 3 & \standardAction{} & Du wirst für 5 Minuten von geisterhaften Schatten verhüllt. Solange du dich im Halbdunkel oder in Dunkelheit befindest, haben andere Wesen Nachteil auf Proben, um dich wahrzunehmen. Der Zauber endet, sobald du angreifst oder einen Angriffszauber wirkst. \\
 \textbf{Furcht} & Einfluss & 3 & \standardAction{} & Ein sichtbarer Gegner in bis zu 10 Metern Entfernung muss in seinem nächsten Zug seine Bewegungsaktion verwenden, um sich so weit wie möglich von dir zu entfernen. Er darf sich dir in diesem Zug nicht freiwillig nähern. \\
-\end{hptable}
+\end{xltabular}
+\endgroup
 
 \section{Zauber für 4 Mana}
 
-\begin{hptable}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
+\begingroup
+\hplongtablestyle
+\begin{xltabular}{\linewidth}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
 \textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\hline
+\endfirsthead
+\textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\hline
+\endhead
 \textbf{Verwandlung} & Leben & 4 & \standardAction{} & Ein benachbarter Verbündeter erhält für 10 Minuten ein natürliches tierisches Merkmal deiner Wahl: Kiemen und Schwimmhäute, Krallen und Kletterfähigkeit, besonders scharfe Sinne oder Flügel. Flügel erlauben nur langsamen Flug und tragen keine zusätzliche Person. \\
 \textbf{Fliegen} & Bewegung & 4 & \standardAction{} & Ein benachbarter Verbündeter kann 5 Minuten lang fliegen. Seine Bewegungsweite bleibt unverändert. Endet der Zauber in der Luft, sinkt das Ziel sicher zu Boden. \\
 \textbf{Letzte Erinnerung} & Erkenntnis, Jenseits & 4 & \standardAction{} & Berühre einen Leichnam. Du erlebst den letzten starken Sinneseindruck, den die verstorbene Person vor ihrem Tod wahrgenommen hat. Die Erinnerung dauert höchstens eine Minute und kann unvollständig oder subjektiv sein. \\
 \textbf{Freundschaft} & Einfluss & 4 & \standardAction{} & Eine Kreatur betrachtet dich für 5 Minuten als Freund. Im Kampf setzt ein Gegner für 1 Runde aus. \\
 \textbf{Erinnerungen trüben} & Einfluss & 4 & \standardAction{} & Ein sichtbares Wesen in bis zu 10 Metern Entfernung erinnert sich für 1 Stunde nur verschwommen an die letzten 5 Minuten. Prägende Erlebnisse, erlittene Verletzungen und fest verankertes Wissen werden nicht gelöscht. \\
-\end{hptable}
+\end{xltabular}
+\endgroup
 
 \begin{todo}
 Widerstand, gültige Ziele und Grenzen der Zauber \emph{Freundschaft}, \emph{Furcht}, \emph{Erinnerungen trüben} und \emph{Herrschaft} festlegen.
@@ -72,29 +104,61 @@ Widerstand, gültige Ziele und Grenzen der Zauber \emph{Freundschaft}, \emph{Fur
 
 \section{Zauber für 5 Mana}
 
-\begin{hptable}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
+\begingroup
+\hplongtablestyle
+\begin{xltabular}{\linewidth}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
 \textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\hline
+\endfirsthead
+\textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\hline
+\endhead
 \textbf{Feuerball} & Elementar, Feuer & 5 & \standardAction{} & Wähle einen sichtbaren Punkt in bis zu 20 Metern Entfernung. Würfle einmal \redDmgDie{}\redDmgDie{}\redDmgDie{}\redDmgDie{}\redDmgDie{}. Alle Wesen im Umkreis von 3 Metern um diesen Punkt erleiden das gewürfelte Ergebnis und erhalten \emph{Brennend 2}. Freund und Feind sind gleichermaßen betroffen. Diesem Schaden kann nicht ausgewichen werden. Brennbare Objekte im Wirkungsbereich fangen Feuer. \\
 \textbf{Mit den Toten sprechen} & Jenseits & 5 & \standardAction{} & Berühre einen Leichnam. Du darfst dem Geist der verstorbenen Person bis zu drei Fragen stellen. Er antwortet wahrheitsgemäß nach bestem Wissen, kann sich aber irren, schweigen oder unverständlich bleiben, wenn seine Seele nicht erreichbar ist. Derselbe Tote kann nur einmal durch diesen Zauber befragt werden. \\
-\end{hptable}
+\end{xltabular}
+\endgroup
 
 \section{Zauber für 6 Mana}
 
-\begin{hptable}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
+\begingroup
+\hplongtablestyle
+\begin{xltabular}{\linewidth}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
 \textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\hline
+\endfirsthead
+\textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\hline
+\endhead
 \multicolumn{5}{c}{\emph{Noch keine Zauber eingetragen.}} \\
-\end{hptable}
+\end{xltabular}
+\endgroup
 
 \section{Zauber für 7 Mana}
 
-\begin{hptable}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
+\begingroup
+\hplongtablestyle
+\begin{xltabular}{\linewidth}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
 \textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\hline
+\endfirsthead
+\textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\hline
+\endhead
 \textbf{Herrschaft} & Einfluss & 7 & \standardAction{} & Ein sichtbares Wesen in bis zu 10 Metern Entfernung muss in seinem nächsten Zug eine kurze, eindeutig formulierte Anweisung ausführen. Es führt keine Handlung aus, durch die es sich offensichtlich selbst schwer verletzt oder unmittelbar tötet. Danach endet der Zauber. \\
-\end{hptable}
+\end{xltabular}
+\endgroup
 
 \section{Zauber für 8 oder mehr Mana}
 
-\begin{hptable}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
+\begingroup
+\hplongtablestyle
+\begin{xltabular}{\linewidth}{L{2.7cm} L{3.0cm} C{1.0cm} L{2.1cm} Y}
 \textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\hline
+\endfirsthead
+\textbf{Zauber} & \textbf{Schlüsselworte} & \textbf{Mana} & \textbf{Zauberzeit} & \textbf{Effekt} \\
+\hline
+\endhead
 \textbf{Wiederbelebung} & Leben, Jenseits & 8 & 10 Minuten & Bringe eine verstorbene Person ins Leben zurück, die höchstens seit einer Stunde tot ist und deren Körper nicht vollständig zerstört wurde. Sie kehrt mit 1\lifeGain{} zurück. Derselbe Verstorbene kann nur einmal durch diesen Zauber zurückgebracht werden. \\
-\end{hptable}
+\end{xltabular}
+\endgroup
