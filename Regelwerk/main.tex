@@ -2,6 +2,13 @@
 
 \usepackage{heldenpfade}
 
+\newcommand{\HPDocumentVersion}{unveröffentlicht}
+\newcommand{\HPDocumentDate}{ohne Veröffentlichungsdatum}
+\newcommand{\HPDocumentStatus}{Version}
+\IfFileExists{shared/version-info.generated.tex}{%
+  \input{shared/version-info.generated.tex}%
+}{}
+
 \title{Heldenpfade}
 \author{}
 \date{}
@@ -9,7 +16,17 @@
 \begin{document}
 
 \frontmatter
-\maketitle
+\begin{titlepage}
+  \centering
+  \vspace*{0.22\textheight}
+  {\Huge\bfseries Heldenpfade\par}
+  \vfill
+  {\small
+    \HPDocumentStatus{} \HPDocumentVersion\par
+    \vspace{0.35em}
+    \HPDocumentDate\par
+  }
+\end{titlepage}
 \tableofcontents
 
 \mainmatter
