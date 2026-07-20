@@ -25,7 +25,7 @@ Um Zauber wirken zu können, muss ein Held das Talent \emph{Magiebegabt} besitze
 
 Jeder Zauber wird durch eine Zauberkarte beschrieben. Die Karte nennt den Namen, die Manakosten, die Zauberzeit und den Effekt des Zaubers. Sie kann außerdem Ziele, eine Wirkungsdauer, Schlüsselwörter oder weitere Voraussetzungen angeben.
 
-Ein \textbf{Zauber} ist die gesamte Karte. Um ihn zu wirken, bezahlt der Held seine Manakosten und führt den beschriebenen \textbf{Effekt} aus. Ein Effekt kann eine \textbf{Angriffsoption} sein. In diesem Fall bestimmt die Angriffsoption wie gewohnt die Angriffsfertigkeit, wie erzielte \star{} ausgegeben werden können, und mögliche zusätzliche Folgen. Jede aufgeführte Zeile darf pro Angriff höchstens einmal genutzt werden; verbleibende \star{} können anschließend erhaltene Schadenswürfel verbessern.
+Ein \textbf{Zauber} ist die gesamte Karte. Um ihn zu wirken, bezahlt der Held seine Manakosten und führt den beschriebenen \textbf{Effekt} aus. Ein Effekt kann eine \textbf{Angriffsoption} sein. In diesem Fall bestimmt die Angriffsoption wie gewohnt die Angriffsfertigkeit, wie erzielte \star{} ausgegeben werden können, und mögliche zusätzliche Folgen. Jede aufgeführte Zeile darf pro Angriff höchstens einmal genutzt werden, sofern sie nicht ausdrücklich als mehrfach nutzbar bezeichnet ist; verbleibende \star{} können anschließend erhaltene Schadenswürfel verbessern.
 
 Zauberkarten werden durch das Wirken eines Zaubers nicht automatisch erschöpft. Nur wenn eine Zauberkarte ausdrücklich das Symbol \textbf{Erschöpfen (\exhaust)} zeigt oder der Regeltext dies verlangt, wird genau diese Karte umgedreht. Danach gelten ausschließlich die Angaben und Effekte der nun sichtbaren Kartenseite.
 
@@ -59,10 +59,12 @@ Enthält der Effekt eines Zaubers eine Angriffsoption, gelten für diese vollst�
 Manakosten bezahlen $\rightarrow$ Angriffsoption nach den normalen Kampfregeln ausführen.
 \end{kurzregel}
 
-\begin{beispiel}[title=Beispiel: Eisblitz]
-Lina wirkt \emph{Eisblitz}. Der Zauber kostet 1\manaLoss{} und benötigt eine \standardAction. Sein Effekt ist eine Angriffsoption mit der Angriffsfertigkeit \emph{Zaubern}. Bei dieser Angriffsoption kann \star{} für 1\orangeDmgDie{} ausgegeben werden.
+Bestimmt ein Angriffszauber nach der Angriffsprobe weitere Ziele und überträgt alle gekauften Schadenswürfel und Effekte auf diese, werden die Ziele vor dem Schadenswurf gewählt. Der gemeinsame Schadenspool wird nur einmal gewürfelt und das Ergebnis gegen jedes Ziel angewendet. Schilde und zielabhängige Boni werden für jedes Ziel einzeln berücksichtigt.
 
-Lina bezahlt 1 Mana, bestimmt einen gültigen Gegner als Ziel und legt anschließend die Angriffsprobe mit \emph{Zaubern} ab. Sie erzielt 2\star{}, gibt 1\star{} für den \orangeDmgDie{} aus und verbessert ihn mit dem verbleibenden \star{} zu einem \redDmgDie{}. Der weitere Ablauf folgt den normalen Regeln für Schaden, Rüstungsbruch, \armor{} und Lebenspunktverlust.
+\begin{beispiel}[title=Beispiel: Eisblitz]
+Lina wirkt \emph{Eisblitz}. Der Zauber kostet 1\manaLoss{} und benötigt eine \standardAction. Sein Effekt ist eine Angriffsoption mit der Angriffsfertigkeit \emph{Zaubern}. Bei dieser Angriffsoption kann 1\star{} für 1\redDmgDie{} oder 2\star{} für 2\redDmgDie{} ausgegeben werden. Für 3\star{} kann das Ziel stattdessen den Statuseffekt \emph{Festgefroren} erhalten.
+
+Lina bezahlt 1 Mana, bestimmt einen gültigen Gegner als Ziel und legt anschließend die Angriffsprobe mit \emph{Zaubern} ab. Sie erzielt 2\star{} und gibt sie für 2\redDmgDie{} aus. Der weitere Ablauf folgt den normalen Regeln für Schaden, Rüstungsbruch, \armor{} und Lebenspunktverlust.
 \end{beispiel}
 
 \section{Zauberproben}
@@ -83,16 +85,16 @@ Endet ein Zauber, enden auch alle durch ihn verursachten fortdauernden Boni, Mal
 
 \section{Ausführliches Beispiel}
 
-Lina möchte im Kampf einen entfernten Gegner mit \emph{Eisblitz} angreifen.
+Lina möchte im Kampf zwei entfernte Gegner mit \emph{Eisblitz} angreifen.
 
 \begin{enumerate}
   \item \textbf{Zauber wählen:} Lina wählt den verfügbaren Zauber \emph{Eisblitz}. Das Wirken benötigt eine \standardAction.
-  \item \textbf{Mana bezahlen:} Sie bezahlt die Kosten von 1\manaLoss.
-  \item \textbf{Ziel bestimmen:} Da die Angriffsoption \emph{Zaubern} verwendet, darf sie einen benachbarten oder entfernten Gegner als Ziel wählen.
+  \item \textbf{Mana bezahlen:} Sie bezahlt die Grundkosten von 1\manaLoss.
+  \item \textbf{Ziel bestimmen:} Da die Angriffsoption \emph{Zaubern} verwendet, darf sie einen benachbarten oder entfernten Gegner als erstes Ziel wählen.
   \item \textbf{Angriffsprobe:} Lina legt eine Angriffsprobe mit \emph{Zaubern} ab und erzielt 3\star.
-  \item \textbf{Sterne ausgeben:} Lina gibt gemäß den Angaben des \emph{Eisblitzes} 1\star{} aus und erhält 1\orangeDmgDie{}.
-  \item \textbf{Schadenswürfel verbessern:} Mit den beiden verbleibenden \star{} verbessert sie den Würfel zunächst zu einem \redDmgDie{} und anschließend zu einem \blackDmgDie{}.
-  \item \textbf{Angriff abschließen:} Lina würfelt den \blackDmgDie{}. Anschließend werden Rüstungsbruch, \armor{} und mögliche weitere Effekte nach den normalen Kampfregeln angewendet.
+  \item \textbf{Sterne ausgeben:} Lina gibt 1\star{} für 1\redDmgDie{} und 2\star{} für 2 weitere \redDmgDie{} aus. Ihr Schadenspool besteht aus 3\redDmgDie{}.
+  \item \textbf{Weiteres Ziel wählen:} Lina bezahlt zusätzlich 1\manaLoss{} und wählt einen zweiten entfernten Gegner in Reichweite. Beide Ziele sind von allen gekauften Schadenswürfeln betroffen.
+  \item \textbf{Angriff abschließen:} Lina würfelt den gemeinsamen Schadenspool einmal. Das Ergebnis wird gegen beide Gegner angewendet; \armor{} und mögliche weitere Effekte werden für jedes Ziel einzeln berücksichtigt.
 \end{enumerate}
 
 \section{Weiterführende Informationen}
