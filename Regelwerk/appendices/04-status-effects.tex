@@ -1,5 +1,24 @@
-\chapter{Statuseffekte}
+\chapter{Effekte und Zustände}
 \label{app:status-effects}
+
+Dieser Anhang enthält standardisierte Kampfeffekte und Statuseffekte. Sie können durch Waffen, Zauber, Talente, Gegnerfähigkeiten oder andere Spielregeln ausgelöst werden und gelten unabhängig von ihrer Quelle immer gleich.
+
+\section{Allgemeine Kampfeffekte}
+
+Kampfeffekte sind standardisierte Regeln des Kampfsystems. Sie können durch Angriffsoptionen, Talente, Zauber, Gegnerfähigkeiten oder andere Spieleffekte ausgelöst werden. Jeder Kampfeffekt ist an dieser Stelle definiert und wird an anderer Stelle lediglich referenziert.
+
+\begin{hptable}{L{4.0cm} Y}
+\textbf{Kampfeffekt} & \textbf{Wirkung} \\
+\hline
+\effectArmorBreak{} \textbf{Rüstungsbruch} & Ignoriert bei der Schadensabwicklung die angegebene Anzahl an Schild-Symbolen jedes betroffenen Ziels. \\
+\effectDefensive{} \textbf{Defensiv} & Der Angreifer erhält bis zum Beginn seines nächsten Zuges den angegebenen Bonus auf Ausweichen oder die angegebenen Schild-Symbole. \\
+\effectCleave{} \textbf{Spalten} & Vor dem Schadenswurf dürfen die Schadenswürfel des Angriffs auf beliebig viele Gegner in Reichweite verteilt werden. Die einem Gegner zugeteilten Würfel bilden einen eigenen Schadenspool. Rüstungsbruch wird bei jedem dieser Schadenspools berücksichtigt. Alle weiteren ausgelösten Kampfeffekte gelten für jeden betroffenen Gegner, der durch seinen Schadenspool mindestens 1 Lebenspunkt verliert. Wird der Schadenspool zuvor durch Mehrfachangriff verdoppelt, werden anschließend alle Würfel des verdoppelten Pools verteilt. \\
+\effectKnockdown{} \textbf{Zu Fall bringen} & Das Ziel erhält den Statuseffekt \emph{Zu Boden}. \\
+\effectPush{} \textbf{Wegstoßen} & Das Ziel wird ein Feld direkt vom Angreifer weg bewegt. War es zuvor benachbart, gilt es anschließend als entfernt. \\
+\effectStun{} \textbf{Betäuben} & Das Ziel setzt seinen nächsten Zug vollständig aus. \\
+\end{hptable}
+
+\section{Statuseffekte}
 
 Statuseffekte beschreiben besondere Zustände, die eine Figur vorübergehend beeinflussen.
 
