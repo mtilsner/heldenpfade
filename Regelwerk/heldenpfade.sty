@@ -20,6 +20,7 @@
 \RequirePackage{csquotes}
 \RequirePackage{parskip}
 \RequirePackage{titlesec}
+\RequirePackage{needspace}
 \RequirePackage{fancyhdr}
 \RequirePackage{enumitem}
 \RequirePackage[most]{tcolorbox}
@@ -100,6 +101,12 @@
   {0.7em}
   {}
 \titlespacing*{\section}{0pt}{1.55\baselineskip}{0.5\baselineskip}
+
+% Haelt eine Abschnittsueberschrift mit dem Beginn des folgenden Inhalts zusammen.
+\newcommand{\hpsection}[2][8]{%
+  \Needspace{#1\baselineskip}%
+  \section{#2}%
+}
 
 \titleformat{\subsection}
   {\normalfont\HPHeadingFont\large\color{hpBrown}}
