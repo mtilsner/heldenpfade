@@ -13,7 +13,7 @@ Kampfeffekte sind standardisierte Regeln des Kampfsystems. Sie können durch Ang
 \effectArmorBreak{} \textbf{Rüstungsbruch} & Ignoriert bei der Schadensabwicklung die angegebene Anzahl an Schild-Symbolen jedes betroffenen Ziels. \\
 \effectDefensive{} \textbf{Defensiv} & Der Angreifer erhält bis zum Beginn seines nächsten Zuges den angegebenen Bonus auf Ausweichen oder die angegebenen Schild-Symbole. \\
 \effectCleave{} \textbf{Spalten} & Vor dem Schadenswurf dürfen die Schadenswürfel des Angriffs auf beliebig viele Gegner in Reichweite verteilt werden. Die einem Gegner zugeteilten Würfel bilden einen eigenen Schadenspool. Rüstungsbruch wird bei jedem dieser Schadenspools berücksichtigt. Alle weiteren ausgelösten Kampfeffekte gelten für jeden betroffenen Gegner, der durch seinen Schadenspool mindestens 1 Lebenspunkt verliert. Wird der Schadenspool zuvor durch Mehrfachangriff verdoppelt, werden anschließend alle Würfel des verdoppelten Pools verteilt. \\
-\effectKnockdown{} \textbf{Zu Fall bringen} & Das Ziel erhält den Statuseffekt \emph{Zu Boden}. \\
+\effectKnockdown{} \textbf{Zu Fall bringen} & Das Ziel erhält den Statuseffekt \statusProne{} \emph{Liegend}. \\
 \effectPush{} \textbf{Wegstoßen} & Das Ziel wird ein Feld direkt vom Angreifer weg bewegt. War es zuvor benachbart, gilt es anschließend als entfernt. \\
 \effectStun{} \textbf{Betäuben} & Das Ziel setzt seinen nächsten Zug vollständig aus. \\
 \end{hptable}
@@ -27,10 +27,10 @@ Ein Statuseffekt gilt so lange, bis die bei ihm beschriebene Bedingung erfüllt 
 \begin{hptable}{L{3.0cm} Y L{4.0cm}}
 \textbf{Statuseffekt} & \textbf{Wirkung} & \textbf{Ende} \\
 \hline
-Brennend X & Erhält eine Figur \emph{Brennend X}, erhält sie den angegebenen Wert. Ist sie bereits brennend, erhöht sich ihr vorhandener Wert stattdessen um X. Wird der Schaden eines Feuerzaubers gegen eine brennende Figur ermittelt, erhöht sich der Schaden einmalig um ihren Brennend-Wert. Anschließend wird der Wert durch neu erhaltenes Brennend erhöht. & Die Figur verwendet eine \standardAction{}, um Brennend unabhängig vom Wert vollständig zu entfernen, oder sie wird von einem Zauber mit dem Schlüsselwort \emph{Eis} betroffen. \\
-Festgefroren & Die Figur kann sich nicht bewegen oder bewegt werden. Ein festgefrorener Held hat Nachteil auf eigene Angriffsproben und auf Ausweichproben. Gegen einen festgefrorenen Gegner haben Helden Vorteil auf Angriffsproben und auf Ausweichproben gegen dessen Angriffe. & Am Ende des nächsten Zuges der Figur oder sobald sie von einem Zauber mit dem Schlüsselwort \emph{Feuer} betroffen wird. \\
-Kampfunfähig & Ein kampfunfähiger Held kann nicht handeln. & Sobald der Held geheilt wird und mindestens 1\lifeGain{} besitzt. Anschließend erhält er den Statuseffekt \emph{Zu Boden}. \\
-Zu Boden & Helden haben Vorteil auf Angriffsproben gegen zu Boden gegangene Gegner und auf Ausweichproben gegen deren Angriffe. Ein zu Boden gegangener Held hat Nachteil auf eigene Angriffsproben und auf seine Ausweichprobe (\evade). Die Figur muss ihre nächste \moveAction{} verwenden, um aufzustehen. & Sobald die Figur aufgestanden ist. \\
+\statusBurning{} \textbf{Brennend X} & Erhält eine Figur \statusBurning{} \emph{Brennend X}, erhält sie den angegebenen Wert. Ist sie bereits brennend, erhöht sich ihr vorhandener Wert stattdessen um X. Wird der Schaden eines Feuerzaubers gegen eine brennende Figur ermittelt, erhöht sich der Schaden einmalig um ihren Brennend-Wert. Anschließend wird der Wert durch neu erhaltenes Brennend erhöht. & Die Figur verwendet eine \standardAction{}, um Brennend unabhängig vom Wert vollständig zu entfernen, oder sie wird von einem Zauber mit dem Schlüsselwort \emph{Eis} betroffen. \\
+\statusFrozen{} \textbf{Festgefroren} & Die Figur kann sich nicht bewegen oder bewegt werden. Ein festgefrorener Held hat Nachteil auf eigene Angriffsproben und auf Ausweichproben. Gegen einen festgefrorenen Gegner haben Helden Vorteil auf Angriffsproben und auf Ausweichproben gegen dessen Angriffe. & Am Ende des nächsten Zuges der Figur oder sobald sie von einem Zauber mit dem Schlüsselwort \emph{Feuer} betroffen wird. \\
+\statusIncapacitated{} \textbf{Kampfunfähig} & Ein kampfunfähiger Held kann nicht handeln. & Sobald der Held geheilt wird und mindestens 1\lifeGain{} besitzt. Anschließend erhält er den Statuseffekt \statusProne{} \emph{Liegend}. \\
+\statusProne{} \textbf{Liegend} & Helden haben Vorteil auf Angriffsproben gegen liegende Gegner und auf Ausweichproben gegen deren Angriffe. Ein liegender Held hat Nachteil auf eigene Angriffsproben und auf seine Ausweichprobe (\evade). Die Figur muss ihre nächste \moveAction{} verwenden, um aufzustehen. & Sobald die Figur aufgestanden ist. \\
 \end{hptable}
 
 \begin{todo}
