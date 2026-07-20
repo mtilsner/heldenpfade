@@ -14,6 +14,9 @@ on:
       - '!Regelwerk/build/**'
       - '.github/workflows/build-regelwerk.yml'
       - '.gitignore'
+  release:
+    types:
+      - published
   workflow_run:
     workflows:
       - Automatische Build-Version
@@ -40,7 +43,14 @@ jobs:
       - name: Repository auschecken
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
+          ref: >-
+            ${{
+              github.event_name == 'release'
+                && github.event.release.tag_name
+                || github.event_name == 'workflow_run'
+                && github.event.workflow_run.head_sha
+                || github.sha
+            }}
 
       - name: Dokumentversion bestimmen
         id: document-version
@@ -48,7 +58,7 @@ jobs:
         with:
           script: |
             const { owner, repo } = context.repo;
-            const semanticTag = /^v(\d+)\.(\d+)\.(\d+)$/;
+            const semanticTag = /^v(\d+)\.(\d+)\.(\d+)$/i;
             const dateFormatter = new Intl.DateTimeFormat("de-DE", {
               day: "2-digit",
               month: "2-digit",
@@ -130,6 +140,31 @@ jobs:
               return;
             }
 
+            if (context.eventName === "release") {
+              const release = context.payload.release;
+              const match = semanticTag.exec(release.tag_name);
+
+              if (!match) {
+                core.setFailed(
+                  `Release-Tag ${release.tag_name} entspricht nicht dem erwarteten Format vMAJOR.MINOR.PATCH.`,
+                );
+                return;
+              }
+
+              core.setOutput(
+                "version",
+                `${match[1]}.${match[2]}.${match[3]}`,
+              );
+              core.setOutput("status", "Version");
+              core.setOutput(
+                "date",
+                dateFormatter.format(
+                  new Date(release.published_at || release.created_at),
+                ),
+              );
+              return;
+            }
+
             if (context.eventName === "workflow_run") {
               const commitSha = context.payload.workflow_run.head_sha;
               const matchingReleases = [];
@@ -149,7 +184,10 @@ jobs:
                 return;
               }
 
-              core.setOutput("version", currentRelease.release.tag_name.slice(1));
+              core.setOutput(
+                "version",
+                currentRelease.release.tag_name.replace(/^v/i, ""),
+              );
               core.setOutput("status", "Version");
               core.setOutput(
                 "date",
@@ -169,12 +207,18 @@ jobs:
               return;
             }
 
-            core.setOutput("version", latest.release.tag_name.slice(1));
+            core.setOutput(
+              "version",
+              latest.release.tag_name.replace(/^v/i, ""),
+            );
             core.setOutput("status", "Version");
             core.setOutput(
               "date",
               dateFormatter.format(
-                new Date(latest.release.published_at || latest.release.created_at),
+                new Date(
+                  latest.release.published_at ||
+                    latest.release.created_at,
+                ),
               ),
             );
 
@@ -270,6 +314,7 @@ jobs:
 
       - name: Aktuelles Regelwerk auf gh-pages veröffentlichen
         if: >-
+          github.event_name == 'release' ||
           github.event_name == 'workflow_run' ||
           (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main')
         uses: peaceiris/actions-gh-pages@v4
