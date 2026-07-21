@@ -37,77 +37,9 @@ Leichte Armbrust & 2 & Schießen & 2\star{} $\rightarrow$ \redDmgDie{}\newline 3
  & & Rückseite & \moveAction{} $\rightarrow$ Waffe bereit machen \\
 Schwere Armbrust & 2 & Schießen & 2\star{} $\rightarrow$ \redDmgDie{}\redDmgDie{}\newline 3\star{} $\rightarrow$ \blackDmgDie{}\blackDmgDie{}\newline 2\star{} $\rightarrow$ \effectArmorBreak{} 2\newline Danach \exhaust{} \\
  & & Rückseite & \standardAction{} $\rightarrow$ Waffe bereit machen \\
-Arkebuse & 2 & Schießen & 3\star{} $\rightarrow$ \redDmgDie{}\redDmgDie{}\redDmgDie{}\newline \star{} $\rightarrow$ \effectPush{}\newline Danach \exhaust{} \\
- & & Rückseite & \standardAction{} $\rightarrow$ Waffe bereit machen \\
+Arkebuse & 2 & Schießen & 2\star{} $\rightarrow$ \redDmgDie{}\redDmgDie{}\newline 3\star{} $\rightarrow$ \redDmgDie{}\redDmgDie{}\redDmgDie{}\newline \star{} $\rightarrow$ \effectPush{}\newline Danach \exhaust{} \\
+ & & Rückseite & \moveAction{} $\rightarrow$ Waffe bereit machen \\
 Muskete & 2 & Schießen & 2\star{} $\rightarrow$ \blackDmgDie{}\newline 4\star{} $\rightarrow$ \blackDmgDie{}\blackDmgDie{}\blackDmgDie{}\newline 2\star{} $\rightarrow$ \effectArmorBreak{} 3\newline Danach \exhaust{} \\
  & & Rückseite & \standardAction{} $\rightarrow$ Waffe bereit machen \\
-Steinschlosspistole & 1 & Schießen & \star{} $\rightarrow$ \redDmgDie{}\redDmgDie{}\newline Danach \exhaust{} \\
- & & Rückseite & \moveAction{} $\rightarrow$ Waffe bereit machen \\
-Blunderbüchse & 2 & Schießen & \star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}\newline 2\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}\orangeDmgDie{}\newline 2\star{} $\rightarrow$ \effectCleave{}\newline Danach \exhaust{} \\
- & & Rückseite & \standardAction{} $\rightarrow$ Waffe bereit machen \\
-\end{xltabular}
-\endgroup
-
-\subsection{Einsteigerwaffen}
-
-Einsteigerwaffen verwenden ein einfaches Schadensprofil. Jeder erzielte \star{} wird automatisch gemäß der angegebenen Schadensformel in Schadenswürfel umgewandelt.
-
-\begin{hptable}{L{3.5cm} C{1.5cm} L{2.4cm} Y}
-\textbf{Waffe} & \textbf{Hände} & \textbf{Typ} & \textbf{Schadensformel} \\
-\hline
-Einfache Klinge & 1 & Schlagen & Jeder \star{} $\rightarrow$ \orangeDmgDie{} \\
-Einfacher Zweihänder & 2 & Schlagen & Jeder \star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{} \\
-Einfacher Bogen & 2 & Schießen & Jeder \star{} $\rightarrow$ \orangeDmgDie{} \\
-\end{hptable}
-
-\section{Rüstungen und Schilde}
-
-Rüstungen und Schilde können Schild-Symbole verleihen, eine Ausweichprobe ermöglichen oder verbessern und besondere Effekte besitzen.
-
-\begin{hptable}{L{2.8cm} C{1.7cm} C{2.0cm} L{4.1cm} Y}
-\textbf{Name} & \textbf{Platz} & \textbf{Schild-Symbole} & \textbf{Ausweichen} & \textbf{Effekt} \\
-\hline
-Reisekleidung & Körper & -- & \heroDie{} + INT + GEW + \blueDie{}\blueDie{}\blueDie{} & -- \\
-Lederrüstung & Körper & \armor & \heroDie{} + INT + GEW + \blueDie{}\blueDie{} & -- \\
-Kettenrüstung & Körper & \armor\armor & \heroDie{} + INT + GEW & -- \\
-Plattenrüstung & Körper & \armor\armor\armor\armor & -- & -- \\
-Knochenrüstung & Körper & \armor & \heroDie{} + INT + GEW + \blueDie{} & \freeAction{}: \exhaust{} $\rightarrow$ 8\,\lifeGain \\
-\emph{Knochenrüstung (Rückseite)} & -- & -- & \heroDie{} + INT + GEW + \blueDie{} & -- \\
-Kleiner Deckel & 1 Hand & -- & +\blueDie{} auf \evade & -- \\
-Großer Deckel & 1 Hand & \armor & -- & -- \\
-\end{hptable}
-
-\section{Sonstige Gegenstände}
-
-\subsection{Kopf-, Fuß- und kleine Ausrüstung}
-
-Diese Gegenstände unterstützen Fertigkeitsproben außerhalb des Kampfes. Kleine Gegenstände benötigen keinen Ausrüstungsplatz.
-
-\begin{hptable}{L{3.5cm} L{1.7cm} Y}
-\textbf{Name} & \textbf{Platz} & \textbf{Effekt} \\
-\hline
-Späherhut & Kopf & +\blueDie{} auf Proben mit \emph{Suchen}. \\
-Schattenkapuze & Kopf & +\blueDie{} auf Proben mit \emph{Schleichen}. \\
-Schutzbrille & Kopf & +\blueDie{} auf Proben mit \emph{Basteln}. \\
-Heilerhaube & Kopf & Vorteil auf Proben mit \emph{Heilen} beim Untersuchen von Verletzungen oder Krankheiten. \\
-Verkleidungsmaske & Kopf & Vorteil auf Proben mit \emph{Vorführen}, wenn eine andere Person oder Rolle dargestellt wird. \\
-Leise Schuhe & Füße & +\blueDie{} auf Proben mit \emph{Schleichen}. \\
-Kletterstiefel & Füße & Vorteil auf Proben mit \emph{Turnen} beim Klettern. \\
-Dietriche & Klein & Vorteil auf Proben mit \emph{Basteln} zum Öffnen von Schlössern. \\
-Karte und Kompass & Klein & Vorteil auf Proben mit \emph{Natur} zur Orientierung. \\
-Heilertasche & Klein & +\blueDie{} auf Proben mit \emph{Heilen}. \\
-Musikinstrument & Klein & Vorteil auf Proben mit \emph{Vorführen} beim Musizieren. \\
-\end{hptable}
-
-\subsection{Verbrauchsgegenstände}
-
-\begin{hptable}{L{3.5cm} L{1.7cm} Y}
-\textbf{Name} & \textbf{Platz} & \textbf{Effekt} \\
-\hline
-Heiltrank & Klein & \moveAction{} $\rightarrow$ Der Trinker heilt 4\,\lifeGain; danach aus dem Spiel ablegen. \\
-Starker Heiltrank & Klein & \moveAction{} $\rightarrow$ Der Trinker heilt 7\,\lifeGain; danach aus dem Spiel ablegen. \\
-Manaessenz & Klein & \moveAction{} $\rightarrow$ Der Trinker erhält 3\,\manaGain; danach aus dem Spiel ablegen. \\
-Heilkräuter & Klein & Am Ende einer vollständig abgeschlossenen Stunde Rast 3 zusätzliche Lebenspunkte heilen; danach aus dem Spiel ablegen. \\
-Fackel & Klein & \moveAction{} $\rightarrow$ Beleuchtet für eine Szene die Umgebung; danach aus dem Spiel ablegen. \\
-Kreide & Klein & Beim Markieren eines Weges verwenden: Vorteil auf eine spätere Probe mit \emph{Natur}, um diesen Weg zurückzuverfolgen; danach aus dem Spiel ablegen. \\
-\end{hptable}
+Steinschlosspistole & 1 & Schießen & \star{} $\rightarrow$ \redDmgDie{}\redDmgDie{}\newline 2\star{} $\rightarrow$ \orangeDmgDie{}\orangeDmgDie{}\newline Danach \exhaust{} \\
+ & & Rückseite & \freeAction{} $\rightarrow$ Waffe bereit machen \\
